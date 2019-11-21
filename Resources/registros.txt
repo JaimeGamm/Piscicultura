@@ -1,0 +1,3648 @@
+[{
+	"a_o": "2016",
+	"municipio": "SOATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "4000",
+	"produccion_estimada_kg": "20000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "AQUITANIA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "55000",
+	"animales_cosechados": "50000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "17500",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "ARCABUCO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "290000",
+	"animales_cosechados": "270000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "67500",
+	"precio_al_productor_kg": "67500"
+}, {
+	"a_o": "2016",
+	"municipio": "BELEN",
+	"especie": "TRUCHA",
+	"animales_sembrados": "150000",
+	"animales_cosechados": "100000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "30000",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "BERBEO",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "600",
+	"animales_cosechados": "500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "250",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2016",
+	"municipio": "BERBEO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1250",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2016",
+	"municipio": "BOAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "1575",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "BRICEÑO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "10000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "5000",
+	"produccion_estimada_kg": "70000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "5000",
+	"produccion_estimada_kg": "4000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHINAVITA",
+	"especie": "CARPA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "2000",
+	"produccion_estimada_kg": "1800",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHINAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "6500",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHINAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6200",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "2170",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHIQUINQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9500",
+	"peso_promedio_por_animal_al_cosechar_g": "480",
+	"produccion_estimada_kg": "4560",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHISCAS",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "625",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "CHITARAQUE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "4050",
+	"precio_al_productor_kg": "10800"
+}, {
+	"a_o": "2016",
+	"municipio": "CHITARAQUE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "70000",
+	"animales_cosechados": "65000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "29250",
+	"precio_al_productor_kg": "10800"
+}, {
+	"a_o": "2016",
+	"municipio": "CHIVOR",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "140000",
+	"animales_cosechados": "90000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "31500",
+	"precio_al_productor_kg": "4000"
+}, {
+	"a_o": "2016",
+	"municipio": "COPER",
+	"especie": "CACHAMA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "COPER",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "30000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "10500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "CUBARA",
+	"especie": "BOCACHICO",
+	"animales_sembrados": "16000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5250",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "DUITAMA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "160000",
+	"animales_cosechados": "150000",
+	"peso_promedio_por_animal_al_cosechar_g": "4500",
+	"produccion_estimada_kg": "675000"
+}, {
+	"a_o": "2016",
+	"municipio": "EL COCUY",
+	"especie": "TRUCHA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "30000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "10500",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "GAMEZA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3600",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "GARAGOA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2800",
+	"peso_promedio_por_animal_al_cosechar_g": "700",
+	"produccion_estimada_kg": "1960",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "GARAGOA",
+	"especie": "CARPA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3200",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1440",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "GARAGOA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "17000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "GARAGOA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "7200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3600",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "GUACAMAYAS",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "4000",
+	"produccion_estimada_kg": "7200"
+}, {
+	"a_o": "2016",
+	"municipio": "GUACAMAYAS",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "4000",
+	"produccion_estimada_kg": "48000"
+}, {
+	"a_o": "2016",
+	"municipio": "GUAYATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "720",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "GUAYATA",
+	"especie": "CARPA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "1400",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "560",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "33000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "13200",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "JERICO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "2500",
+	"produccion_estimada_kg": "17500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "JERICO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "3000",
+	"produccion_estimada_kg": "9000",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "LA UVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "9250",
+	"animales_cosechados": "8787",
+	"peso_promedio_por_animal_al_cosechar_g": "27591",
+	"produccion_estimada_kg": "242442",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2016",
+	"municipio": "LA VICTORIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "19000",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "5320",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "LA VICTORIA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "19000",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "5320",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1700",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "850",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2016",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "1980",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "36000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "8250",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "MARIPI",
+	"especie": "CACHAMA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "12500",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "4125",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "5940",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "3630",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "MIRAFLORES",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3250",
+	"animales_cosechados": "2600",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1170",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "MIRAFLORES",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "26000",
+	"animales_cosechados": "20800",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "9360",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "MIRAFLORES",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "3250",
+	"animales_cosechados": "2600",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1170",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "MIRAFLORES",
+	"especie": "TRUCHA",
+	"animales_sembrados": "22000",
+	"animales_cosechados": "20000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "7000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "MONIQUIRA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "40000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "20000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2250",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "MONIQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "OTANCHE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1900",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "OTANCHE",
+	"especie": "CARPA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "1500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "48000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "19200",
+	"precio_al_productor_kg": "9200"
+}, {
+	"a_o": "2016",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "60000",
+	"animales_cosechados": "58000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "23200",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "PACHAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "4400"
+}, {
+	"a_o": "2016",
+	"municipio": "PACHAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2500"
+}, {
+	"a_o": "2016",
+	"municipio": "PAEZ",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "825",
+	"precio_al_productor_kg": "7500"
+}, {
+	"a_o": "2016",
+	"municipio": "PAEZ",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "10000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "200",
+	"animales_cosechados": "180",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "54",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "100",
+	"animales_cosechados": "90",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "27",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAIPA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "300",
+	"animales_cosechados": "290",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "81",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAJARITO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1500",
+	"peso_promedio_por_animal_al_cosechar_g": "900",
+	"produccion_estimada_kg": "1350",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAJARITO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "370",
+	"produccion_estimada_kg": "9250",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "PANQUEBA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "1000",
+	"produccion_estimada_kg": "1800",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "20000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "5000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "2000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAUNA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "240"
+}, {
+	"a_o": "2016",
+	"municipio": "PAYA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "75000",
+	"animales_cosechados": "50000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "12500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAYA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "60000",
+	"animales_cosechados": "45000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "13500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "PAZ DE RIO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "375",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "PESCA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "30000",
+	"peso_promedio_por_animal_al_cosechar_g": "200",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2016",
+	"municipio": "PISBA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "200",
+	"produccion_estimada_kg": "200"
+}, {
+	"a_o": "2016",
+	"municipio": "PUERTO BOYACA",
+	"especie": "BOCACHICO",
+	"animales_sembrados": "45000",
+	"animales_cosechados": "40000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "20000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "55000",
+	"animales_cosechados": "50000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "25000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CARPA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "PUERTO BOYACA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "22000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "8800",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "QUIPAMA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "19600",
+	"peso_promedio_por_animal_al_cosechar_g": "800",
+	"produccion_estimada_kg": "15680",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2016",
+	"municipio": "QUIPAMA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "77600",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "34920",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2016",
+	"municipio": "RAQUIRA",
+	"especie": "CARPA",
+	"animales_sembrados": "500",
+	"animales_cosechados": "400",
+	"peso_promedio_por_animal_al_cosechar_g": "1100",
+	"produccion_estimada_kg": "440"
+}, {
+	"a_o": "2016",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "3150"
+}, {
+	"a_o": "2016",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "3150"
+}, {
+	"a_o": "2016",
+	"municipio": "RAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "1200",
+	"produccion_estimada_kg": "3000"
+}, {
+	"a_o": "2016",
+	"municipio": "SABOYA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "5750",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAMACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "380",
+	"produccion_estimada_kg": "5320",
+	"precio_al_productor_kg": "4200"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "BOCACHICO",
+	"animales_sembrados": "200",
+	"animales_cosechados": "170",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "85",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "400",
+	"animales_cosechados": "365",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "219",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "CARPA",
+	"animales_sembrados": "380",
+	"animales_cosechados": "370",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "222",
+	"precio_al_productor_kg": "900"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "3200",
+	"animales_cosechados": "1600",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "480",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "1200",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "720",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN EDUARDO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "1000",
+	"precio_al_productor_kg": "8400"
+}, {
+	"a_o": "2017",
+	"municipio": "CHINAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "7500",
+	"animales_cosechados": "6300",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2520",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "CARPA",
+	"animales_sembrados": "9000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2800",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "500000",
+	"animales_cosechados": "300000",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "225000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "850000",
+	"animales_cosechados": "570000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "228000",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN MATEO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "1350",
+	"animales_cosechados": "1175",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "294"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN MATEO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "14900",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "4200"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN MATEO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "14500",
+	"animales_cosechados": "7250",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "2538"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "CACHAMA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3100",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "11000",
+	"animales_cosechados": "9900",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3960",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2700",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "1080",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2016",
+	"municipio": "SANTA MARIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "6500",
+	"animales_cosechados": "5850",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2925",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "SANTA MARIA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "62500",
+	"animales_cosechados": "56250",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "28125",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2016",
+	"municipio": "SANTA ROSA DE VITERBO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "6500",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "SANTANA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "1200",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "450",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "SANTANA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "3600",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1350",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2016",
+	"municipio": "SATIVASUR",
+	"especie": "TRUCHA",
+	"animales_sembrados": "7500",
+	"animales_cosechados": "6500",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "1625",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2016",
+	"municipio": "SOATA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "17000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5950",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "SOATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "875",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2016",
+	"municipio": "SOCOTA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2016",
+	"municipio": "SOGAMOSO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "10000",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2016",
+	"municipio": "SOMONDOCO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "48000",
+	"animales_cosechados": "45600",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "20520",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "SORACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "800",
+	"animales_cosechados": "700",
+	"peso_promedio_por_animal_al_cosechar_g": "700",
+	"produccion_estimada_kg": "490",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2016",
+	"municipio": "SOTAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "38000",
+	"animales_cosechados": "36000",
+	"peso_promedio_por_animal_al_cosechar_g": "270",
+	"produccion_estimada_kg": "9720",
+	"precio_al_productor_kg": "12500"
+}, {
+	"a_o": "2016",
+	"municipio": "SUSACON",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "SUSACON",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4750"
+}, {
+	"a_o": "2016",
+	"municipio": "SUTAMARCHAN",
+	"especie": "CARPA",
+	"animales_sembrados": "2500",
+	"animales_cosechados": "2300",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "690",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2016",
+	"municipio": "SUTAMARCHAN",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1900",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "570",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "SUTAMARCHAN",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "2500",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "200",
+	"produccion_estimada_kg": "500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2016",
+	"municipio": "TIBANA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4900",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2450",
+	"precio_al_productor_kg": "9600"
+}, {
+	"a_o": "2016",
+	"municipio": "TINJACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "600",
+	"animales_cosechados": "360",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "180",
+	"precio_al_productor_kg": "3000"
+}, {
+	"a_o": "2016",
+	"municipio": "TINJACA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "500",
+	"animales_cosechados": "278",
+	"peso_promedio_por_animal_al_cosechar_g": "850",
+	"produccion_estimada_kg": "236",
+	"precio_al_productor_kg": "3200"
+}, {
+	"a_o": "2016",
+	"municipio": "UMBITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "14500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5800",
+	"precio_al_productor_kg": "12500"
+}, {
+	"a_o": "2016",
+	"municipio": "VENTAQUEMADA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3200",
+	"precio_al_productor_kg": "1000"
+}, {
+	"a_o": "2016",
+	"municipio": "VIRACACHA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "220",
+	"produccion_estimada_kg": "2200",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2017",
+	"municipio": "ALMEIDA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "2000"
+}, {
+	"a_o": "2017",
+	"municipio": "ALMEIDA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000"
+}, {
+	"a_o": "2017",
+	"municipio": "ARCABUCO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "290000",
+	"animales_cosechados": "270000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "67500",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2017",
+	"municipio": "BELEN",
+	"especie": "TRUCHA",
+	"animales_sembrados": "14700",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "BERBEO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2800",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "2100",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "BERBEO",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "450",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "BETEITIVA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "1400",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "420",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "BOAVITA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "1400",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "BOYACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "19000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "9500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "BRICEÑO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "34000",
+	"animales_cosechados": "30000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "15000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "600",
+	"animales_cosechados": "420",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "105",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "CARPA",
+	"animales_sembrados": "9400",
+	"animales_cosechados": "6580",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "1645",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "CHINAVITA",
+	"especie": "CARPA",
+	"animales_sembrados": "1200",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "2200",
+	"produccion_estimada_kg": "1980",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "CHINAVITA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "2100",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "CHIQUINQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9500",
+	"peso_promedio_por_animal_al_cosechar_g": "480",
+	"produccion_estimada_kg": "4560",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "CHITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "200000",
+	"animales_cosechados": "120000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "30000",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "CHITARAQUE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "14000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "11500"
+}, {
+	"a_o": "2017",
+	"municipio": "CHITARAQUE",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "60000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "27000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "CHIVOR",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "8100",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "COPER",
+	"especie": "CACHAMA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "COPER",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "30000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "10500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "COVARACHIA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "3630",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "COVARACHIA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "2310",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "CUBARA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "36000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "12600",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2017",
+	"municipio": "DUITAMA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "160000",
+	"animales_cosechados": "159000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "71550",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "EL COCUY",
+	"especie": "TRUCHA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "8750",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "GAMEZA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3700",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "925",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "GARAGOA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "700",
+	"produccion_estimada_kg": "2940",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2017",
+	"municipio": "GARAGOA",
+	"especie": "CARPA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3200",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1440",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2017",
+	"municipio": "GARAGOA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "16000",
+	"animales_cosechados": "15500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7750",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2017",
+	"municipio": "GARAGOA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "7500",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "3375",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUACAMAYAS",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "720",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUACAMAYAS",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUAYATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1900",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "760",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUAYATA",
+	"especie": "CARPA",
+	"animales_sembrados": "1800",
+	"animales_cosechados": "1600",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "640",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "35000",
+	"animales_cosechados": "32000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "12800",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2400",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUAYATA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "320",
+	"produccion_estimada_kg": "256",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "GUICAN",
+	"especie": "TRUCHA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "1500",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2017",
+	"municipio": "JENESANO",
+	"especie": "CARPA",
+	"animales_sembrados": "9000",
+	"animales_cosechados": "8200",
+	"peso_promedio_por_animal_al_cosechar_g": "800",
+	"produccion_estimada_kg": "6560",
+	"precio_al_productor_kg": "3500"
+}, {
+	"a_o": "2017",
+	"municipio": "LA UVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2800",
+	"animales_cosechados": "675",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "169",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "LA VICTORIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "9000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "LA VICTORIA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "28000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "14000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1500",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "1980",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "36000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "11880",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "MARIPI",
+	"especie": "CACHAMA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5250",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2017",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "22000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "11000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "MIRAFLORES",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "40000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "18000",
+	"precio_al_productor_kg": "18000"
+}, {
+	"a_o": "2017",
+	"municipio": "MIRAFLORES",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "4050",
+	"precio_al_productor_kg": "4050"
+}, {
+	"a_o": "2017",
+	"municipio": "MONIQUIRA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "44000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "19800",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "MONIQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8900",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4450",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "MUZO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "150000",
+	"animales_cosechados": "130000",
+	"peso_promedio_por_animal_al_cosechar_g": "1500",
+	"produccion_estimada_kg": "195000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "MUZO",
+	"especie": "CARPA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "6000",
+	"produccion_estimada_kg": "108000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "MUZO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "350000",
+	"animales_cosechados": "325000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "162500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "OTANCHE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "5000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "OTANCHE",
+	"especie": "CARPA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "1500",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "70000",
+	"animales_cosechados": "45000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "18000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "60000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "24000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "PACHAVITA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "PACHAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "14000",
+	"animales_cosechados": "13000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5200",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAEZ",
+	"especie": "CACHAMA",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "4800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "1920",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAEZ",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "40000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "14000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAIPA",
+	"especie": "CARPA",
+	"animales_sembrados": "70",
+	"animales_cosechados": "60",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "24",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "200",
+	"animales_cosechados": "180",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "54",
+	"precio_al_productor_kg": "11500"
+}, {
+	"a_o": "2017",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "100",
+	"animales_cosechados": "90",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "27",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAIPA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "300",
+	"animales_cosechados": "290",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "81",
+	"precio_al_productor_kg": "12500"
+}, {
+	"a_o": "2017",
+	"municipio": "PAJARITO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "900",
+	"produccion_estimada_kg": "2250",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAJARITO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "32000",
+	"animales_cosechados": "27000",
+	"peso_promedio_por_animal_al_cosechar_g": "370",
+	"produccion_estimada_kg": "9990",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PANQUEBA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "1000",
+	"produccion_estimada_kg": "1800",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "20000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "2000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAUNA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "240"
+}, {
+	"a_o": "2017",
+	"municipio": "PAYA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "65000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "19500",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAYA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "62000",
+	"animales_cosechados": "48000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "14400",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PAZ DE RIO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "375",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PESCA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "24000",
+	"animales_cosechados": "23000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "5750",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "PISBA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "250",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2017",
+	"municipio": "PUERTO BOYACA",
+	"especie": "BOCACHICO",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4000",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "600000",
+	"animales_cosechados": "500000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "150000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CARPA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "450",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "PUERTO BOYACA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "500000",
+	"animales_cosechados": "400000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "120000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "PUERTO BOYACA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "2100",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "QUIPAMA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "35000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "12250",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "QUIPAMA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "75000",
+	"animales_cosechados": "70000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "24500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "QUIPAMA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "61000",
+	"animales_cosechados": "56000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "19600",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "RAQUIRA",
+	"especie": "CARPA",
+	"animales_sembrados": "500",
+	"animales_cosechados": "400",
+	"peso_promedio_por_animal_al_cosechar_g": "1100",
+	"produccion_estimada_kg": "440",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "3150",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "3150",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "RAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "750",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "SABOYA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAMACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "380",
+	"produccion_estimada_kg": "5700",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN EDUARDO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN EDUARDO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9500",
+	"peso_promedio_por_animal_al_cosechar_g": "700",
+	"produccion_estimada_kg": "6650",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "600000",
+	"animales_cosechados": "400000",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "300000",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "945000",
+	"animales_cosechados": "669000",
+	"peso_promedio_por_animal_al_cosechar_g": "550",
+	"produccion_estimada_kg": "367950",
+	"precio_al_productor_kg": "6500"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN MATEO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3750",
+	"animales_cosechados": "1500",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "375",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN MATEO",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "15800",
+	"animales_cosechados": "13000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "3900",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN MATEO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "14450",
+	"animales_cosechados": "11500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "4025",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN PABLO DE BORB",
+	"especie": "UCACHAMA",
+	"animales_sembrados": "9000",
+	"animales_cosechados": "7200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN PABLO DE BORB",
+	"especie": "UTILAPIA O MOJARRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3200",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SAN PABLO DE BORB",
+	"especie": "UTILAPIA NEGRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2400",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "960",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SANTA MARIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2500",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "SANTA MARIA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "150000",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7000",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "SANTA ROSA DE VITE",
+	"especie": "RTRUCHA",
+	"animales_sembrados": "6500",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "SATIVANORTE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "24000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "SATIVASUR",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3200",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "960",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOATA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "17000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5950",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "875",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOCOTA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOGAMOSO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "24000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "9600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOMONDOCO",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "48000",
+	"animales_cosechados": "45660",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "20547",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "SOTAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "38000",
+	"animales_cosechados": "36000",
+	"peso_promedio_por_animal_al_cosechar_g": "270",
+	"produccion_estimada_kg": "9720",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "SUSACON",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2017",
+	"municipio": "TASCO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "750",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2017",
+	"municipio": "TIBANA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "2500",
+	"animales_cosechados": "2000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "TINJACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "650",
+	"animales_cosechados": "450",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "225",
+	"precio_al_productor_kg": "6400"
+}, {
+	"a_o": "2017",
+	"municipio": "TINJACA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "870",
+	"produccion_estimada_kg": "2610",
+	"precio_al_productor_kg": "6600"
+}, {
+	"a_o": "2017",
+	"municipio": "TOGUI",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "75000",
+	"animales_cosechados": "70000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "31500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2017",
+	"municipio": "TUNUNGUA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "27500",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "6300",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "TURMEQUE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000"
+}, {
+	"a_o": "2017",
+	"municipio": "TUTAZA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "120000",
+	"animales_cosechados": "110000",
+	"peso_promedio_por_animal_al_cosechar_g": "375",
+	"produccion_estimada_kg": "41250",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "UMBITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "22000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "9900",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2017",
+	"municipio": "VENTAQUEMADA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "14400",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5760",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2017",
+	"municipio": "VIRACACHA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "220",
+	"produccion_estimada_kg": "2200",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2017",
+	"municipio": "ZETAQUIRA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "4050",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "ZETAQUIRA",
+	"especie": "CARPA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "270",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2017",
+	"municipio": "ZETAQUIRA",
+	"especie": "TILAPIA O MOJARRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "4050",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "ZETAQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "4050",
+	"precio_al_productor_kg": "5500"
+}, {
+	"a_o": "2017",
+	"municipio": "ZETAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "6200",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "1860",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "ARCABUCO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "290000",
+	"animales_cosechados": "270000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "67500",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "BELEN",
+	"especie": "TRUCHA",
+	"animales_sembrados": "14700",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "BERBEO",
+	"especie": "CARPA",
+	"animales_sembrados": "3100",
+	"animales_cosechados": "2850",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "2138",
+	"precio_al_productor_kg": "6200"
+}, {
+	"a_o": "2018",
+	"municipio": "BERBEO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "1100",
+	"animales_cosechados": "950",
+	"peso_promedio_por_animal_al_cosechar_g": "550",
+	"produccion_estimada_kg": "523",
+	"precio_al_productor_kg": "6200"
+}, {
+	"a_o": "2018",
+	"municipio": "BOAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "1400",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "BOYACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "28500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "9975",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "BRICEÑO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2500",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "450",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "BRICEÑO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "2750",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "BRICEÑO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1200",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "300",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "200",
+	"animales_cosechados": "100",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "50",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "CAMPOHERMOSO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "1800",
+	"animales_cosechados": "1300",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "325",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHINAVITA",
+	"especie": "CARPA",
+	"animales_sembrados": "1200",
+	"animales_cosechados": "900",
+	"peso_promedio_por_animal_al_cosechar_g": "2200",
+	"produccion_estimada_kg": "1980",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHINAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "2100",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHINAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "7500",
+	"animales_cosechados": "6300",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2520",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHIQUINQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9500",
+	"peso_promedio_por_animal_al_cosechar_g": "480",
+	"produccion_estimada_kg": "4560",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHISCAS",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "5400",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "1890",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHITA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "1500",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHITARAQUE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "14000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "11500"
+}, {
+	"a_o": "2018",
+	"municipio": "CHITARAQUE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "60000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "27000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "CHIVOR",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "11000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "COPER",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "COPER",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5600",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "COPER",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "4400",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "COVARACHIA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "13000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "4800",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "COVARACHIA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "9000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2800",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "CUBARA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "27000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "9450",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "DUITAMA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "160000",
+	"animales_cosechados": "150000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "67500",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "EL COCUY",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "3150",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "GAMEZA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3800",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "950",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "GARAGOA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4200",
+	"peso_promedio_por_animal_al_cosechar_g": "700",
+	"produccion_estimada_kg": "2940",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2018",
+	"municipio": "GARAGOA",
+	"especie": "CARPA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3200",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1440",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "GARAGOA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "19000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "9500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "GARAGOA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "7500",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "3375",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUACAMAYAS",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "540",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUACAMAYAS",
+	"especie": "TRUCHA",
+	"animales_sembrados": "17000",
+	"animales_cosechados": "14300",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5005",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUAYATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1900",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "760",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUAYATA",
+	"especie": "CARPA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "720",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "38000",
+	"animales_cosechados": "35000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "14000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUAYATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "7000",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUAYATA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1200",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "GUICAN",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8400",
+	"animales_cosechados": "7560",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3780",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "JENESANO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "3300",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "LA UVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2800",
+	"animales_cosechados": "675",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "169",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "LA VICTORIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "18000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "9000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "LA VICTORIA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "28000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "14000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3500",
+	"animales_cosechados": "3000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "1650",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "LABRANZAGRANDE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "36000",
+	"peso_promedio_por_animal_al_cosechar_g": "330",
+	"produccion_estimada_kg": "11880",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "MARIPI",
+	"especie": "CACHAMA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "5250",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "17500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "5250",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "MARIPI",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "2700",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "MIRAFLORES",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "6075",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2018",
+	"municipio": "MIRAFLORES",
+	"especie": "TRUCHA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3600",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1620",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "MONGUI",
+	"especie": "TRUCHA",
+	"animales_sembrados": "150000",
+	"animales_cosechados": "80000",
+	"peso_promedio_por_animal_al_cosechar_g": "12",
+	"produccion_estimada_kg": "960",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "MONIQUIRA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "44000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "19800",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "MONIQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "2400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "MONIQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8900",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4450",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "MUZO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "MUZO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "60000",
+	"animales_cosechados": "55000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "27500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "MUZO",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "OTANCHE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "12500",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "OTANCHE",
+	"especie": "CARPA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "600",
+	"produccion_estimada_kg": "600",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "70000",
+	"animales_cosechados": "50000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "20000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "OTANCHE",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "60000",
+	"animales_cosechados": "50000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "20000",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "PACHAVITA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "PACHAVITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "14000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5600",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAEZ",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3200",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAEZ",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "80000",
+	"animales_cosechados": "64000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "22400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAIPA",
+	"especie": "CARPA",
+	"animales_sembrados": "95",
+	"animales_cosechados": "90",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "41",
+	"precio_al_productor_kg": "9500"
+}, {
+	"a_o": "2018",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "220",
+	"animales_cosechados": "190",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "53",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAIPA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "120",
+	"animales_cosechados": "95",
+	"peso_promedio_por_animal_al_cosechar_g": "280",
+	"produccion_estimada_kg": "27",
+	"precio_al_productor_kg": "9500"
+}, {
+	"a_o": "2018",
+	"municipio": "PAIPA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "250",
+	"animales_cosechados": "120",
+	"peso_promedio_por_animal_al_cosechar_g": "320",
+	"produccion_estimada_kg": "38",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAJARITO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "40000",
+	"animales_cosechados": "35000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "14000",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAJARITO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "25000",
+	"peso_promedio_por_animal_al_cosechar_g": "370",
+	"produccion_estimada_kg": "9250",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PANQUEBA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "1000",
+	"produccion_estimada_kg": "1800",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "26000",
+	"animales_cosechados": "21000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "10500",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAUNA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4000",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAUNA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "320",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAYA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "60000",
+	"animales_cosechados": "48000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "14400",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAYA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "45000",
+	"animales_cosechados": "37000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "11100",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "PAZ DE RIO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "375",
+	"produccion_estimada_kg": "3750",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PISBA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "1500",
+	"animales_cosechados": "1000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "250",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "PISBA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "375",
+	"produccion_estimada_kg": "300",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "PUERTO BOYACA",
+	"especie": "BOCACHICO",
+	"animales_sembrados": "200000",
+	"animales_cosechados": "180000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "90000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "430000",
+	"animales_cosechados": "410000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "205000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "PUERTO BOYACA",
+	"especie": "CARPA",
+	"animales_sembrados": "120000",
+	"animales_cosechados": "110000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "44000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "PUERTO BOYACA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "120000",
+	"animales_cosechados": "110000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "44000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "PUERTO BOYACA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "7000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "2100",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "QUIPAMA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "20000",
+	"animales_cosechados": "15000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "7500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "QUIPAMA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "85000",
+	"animales_cosechados": "75000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "37500",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "QUIPAMA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "5000",
+	"produccion_estimada_kg": "50000",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "RAQUIRA",
+	"especie": "CARPA",
+	"animales_sembrados": "300",
+	"animales_cosechados": "200",
+	"peso_promedio_por_animal_al_cosechar_g": "1000",
+	"produccion_estimada_kg": "200",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1300",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "975",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "RAQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "400",
+	"animales_cosechados": "300",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "225",
+	"precio_al_productor_kg": "7500"
+}, {
+	"a_o": "2018",
+	"municipio": "RAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1200",
+	"peso_promedio_por_animal_al_cosechar_g": "1100",
+	"produccion_estimada_kg": "1320",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "SABOYA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "16000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "8000",
+	"precio_al_productor_kg": "15000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAMACA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "6000",
+	"animales_cosechados": "5000",
+	"peso_promedio_por_animal_al_cosechar_g": "380",
+	"produccion_estimada_kg": "1900",
+	"precio_al_productor_kg": "11400"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN EDUARDO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "16000",
+	"animales_cosechados": "13000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "5850",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN EDUARDO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "11000",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "8250",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "CACHAMA",
+	"animales_sembrados": "2000",
+	"animales_cosechados": "1800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN JOSE DE PARE",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "9000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "4500",
+	"precio_al_productor_kg": "8000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "600000",
+	"animales_cosechados": "380000",
+	"peso_promedio_por_animal_al_cosechar_g": "750",
+	"produccion_estimada_kg": "285000",
+	"precio_al_productor_kg": "5200"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN LUIS DE GACENO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "948000",
+	"animales_cosechados": "689000",
+	"peso_promedio_por_animal_al_cosechar_g": "550",
+	"produccion_estimada_kg": "378950",
+	"precio_al_productor_kg": "6500"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN MATEO",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3750",
+	"animales_cosechados": "1500",
+	"peso_promedio_por_animal_al_cosechar_g": "230",
+	"produccion_estimada_kg": "345",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN MATEO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "17000",
+	"animales_cosechados": "16000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "4800",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN MATEO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "CACHAMA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "3600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "CARPA",
+	"animales_sembrados": "250",
+	"animales_cosechados": "200",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "100",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "38000",
+	"animales_cosechados": "30400",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "12160",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SAN PABLO DE BORBUR",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "4000",
+	"animales_cosechados": "3200",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "1440",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SANTA MARIA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2800",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1400",
+	"precio_al_productor_kg": "5600"
+}, {
+	"a_o": "2018",
+	"municipio": "SANTA MARIA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "48000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "24000",
+	"precio_al_productor_kg": "5600"
+}, {
+	"a_o": "2018",
+	"municipio": "SANTA ROSA DE VITERBO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "6500",
+	"animales_cosechados": "6000",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "3000",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "SATIVANORTE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "24000",
+	"peso_promedio_por_animal_al_cosechar_g": "250",
+	"produccion_estimada_kg": "6000",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "SATIVASUR",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3200",
+	"animales_cosechados": "2900",
+	"peso_promedio_por_animal_al_cosechar_g": "290",
+	"produccion_estimada_kg": "841",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOATA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "8000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "3200",
+	"precio_al_productor_kg": "7000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOATA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "50000",
+	"animales_cosechados": "40000",
+	"peso_promedio_por_animal_al_cosechar_g": "320",
+	"produccion_estimada_kg": "12800",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOATA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "4500",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "1575",
+	"precio_al_productor_kg": "8500"
+}, {
+	"a_o": "2018",
+	"municipio": "SOATA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "10000",
+	"animales_cosechados": "8500",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "2550",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOCHA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "12000",
+	"animales_cosechados": "10000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "3500",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOCOTA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "15600",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "4200",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOCOTA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "12000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "4800",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOGAMOSO",
+	"especie": "TRUCHA",
+	"animales_sembrados": "28000",
+	"animales_cosechados": "26000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "10400",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOMONDOCO",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "48000",
+	"animales_cosechados": "45000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "20250",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "SOTAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "37000",
+	"animales_cosechados": "34000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "10200",
+	"precio_al_productor_kg": "14000"
+}, {
+	"a_o": "2018",
+	"municipio": "SUSACON",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "5850",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2018",
+	"municipio": "TIBANA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "2500",
+	"animales_cosechados": "2000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "900",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "TINJACA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "650",
+	"animales_cosechados": "450",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "225",
+	"precio_al_productor_kg": "9000"
+}, {
+	"a_o": "2018",
+	"municipio": "TINJACA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "500",
+	"animales_cosechados": "300",
+	"peso_promedio_por_animal_al_cosechar_g": "870",
+	"produccion_estimada_kg": "261",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "TOGUI",
+	"especie": "CACHAMA",
+	"animales_sembrados": "5000",
+	"animales_cosechados": "3500",
+	"peso_promedio_por_animal_al_cosechar_g": "500",
+	"produccion_estimada_kg": "1750",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "TOGUI",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "120000",
+	"animales_cosechados": "80000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "36000",
+	"precio_al_productor_kg": "9500"
+}, {
+	"a_o": "2018",
+	"municipio": "TUNUNGUA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "30000",
+	"animales_cosechados": "2000",
+	"peso_promedio_por_animal_al_cosechar_g": "300",
+	"produccion_estimada_kg": "600",
+	"precio_al_productor_kg": "10000"
+}, {
+	"a_o": "2018",
+	"municipio": "TURMEQUE",
+	"especie": "TRUCHA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "5850",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "TUTAZA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "120000",
+	"animales_cosechados": "117000",
+	"peso_promedio_por_animal_al_cosechar_g": "350",
+	"produccion_estimada_kg": "40950",
+	"precio_al_productor_kg": "11000"
+}, {
+	"a_o": "2018",
+	"municipio": "UMBITA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "25000",
+	"animales_cosechados": "22000",
+	"peso_promedio_por_animal_al_cosechar_g": "450",
+	"produccion_estimada_kg": "9900",
+	"precio_al_productor_kg": "12000"
+}, {
+	"a_o": "2018",
+	"municipio": "VENTAQUEMADA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "3000",
+	"animales_cosechados": "2500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "1000",
+	"precio_al_productor_kg": "6000"
+}, {
+	"a_o": "2018",
+	"municipio": "VIRACACHA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "18000",
+	"animales_cosechados": "2000",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "800",
+	"precio_al_productor_kg": "13000"
+}, {
+	"a_o": "2018",
+	"municipio": "ZETAQUIRA",
+	"especie": "CACHAMA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2018",
+	"municipio": "ZETAQUIRA",
+	"especie": "CARPA",
+	"animales_sembrados": "1000",
+	"animales_cosechados": "800",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "320",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2018",
+	"municipio": "ZETAQUIRA",
+	"especie": "TILAPIA O MOJARRA ROJA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2018",
+	"municipio": "ZETAQUIRA",
+	"especie": "TILAPIA NEGRA",
+	"animales_sembrados": "15000",
+	"animales_cosechados": "13500",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "5400",
+	"precio_al_productor_kg": "5000"
+}, {
+	"a_o": "2018",
+	"municipio": "ZETAQUIRA",
+	"especie": "TRUCHA",
+	"animales_sembrados": "8000",
+	"animales_cosechados": "6200",
+	"peso_promedio_por_animal_al_cosechar_g": "400",
+	"produccion_estimada_kg": "2480",
+	"precio_al_productor_kg": "7000"
+}]
