@@ -13,8 +13,8 @@ public class Pond {
     private long price;
     
 	
-    public Pond(long id, long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
-		this.id = id;
+    public Pond(long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
+	
 		this.year = year;
 		this.municipality = municipality;
 		this.specie = specie;
@@ -56,7 +56,7 @@ public class Pond {
 
 	public void setSpecie(String specie) {
 		this.specie = specie;
-	}
+	} 
 
 	public long getSeeded() {
 		return seeded;

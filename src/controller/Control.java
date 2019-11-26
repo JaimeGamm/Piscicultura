@@ -161,11 +161,13 @@ public class Control implements ActionListener{
     }
 	
     private void closeDialogAdd() {
-    	framePpal.reiniciarTable();
-    	System.out.println("si");
-    	Pond pond =framePpal.actualizarTable();
-    	fishFarm.addPond(pond);
-    	framePpal.cargaDeNuevoTabla(fishFarm.toMatrixVector2());
+    	deletePond();
+//    	framePpal.reiniciarTable();
+//    	System.out.println("si");
+//    	Pond pond =framePpal.actualizarTable();
+//    	pond.setId(addId());
+//    	fishFarm.addPond(pond);
+//    	framePpal.cargaDeNuevoTabla(fishFarm.toMatrixVector2());
 //    	System.out.println(pond.getSpecie());
 //    	for(Pond pond2:fishFarm.getPonds()) {
 //    		System.out.println(pond2.getSpecie());
@@ -174,6 +176,17 @@ public class Control implements ActionListener{
         framePpal.closeDialogAdd();
         getAndShowInformationPonds();
     }
+    private long addId() {
+    	long numeroActual=0;
+       	for(Pond pond:fishFarm.getPonds()) {
+       		if(numeroActual<pond.getId()) {
+       			numeroActual=pond.getId();
+       		}
+       		
+       	}
+    	numeroActual+=1;
+       	return numeroActual;
+	}
 	
     private void openDialogDelete() {
         framePpal.openDialogDelete();
@@ -187,19 +200,15 @@ public class Control implements ActionListener{
 	
     private void createAndAddPond() {
     	try {
-//            if(framePpal.componentsAddDialogEmpty() == true) {
-            Pond pond = framePpal.getRunnerFromDialog();
-                if(fishFarm.searchPond(pond.getId()) == null) {
-                            framePpal.showMessagePondCreated();
-                            fishFarm.addPond(pond);	
-                       
-                       
-//                }else {
-//                	Exception e = new EmptyFieldsException();
-//                	framePpal.showErrorMessage(e.getMessage());
-//                }
+           if(framePpal.componentsAddDialogEmpty() == true) {
+        		framePpal.reiniciarTable();
+            	System.out.println("si");
+            	Pond pond =framePpal.actualizarTable();
+            	pond.setId(addId());
+            	fishFarm.addPond(pond);
+            	framePpal.cargaDeNuevoTabla(fishFarm.toMatrixVector2());
             }
-    	}catch(NumberFormatException e) {
+    	}catch(NumberFormatException e) { 
             framePpal.showErrorNumberFormatException();
     	}
     	
@@ -211,6 +220,7 @@ public class Control implements ActionListener{
             Pond pond = fishFarm.searchPond(framePpal.getIdDeletDialog());
 		if(pond != null) {
                     if(framePpal.showMessageConfirmationDelete() == framePpal.jOptionPaneYesOption()) {
+                    	
 			fishFarm.deletePond(pond);
 			framePpal.showMessageCorrectDelete();
                     }
@@ -257,7 +267,7 @@ public class Control implements ActionListener{
 	public static void main(String[] args) throws IOException, DeserializationException {
 		Control control = new Control();
 //		control.leerlista();
-		Pond pond = new Pond(600, 1996, "tunja", "rrrrrrrrrrrrrrrrrrrrrr", 3, 4,5 , 100, 1200);
+		Pond pond = new Pond(1996, "tunja", "rrrrrrrrrrrrrrrrrrrrrr", 3, 4,5 , 100, 1200);
 		control.fishFarm.addPond(pond);
 		control.leerlista();
 	}

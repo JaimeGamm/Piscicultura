@@ -25,8 +25,8 @@ public class FishFarm {
     	return fileManager.readFile(Constants.ROUTE_DATA);
     }
 	
-    public static Pond createRunner(long id, long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
-    	return new Pond(id, year, municipality, specie, seeded, harvested, weight, production, price);
+    public static Pond createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
+    	return new Pond(year, municipality, specie, seeded, harvested, weight, production, price);
     }
     
 	public ArrayList<Object[]> toMatrixVector2() {
@@ -83,9 +83,6 @@ public class FishFarm {
             i++;
 		}
     }
-//	public void addPond(Pond pond) {
-//		ponds.add();
-//	}
 	
     public void deletePond(Pond pondToRemove) {
     	this.ponds.remove(pondToRemove);

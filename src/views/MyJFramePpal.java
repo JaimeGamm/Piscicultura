@@ -31,7 +31,7 @@ public class MyJFramePpal extends JFrame{
 		setTitle(HandlerLanguage.languageProperties.getProperty(Constants.TITLE));
 		initComponents(actionListenner, datasFarm);
 		setVisible(true);
-    }
+    } 
 	
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	panel = new MyJPanelPrincipal(actionListenner, datasFarm);
@@ -89,9 +89,9 @@ public class MyJFramePpal extends JFrame{
     }
 
 	
-//    public boolean componentsAddDialogEmpty() {
-//    	return dialogAdd.verifyEmptyComponents();
-//    }
+    public boolean componentsAddDialogEmpty() {
+    	return dialogAdd.verifyEmptyComponents();
+    } 
 	
 	
     public Pond getRunnerFromDialog() {

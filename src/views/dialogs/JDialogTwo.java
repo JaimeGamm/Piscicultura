@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -12,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import org.json.simple.DeserializationException;
 
 import controller.Commands;
 import general.HandlerLanguage;
@@ -41,8 +45,8 @@ public class JDialogTwo extends JDialog{
 		setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 		initComponents(actionListenner,editButtons);
     }
-	
-    private void initComponents(ActionListener actionListenner,boolean editButtons) {
+    public JDialogTwo() {}
+      private void initComponents(ActionListener actionListenner,boolean editButtons) {
     	addJDialogs();
     	addJComboBoxSpecies();
     	addJComboBoxMunicipality();
@@ -51,10 +55,10 @@ public class JDialogTwo extends JDialog{
     }
 	
     private void addJDialogs() {
-    	idL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
-    	add(idL);
-    	id = new MyJTextField();
-    	add(id);
+//    	idL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
+//    	add(idL);
+//    	id = new MyJTextField();
+//    	add(id);
     	yearL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
     	add(yearL);
     	year = new MyJTextField();
@@ -209,7 +213,7 @@ public class JDialogTwo extends JDialog{
     }
     
     public void changeLanguage(){
-		idL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
+//		idL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
 		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
 		seededL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
 		harvestedL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
@@ -245,27 +249,78 @@ public class JDialogTwo extends JDialog{
     }
 	
     public long getYear() {
-    	return Long.parseLong(year.getText());
+    	long yearLong =0;
+    	try {
+    		yearLong=Long.parseLong(year.getText());
+		} catch (NumberFormatException e) {
+			yearLong=validaCadena(year.getText());
+		}
+    	return yearLong;
     }
-	
+	private long validaCadena(String text) {
+		long newLong =0;
+		String newtext="";
+		for (int i = 0; i < text.length(); i++) {
+//			System.out.println("char"+text.charAt(i));
+			if((int)text.charAt(i)!=32) {
+				newtext+=Character.toString(text.charAt(i)); 
+			}
+			
+		}
+		newLong=Long.parseLong(newtext);
+//		System.out.println("vota"+newLong);
+		return newLong;
+	}
     public long getSeeded() {
-    	return Long.parseLong(seeded.getText());
+    	long longSeeded =0;
+    	try {
+    		longSeeded=Long.parseLong(seeded.getText());
+		} catch (NumberFormatException e) {
+			longSeeded=validaCadena(seeded.getText());
+		}
+//    	System.out.println(year.getText());
+    	return longSeeded;
     }
 	
     public long getHarvested() {
-    	return Long.parseLong(harvested.getText());
+    	long longHarvested =0;
+    	try {
+    		longHarvested=Long.parseLong(harvested.getText());
+		} catch (NumberFormatException e) {
+			longHarvested=validaCadena(harvested.getText());
+		}
+//    	System.out.println(year.getText());
+    	return longHarvested;
     }
     
     public long getWeight() {
-    	return Long.parseLong(weight.getText());
+    	long longWeight =0;
+    	try {
+    		longWeight=Long.parseLong(weight.getText());
+		} catch (NumberFormatException e) {
+			longWeight=validaCadena(weight.getText());
+		}
+    	return longWeight;
     }
     
     public long getProduction() {
-    	return Long.parseLong(production.getText());
+    	long longProduction =0;
+    	try {
+    		longProduction=Long.parseLong(production.getText());
+		} catch (NumberFormatException e) {
+			longProduction=validaCadena(production.getText());
+		}
+    	return longProduction;
     }
     
     public long getPrice() {
-    	return Long.parseLong(price.getText());
+    	long longPrice =0;
+    	try {
+    		longPrice=Long.parseLong(price.getText());
+		} catch (NumberFormatException e) {
+			longPrice=validaCadena(price.getText());
+		}
+    	return longPrice;
     }
 	
     public String getSpecie() {
@@ -277,7 +332,7 @@ public class JDialogTwo extends JDialog{
     }
 	
     public void clearComponents() {
-    	id.setText(Constants.EMPTY);
+//    	id.setText(Constants.EMPTY);
     	year.setText(Constants.EMPTY);
     	seeded.setText(Constants.EMPTY);
     	harvested.setText(Constants.EMPTY);
@@ -286,17 +341,17 @@ public class JDialogTwo extends JDialog{
     	price.setText(Constants.EMPTY);
     }
 	
-	
-//    public boolean verifyEmptyComponents() {
-//    	boolean isEmpty = true;
-//    	if(id.getText().isEmpty() || id.getText().isEmpty() || year.getText().isEmpty() || seeded.getText().isEmpty() || harvested.getText().isEmpty() || weight.getText().isEmpty() || production.getText().isEmpty() || price.getText().isEmpty())
-//            isEmpty = false;
-//    	return isEmpty;
-//    }
+	 
+    public boolean verifyEmptyComponents() {
+    	boolean isEmpty = true;
+    	if(year.getText().isEmpty() || seeded.getText().isEmpty() || harvested.getText().isEmpty() || weight.getText().isEmpty() || production.getText().isEmpty() || price.getText().isEmpty())
+            isEmpty = false;
+    	return isEmpty;
+    }
 //	
     public void getInformationRunner(Pond pond) {
-    	id.setEditable(false);
-    	id.setText(Long.toString(pond.getId()));
+//    	id.setEditable(false);
+//    	id.setText(Long.toString(pond.getId()));
     	year.setText(Long.toString(pond.getYear()));
     	seeded.setText(Long.toString(pond.getSeeded()));
     	harvested.setText(Long.toString(pond.getHaversted()));
@@ -308,7 +363,7 @@ public class JDialogTwo extends JDialog{
     }
 	
     public Pond createRunner() {
-    	return FishFarm.createRunner(getId(), getYear(), getMunicipality(), getSpecie(), getSeeded(), getHarvested(), getWeight(), getProduction(), getPrice());
+    	return FishFarm.createRunner( getYear(), getMunicipality(), getSpecie(), getSeeded(), getHarvested(), getWeight(), getProduction(), getPrice());
     }
     
     public Object[] createRunner2() {
@@ -325,4 +380,8 @@ public class JDialogTwo extends JDialog{
     	
     	return object;
     }
+//    public static void main(String[] args) throws IOException, DeserializationException {
+//    	JDialogTwo jDialogTwo= new JDialogTwo();
+//    	jDialogTwo.validaCadena("  1212");
+//    }
 }

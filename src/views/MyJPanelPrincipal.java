@@ -16,11 +16,9 @@ public class MyJPanelPrincipal extends JPanel{
 	public static final int HEIGHT_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 
     private static final long serialVersionUID = 1L;
-    private  JtableElement table;
     private JtableElement jtableElement;
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
-    	table = new JtableElement();
 		setBackground(Color.WHITE);
 		setLayout(new BorderLayout());
 		initComponents(actionListenner, datasFarm);
@@ -48,7 +46,6 @@ public class MyJPanelPrincipal extends JPanel{
 		
 	}
 	public void newDatas(ArrayList<Object[]> datasFarm) {
-		jtableElement.setPreferredSize(new Dimension(WIDTH_SCREEN-50,450));
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
 		}

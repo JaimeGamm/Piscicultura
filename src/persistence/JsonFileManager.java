@@ -31,7 +31,8 @@ public class JsonFileManager {
 				long estimatedProduction=Long.parseLong(registerObj.getString(Constants.PRODUCTION_KEY));
 				long price=Long.parseLong(registerObj.getString(Constants.PRICE_KEY));
 				id++;
-				pond = new Pond(id,year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
+				pond = new Pond(year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
+				pond.setId(id);
 				fishFarmingRegisterList.add(pond);	
 				} catch (NumberFormatException e) {
 			}
