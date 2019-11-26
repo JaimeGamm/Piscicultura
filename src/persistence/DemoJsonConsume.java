@@ -14,11 +14,14 @@ import java.net.UnknownHostException;
 
 import org.json.simple.DeserializationException;
 
+import views.Constants;
+
 public class DemoJsonConsume {
 	public static  void readSports(String webServicePath) throws IOException, DeserializationException{
+		@SuppressWarnings("unused")
 		BufferedReader br = new BufferedReader(new InputStreamReader(getHttpURLConnection(false,webServicePath)));
-		
 	}
+	
 	public static InputStream getHttpURLConnection(boolean isProxy, String filePath) {
 		HttpURLConnection httpURLConnection;
 		URL url = null;
@@ -26,16 +29,16 @@ public class DemoJsonConsume {
 		try {
 			url = new URL( filePath );
 			if ( !isProxy ) {
-				System.out.println("Sin proxy");
+				System.out.println(Constants.WITHOUT_PROXY);
 				httpURLConnection = (HttpURLConnection) url.openConnection();	
 				inputStream = httpURLConnection.getInputStream();
 			}else {
-				System.out.println("Con proxy");
-				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("172.16.0.73", 8080));
+				System.out.println(Constants.WITH_PROXY);
+				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(Constants.IP, 8080));
 				httpURLConnection = (HttpURLConnection) url.openConnection(proxy);
 				inputStream = httpURLConnection.getInputStream();
 				if(inputStream == null )
-					System.out.println( "Este input no quiere funcionar" );
+					System.out.println( Constants.MESSAGE_INPUT_ERROR );
 			}
 
 		}catch(ConnectException connectException) {

@@ -7,101 +7,258 @@ import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Locale;
 
 import javax.swing.JOptionPane;
 
 import org.json.simple.DeserializationException;
 
-import model.*;
+import exceptions.EmptyFieldsException;
+import exceptions.NoExistException;
+import general.HandlerLanguage;
+import models.FishFarm;
+import models.Pond;
 import persistence.JsonFileManager;
-import persistence.Myfile;
 import persistence.Utilities;
-import view.JFrameConsole;
+import views.Constants;
+import views.MyJFramePpal;
 
 //import exceptions.DuplicateException;
 //import exceptions.ValidateException;
 //import exceptions.ValueNotFoundException;
 public class Control implements ActionListener{
-	Myfile miFile;
-    Utilities ultilida;
-    JDialogAddNewJugador jDialogAddNewCyclist;
-    JsonFileManager jsonFileManager;
-    FishFarming fishFarming;
-
-
-    public Control () throws FileNotFoundException, IOException, DeserializationException {
-    	cargaDatos();
-        JFrameConsole jFrameConsole= new JFrameConsole(this,fishFarming.toMatrixVector2());
-        //room=new Room();
-      
-      // init();
+	
+	private static final String NAME_FILE_CONFIG = "config.init";
+	
+    private FishFarm fishFarm;
+    private MyJFramePpal framePpal;
+    private JsonFileManager jsonFileManager;
+    private HandlerLanguage config = null;
+	private String languageDefault;
+	
+    public Control() throws IOException, DeserializationException{
+    	jsonFileManager = new JsonFileManager();
+		fishFarm= new FishFarm();
+    	loadConfiguration();
+    	inDatas();
+    	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+    	
+    	getAndShowInformationPonds();		
     }
-	@Override
-	public void actionPerformed(ActionEvent e) {
-    	switch(ActionCompoonet.valueOf(e.getActionCommand())){
-    	case C_ADD_CYCLING:
-    		jDialogAddNewCyclist = new JDialogAddNewJugador(this);
-    		jDialogAddNewCyclist.setVisible(true);
-//    		JOptionPane.showMessageDialog(null, new PanelNewCycking(this));
-    		break;
-    	case C_GUARDAR:
-//    		System.out.println( jDialogAddNewCyclist.createCyclist());
-//    		AddFormNewCyclist.setFirstName()
-//    		jDialogAddNewCyclist.getpan
-//    		JOptionPane.showMessageDialog(null, jDialogAddNewCyclist().;
-    		break;
-		case C_BORRAR_TEXT:
+	
+    public void actionPerformed(ActionEvent e){
+    	switch (Commands.valueOf(e.getActionCommand())) {
+    	case ADD:
+            openDialogAdd();
+            break;
+    	case DELETE:
+            openDialogDelete();
+            break;
+    	case SEE_LIST:
+            getAndShowInformationPonds();
+            break;
+    	case GET_OUT:
+            endProgram();
+            break;
+    	case CLOSE_ADD_DIALOG:
+    		closeDialogAdd();
+        	System.out.println("si");
+	   break;
+    	case CLOSE_DIALOG_ADD_CANCEL:
+            framePpal.closeDialogAdd();
+            break;
+    	case CLOSE_DELETE_DIALOG:
+            closeDialogDelete();
+            break;
+    	case CLOSE_DIALOG_DELETE_CANCEL:
+            framePpal.closeDialogDelete();
+            break;
+    	case ENGLISH:	
+			manageChangeLanguageUS();
 			break;
-		case C_CANCEL_CREATE_COST:
-			break;
-		case C_CANCEOL_CREATE_INCOME:
-			break;
-		case C_CREATE_COST:
-			break;
+		case SPANISH:	
+			manageChangeLanguageES();
 		default:
 			break;
-    	}
+		}	
+    }
+    
+    public String getLanguageDefault(){
+		languageDefault = Locale.getDefault().getLanguage();
+		switch (languageDefault) {
+		case "es":
+			return "Spanish";
+		case "us":
+			return "English";
+		}
+		return "Spanish";
+	}
+
+	public void loadLanguage() throws IOException{
+		try {
+			config.loadLanguage();
+		} catch (Exception e) {			
+		}
+	}
+
+	public void saveConfig() throws IOException{
+		try {
+			new HandlerLanguage(NAME_FILE_CONFIG).saveLanguage();
+		} catch (Exception e) {
+		}
+	}
+
+	public void changeToEnglish() throws IOException{
+		HandlerLanguage.language = "language/languageUS.properties";
+		saveConfig();
+		loadLanguage();		
+	}
+
+	public void changeToSpanish() throws IOException{
+		HandlerLanguage.language = "language/languageES.properties";
+		saveConfig();
+		loadLanguage();
+	}
+	
+	public void loadConfiguration(){
+		if(config == null){
+			config = new HandlerLanguage(NAME_FILE_CONFIG);
+		}
+		try{
+			config.loadLanguage();
+		}catch(IOException e){
+			System.err.println("file not found : NAME_FILE_CONFIG");
+		}
+	}
+	
+	private void manageChangeLanguageUS(){
+		try {
+			changeToEnglish();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}			
+		manageChangeLanguage();
 		
 	}
-	private void cargaDatos() throws FileNotFoundException, IOException, DeserializationException {
-		jsonFileManager =new JsonFileManager();
-		fishFarming= new FishFarming();
-		fishFarming.setJugadorList(jsonFileManager.readFile("Resources/registros.txt"));
-//		for(Jugador jugador: jugadorList) {
-//			System.out.println(jugador.getFirstName()+"--"+jugador.getTeams().getName());
-//		}
-	}
-    public void createCyclistArchivo() {
-    	String[] vector;
-    	String registro = "";
-    	vector=miFile.readRecords();
-    	for (int i = 0; i <vector.length; i++) {
-    		if(vector[i]!=null) {
-    			registro=vector[i];
-    			ultilida = new Utilities(registro);	
-//    			Cyclist cycli =ultilida.cleateCyclist();
-    		
-//    			if(cycli!=null) {
-    			//System.out.println(cycli.getTeam());
-//    			cyclingTour.addCyclist(cycli);
-//    				}
-    			}
-    		
-    	}	
-    }
-
-    public static void main(String[] args) throws FileNotFoundException, IOException, DeserializationException {
-    	//  new Control();
-    }
-	public FishFarming getSportsPrincipal() {
-		return fishFarming;
-	}
-	public void setSportsPrincipal(FishFarming fishFarming) {
-		this.fishFarming = fishFarming;
-	}
-
 	
+	private void manageChangeLanguageES(){
+		try {
+			changeToSpanish();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}	
+		manageChangeLanguage();
+		
+	}
+	
+	
+	private void manageChangeLanguage(){
+		framePpal.changeLanguage();		
+	}
+	
+    private void openDialogAdd() {
+    	framePpal.openDialogAdd();
+    }
+	
+    private void closeDialogAdd() {
+    	framePpal.reiniciarTable();
+    	System.out.println("si");
+    	Pond pond =framePpal.actualizarTable();
+    	fishFarm.addPond(pond);
+    	framePpal.cargaDeNuevoTabla(fishFarm.toMatrixVector2());
+//    	System.out.println(pond.getSpecie());
+//    	for(Pond pond2:fishFarm.getPonds()) {
+//    		System.out.println(pond2.getSpecie());
+//    	}
+    	createAndAddPond();
+        framePpal.closeDialogAdd();
+        getAndShowInformationPonds();
+    }
+	
+    private void openDialogDelete() {
+        framePpal.openDialogDelete();
+    }
+	
+    private void closeDialogDelete() {
+    	deletePond();
+        framePpal.closeDialogDelete();
+        getAndShowInformationPonds();
+    }	
+	
+    private void createAndAddPond() {
+    	try {
+//            if(framePpal.componentsAddDialogEmpty() == true) {
+            Pond pond = framePpal.getRunnerFromDialog();
+                if(fishFarm.searchPond(pond.getId()) == null) {
+                            framePpal.showMessagePondCreated();
+                            fishFarm.addPond(pond);	
+                       
+                       
+//                }else {
+//                	Exception e = new EmptyFieldsException();
+//                	framePpal.showErrorMessage(e.getMessage());
+//                }
+            }
+    	}catch(NumberFormatException e) {
+            framePpal.showErrorNumberFormatException();
+    	}
+    	
+    }
+	
+    private void deletePond() {
+    	try {
+            if(framePpal.componentsDeleteDialogEmpty()) {
+            Pond pond = fishFarm.searchPond(framePpal.getIdDeletDialog());
+		if(pond != null) {
+                    if(framePpal.showMessageConfirmationDelete() == framePpal.jOptionPaneYesOption()) {
+			fishFarm.deletePond(pond);
+			framePpal.showMessageCorrectDelete();
+                    }
+		}else {
+                    Exception e = new NoExistException();
+                    framePpal.showErrorMessage(e.getMessage());
+		}
+            }else {
+                Exception e = new EmptyFieldsException();
+                framePpal.showErrorMessage(e.getMessage());
+            }
+    	}catch(NumberFormatException e) {
+            framePpal.showErrorNumberFormatException();
+    	}
+    }
+	
+	
+	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
+//		jsonFileManager = new JsonFileManager();
+//		fishFarm= new FishFarm();
+		for(Pond pond:jsonFileManager.readFile(Constants.ROUTE_DATA)) {
+			fishFarm.addPond(pond);
+		}
+//		fishFarm.setPondList(jsonFileManager.readFile(Constants.ROUTE_DATA));
+	}
+	
+	
+    private void endProgram() {
+    	if(framePpal.showMessageConfirmation() == framePpal.jOptionPaneYesOption()) {
+    		framePpal.showMessage();
+    		System.exit(0);	
+    	}
+    }
+	
+    private void getAndShowInformationPonds() {
+    	framePpal.getPondsList(fishFarm.getInformationByPond());
+    }
+    private void leerlista() {
+    	for(Pond pond2:fishFarm.getPonds()) {
+    		System.out.println(pond2.getSpecie());
+    	}
+    }
+
+	public static void main(String[] args) throws IOException, DeserializationException {
+		Control control = new Control();
+//		control.leerlista();
+		Pond pond = new Pond(600, 1996, "tunja", "rrrrrrrrrrrrrrrrrrrrrr", 3, 4,5 , 100, 1200);
+		control.fishFarm.addPond(pond);
+		control.leerlista();
+	}
 }
