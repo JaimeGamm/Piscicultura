@@ -5,8 +5,6 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -14,9 +12,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import org.json.simple.DeserializationException;
-
 import controller.Commands;
 import general.HandlerLanguage;
 import models.Pond;
@@ -29,10 +24,10 @@ import views.MyJTextField;
 public class JDialogTwo extends JDialog{
 
     private static final long serialVersionUID = 1L;
-    private MyJTextField id, year, seeded, harvested, weight, production, price;
+    private MyJTextField year, seeded, harvested, weight, production, price;
     private JComboBox<String> species, municipality;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
-    private JLabel idL, yearL, seededL, harvestedL, weightL, productionL, priceL, specieslL, municipalityL;
+    private JLabel yearL, seededL, harvestedL, weightL, productionL, priceL, specieslL, municipalityL;
 	
     public JDialogTwo(MyJFramePpal frame,ActionListener actionListenner,String title, String routeImage,boolean editButtons) {
     	setMinimumSize(new Dimension(430,600));
@@ -55,10 +50,6 @@ public class JDialogTwo extends JDialog{
     }
 	
     private void addJDialogs() {
-//    	idL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
-//    	add(idL);
-//    	id = new MyJTextField();
-//    	add(id);
     	yearL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
     	add(yearL);
     	year = new MyJTextField();
@@ -213,7 +204,6 @@ public class JDialogTwo extends JDialog{
     }
     
     public void changeLanguage(){
-//		idL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_ID));
 		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
 		seededL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
 		harvestedL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
@@ -244,10 +234,6 @@ public class JDialogTwo extends JDialog{
     	return label;
     }
 	
-    public long getId() {
-    	return Long.parseLong(id.getText());
-    }
-	
     public long getYear() {
     	long yearLong =0;
     	try {
@@ -261,14 +247,12 @@ public class JDialogTwo extends JDialog{
 		long newLong =0;
 		String newtext="";
 		for (int i = 0; i < text.length(); i++) {
-//			System.out.println("char"+text.charAt(i));
 			if((int)text.charAt(i)!=32) {
 				newtext+=Character.toString(text.charAt(i)); 
 			}
 			
 		}
 		newLong=Long.parseLong(newtext);
-//		System.out.println("vota"+newLong);
 		return newLong;
 	}
     public long getSeeded() {
@@ -278,7 +262,6 @@ public class JDialogTwo extends JDialog{
 		} catch (NumberFormatException e) {
 			longSeeded=validaCadena(seeded.getText());
 		}
-//    	System.out.println(year.getText());
     	return longSeeded;
     }
 	
@@ -289,7 +272,6 @@ public class JDialogTwo extends JDialog{
 		} catch (NumberFormatException e) {
 			longHarvested=validaCadena(harvested.getText());
 		}
-//    	System.out.println(year.getText());
     	return longHarvested;
     }
     
@@ -332,7 +314,6 @@ public class JDialogTwo extends JDialog{
     }
 	
     public void clearComponents() {
-//    	id.setText(Constants.EMPTY);
     	year.setText(Constants.EMPTY);
     	seeded.setText(Constants.EMPTY);
     	harvested.setText(Constants.EMPTY);
@@ -344,14 +325,13 @@ public class JDialogTwo extends JDialog{
 	 
     public boolean verifyEmptyComponents() {
     	boolean isEmpty = true;
-    	if(year.getText().isEmpty() || seeded.getText().isEmpty() || harvested.getText().isEmpty() || weight.getText().isEmpty() || production.getText().isEmpty() || price.getText().isEmpty())
-            isEmpty = false;
+    	if(year.getText().isEmpty() || seeded.getText().isEmpty() || harvested.getText().isEmpty() || weight.getText().isEmpty() || production.getText().isEmpty() || price.getText().isEmpty()) {
+    		isEmpty = false;
+    	}
     	return isEmpty;
     }
-//	
+
     public void getInformationRunner(Pond pond) {
-//    	id.setEditable(false);
-//    	id.setText(Long.toString(pond.getId()));
     	year.setText(Long.toString(pond.getYear()));
     	seeded.setText(Long.toString(pond.getSeeded()));
     	harvested.setText(Long.toString(pond.getHaversted()));
@@ -368,7 +348,6 @@ public class JDialogTwo extends JDialog{
     
     public Object[] createRunner2() {
     	Object[] object = new Object[8];
-    	object[0]=Long.toString(getId());
     	object[1]=Long.toString(getYear());
     	object[2]=getMunicipality();
     	object[3]=getSpecie();
@@ -380,8 +359,4 @@ public class JDialogTwo extends JDialog{
     	
     	return object;
     }
-//    public static void main(String[] args) throws IOException, DeserializationException {
-//    	JDialogTwo jDialogTwo= new JDialogTwo();
-//    	jDialogTwo.validaCadena("  1212");
-//    }
 }

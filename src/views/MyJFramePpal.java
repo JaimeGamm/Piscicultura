@@ -43,17 +43,15 @@ public class MyJFramePpal extends JFrame{
 		dialogDelete = new JDialogOne(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.DELETE_POND),Constants.DELETE_PATH,false);
     }
     public Pond actualizarTable() {
-    	panel.reiniciarTable();
+    	panel.restartTable();
     	Pond pond=dialogAdd.createRunner();
     	return pond;
     }
 	public void reiniciarTable() {
-		   panel.reiniciarTable();
+		   panel.restartTable();
 	}
 	public void cargaDeNuevoTabla(ArrayList<Object[]> datasFarm) {
 		panel.newDatas(datasFarm);
-//		jpMainPanel.setJtableElement(jtableElement);
-		//jpMainPanel.showDatas( datasFarm);
 	}
 	public void changeLanguage(){
 		table.changeLanguageColunmJtable();

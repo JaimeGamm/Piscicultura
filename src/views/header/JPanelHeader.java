@@ -16,14 +16,14 @@ public class JPanelHeader extends JPanel{
 	
     public JPanelHeader(ActionListener actionListenner) {
 	setLayout(new BorderLayout());
-	setBackground(Constants.GRAY_DARK);
+	setBackground(Constants.GRAY_BLUE);
 	setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
 	initComponents(actionListenner);
 	setVisible(true);
     }
 	
     private void initComponents(ActionListener actionListenner) {
-	JPanelButtonsMenu buttonsMenu = new JPanelButtonsMenu(actionListenner);
+    	JPanelButtonsMenu buttonsMenu = new JPanelButtonsMenu(actionListenner);
         buttonsMenu.setPreferredSize(new Dimension(1000, 150));
         add(buttonsMenu, BorderLayout.CENTER);
     }

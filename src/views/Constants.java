@@ -5,13 +5,17 @@ import java.awt.Color;
 public class Constants{
 	
 	public static final Color GRAY = Color.decode("#888888");
+	public static final Color GRAY_LIGHT = Color.decode("#E8E8E8");
 	public static final Color GRAT_DARK = Color.decode("#4A4848");
-	public static final Color GRAY_DARK = Color.decode("#202020");
+	public static final Color GRAY_BLUE = Color.decode("#ACACAC");
+	public static final Color GRAY_RED = Color.decode("#969696");
 	public static final Color RED = Color.decode("#FF0000");
 	public static final Color CIAN = Color.decode("#00F0FF");
+	public static final Color ORANGE = Color.decode("#FFAE00");
 	public static final String MESSAGE_ARRAY_INDEX = "Opcion no valida";
 	public static final String MESSAGE_NUMBER_FORMAT = "El ID no es valido";
 	public static final String MESSAGE_CREATE_POND = "El cultivo ha sido añadido";
+	public static final String MESSAGE_EMPTY_FIELDS = "";
 	public static final String END_PROGRAM = "Programa finalizado";
 	public static final String MESSAGE_IVALID_OPTION = "Opcion invalida";
 	public static final String MESSAGE_CORRECT_DELETE = "Cultivo eliminado";
@@ -25,7 +29,7 @@ public class Constants{
 	public static final String ERROR = "Error: ";
 	public static final String SPANISH = "Spanish_LG";
 	public static final String ENGLISH = "English_LG";
-	public static final String MESSAGE_NOT_FOUND = "Debe completar todos los campos requeridos"; 
+	public static final String MESSAGE_NOT_FOUND = "Empty_Fields"; 
 	public static final String MESSAGE_INPUT_ERROR = "Este input no quiere funcionar"; 
 	public static final String IP ="172.16.0.73";
 	public static final String WITH_PROXY = "Con proxy";
@@ -48,10 +52,12 @@ public class Constants{
 	public static final String DELETE_PATH = "Resources/DeletePond.png"; 
 	public static final String LIST_PATH = "Resources/seelist.png"; 
 	public static final String EXIT_PATH = "Resources/getout.png"; 
+	public static final String USA_PATH = "Resources/BEU.png"; 
+	public static final String SPAIN_PATH = "Resources/Bsp.png"; 
 	public static final String TITLE = "Title"; 
 	public static final String SELECT_SPECIE = "Select_Specie"; 
 	public static final String SELECT_MUNICIPALITY = "Select_Municipality"; 
-	public static final String IN_SEEDED_ANIMALS = "In_Seeded_Animal"; 
+	public static final String IN_SEEDED_ANIMALS = "In_Seeded_Animals"; 
 	public static final String IN_HARVESTED_ANIMALS = "In_Harvested_Animals"; 
 	public static final String IN_WEIGHT_ANIMALS = "In_Average_Weight"; 
 	public static final String IN_PRODUCTION_ANIMALS = "In_Estimed_Production"; 

@@ -19,6 +19,10 @@ public class JtableElement extends JPanel{
 	/**
 	 * 
 	 */
+	
+	public static final int WIDTH_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
+	public static final int HEIGHT_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
+	
 	private static final long serialVersionUID = 1L;
 	private DefaultTableModel dtmElements;
 	private JTable jtElements;
@@ -29,27 +33,22 @@ public class JtableElement extends JPanel{
 	private void initComponents() {
 		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
 		this.setBackground(Color.white);
-		
-//		String[] headrs = {Constants.ID,Constants.YEAR, Constants.MUNICIPALITY,Constants.SPECIE,Constants.SEEDED_ANIMALS,Constants.HARVESTED_ANIMALS,Constants.WEIGHT_ANIMAL,Constants.PRODUCTION,Constants.PRICE_ANIMAL};
 		dtmElements=new DefaultTableModel();
-//		dtmElements.setColumnIdentifiers(headrs);
 		changeLanguageColunmJtable();
-		
 		Font fontHeader =new Font(Constants.FONT_RUBIK, Font.BOLD,14);
-		
 		jtElements = new JTable();
 		jtElements.setModel(dtmElements);
 		jtElements.getTableHeader().setReorderingAllowed(false);
-		jtElements.getTableHeader().setBackground(Constants.GRAT_DARK);
-		jtElements.getTableHeader().setForeground(Constants.RED);
+		jtElements.getTableHeader().setBackground(Constants.GRAY);
+		jtElements.getTableHeader().setForeground(Color.WHITE);
 		jtElements.getTableHeader().setFont(fontHeader);
-		jtElements.setRowHeight(40);
-		
+		jtElements.setBackground(Constants.GRAY_LIGHT);
+		jtElements.setForeground(Color.BLACK);
+		jtElements.setRowHeight(35);
+		jtElements.setFont(new Font(Constants.FONT_RUBIK, Font.BOLD,12));
 		jtElements.setFillsViewportHeight(true);
 		jtElements.setBorder(null);
-		
 		jsTable = new JScrollPane(jtElements);
-		jsTable.setForeground(Color.WHITE);
 		jsTable.setBorder(null);
 		jsTable.setAlignmentX(Component.LEFT_ALIGNMENT);
 		this.add(jsTable,BorderLayout.PAGE_END);

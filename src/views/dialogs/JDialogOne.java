@@ -100,8 +100,9 @@ public class JDialogOne extends JDialog{
 	
     public boolean verifyEmptyComponent() {
     	boolean isEmpty = true;
-    	if(id.getText().isEmpty())
+    	if(id.getText().isEmpty()) {
             isEmpty = false;
+    	}
     	return isEmpty;
     }
 }

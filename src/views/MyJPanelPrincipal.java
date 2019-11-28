@@ -4,7 +4,6 @@ import views.table.JtableElement;
 import views.header.JPanelHeader;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
@@ -27,18 +26,12 @@ public class MyJPanelPrincipal extends JPanel{
 	
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	add(new JPanelHeader(actionListenner),BorderLayout.NORTH);
-//		add(table,BorderLayout.CENTER);
     	showDatas(datasFarm);
 		
     }
-	
-//    public void getPondsList(ArrayList<Object[]> info) {
-//    	table.showTablePonds(info);
-//    }
     
 	public void showDatas(ArrayList<Object[]> datasFarm) {
 		jtableElement = new JtableElement();
-		jtableElement.setPreferredSize(new Dimension(WIDTH_SCREEN-50,450));
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
 		}
@@ -52,7 +45,7 @@ public class MyJPanelPrincipal extends JPanel{
 		this.add(jtableElement,BorderLayout.CENTER);
 		
 	}
-	public void reiniciarTable() {
+	public void restartTable() {
 		jtableElement.cleanRowsTable();
 	}
 

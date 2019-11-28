@@ -1,10 +1,7 @@
 package views;
 
-import java.awt.Color;
 import java.awt.event.ActionListener;
-
 import javax.swing.JPanel;
-
 import controller.Commands;
 import general.HandlerLanguage;
 
@@ -21,7 +18,7 @@ public class JPanelButtonsMenu extends JPanel{
 	
     public JPanelButtonsMenu(ActionListener actionListenner) {
     	initComponents(actionListenner);
-    	setBackground(Color.WHITE);
+    	setBackground(Constants.GRAY_BLUE);
     }
 	
     private void initComponents(ActionListener actionListenner) {
@@ -41,11 +38,11 @@ public class JPanelButtonsMenu extends JPanel{
     	getoutAndSaveButton.addActionListener(actionListenner);
     	getoutAndSaveButton.setActionCommand(Commands.GET_OUT.toString());
     	add(getoutAndSaveButton);
-    	spanish = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.SPANISH), "");
+    	spanish = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.SPANISH), Constants.SPAIN_PATH);
     	spanish.addActionListener(actionListenner);
     	spanish.setActionCommand(Commands.SPANISH.toString());
     	add(spanish);
-    	english = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.ENGLISH), "");
+    	english = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.ENGLISH), Constants.USA_PATH);
     	english.addActionListener(actionListenner);
     	english.setActionCommand(Commands.ENGLISH.toString());
     	add(english);

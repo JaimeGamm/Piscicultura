@@ -6,6 +6,6 @@ public class EmptyFieldsException extends Exception {
     public static final String MESSAGE_NOT_FOUND = "Debe completar todos los campos requeridos";
 	
     public EmptyFieldsException() { 
-	super( MESSAGE_NOT_FOUND );
+    	super( MESSAGE_NOT_FOUND );
     }
 }
