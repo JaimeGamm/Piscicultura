@@ -1,6 +1,14 @@
 package views;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Label;
+import java.awt.Panel;
 import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import controller.Commands;
 import general.HandlerLanguage;
@@ -15,10 +23,12 @@ public class JPanelButtonsMenu extends JPanel{
     private JButtonsMenuAndDialogs getoutAndSaveButton;
     private JButtonsMenuAndDialogs spanish;
     private JButtonsMenuAndDialogs english;
+    JComboBox<String> jComboReport; 
 	
     public JPanelButtonsMenu(ActionListener actionListenner) {
     	initComponents(actionListenner);
     	setBackground(Constants.GRAY_BLUE);
+    	report(actionListenner);
     }
 	
     private void initComponents(ActionListener actionListenner) {
@@ -55,6 +65,28 @@ public class JPanelButtonsMenu extends JPanel{
 		getoutAndSaveButton.setText(HandlerLanguage.languageProperties.getProperty(Constants.EXIT));
 		spanish.setText(HandlerLanguage.languageProperties.getProperty(Constants.SPANISH));
 		english.setText(HandlerLanguage.languageProperties.getProperty(Constants.ENGLISH));
+	}
+	private void report(ActionListener actionListenner) {
+		Panel panel =new Panel();
+		Label label =new Label("REPORTES");
+		JButton button = new JButton("Entrer");
+		button.setPreferredSize(new Dimension(100,40));
+		button.addActionListener(actionListenner);
+		button.setActionCommand(Commands.ENTER_REPORT.toString());
+		label.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		jComboReport= new JComboBox<>();
+		jComboReport.setPreferredSize(new Dimension(400,40));
+		for (ReportEnum team : ReportEnum.values()) {
+			jComboReport.addItem(team.getName());
+		}
+		jComboReport.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		panel.add(label);
+		panel.add(jComboReport);
+		panel.add(button);
+		this.add(panel,BorderLayout.CENTER);
+	}
+	public String estadoJComboReport() {
+		return (String)jComboReport.getSelectedItem();
 	}
 
 }

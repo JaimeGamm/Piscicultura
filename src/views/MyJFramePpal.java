@@ -20,24 +20,23 @@ public class MyJFramePpal extends JFrame{
     private MyJPanelPrincipal panel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
-    private JtableElement table;
-    private JPanelButtonsMenu buttons;
 	
     public MyJFramePpal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	setMinimumSize(new Dimension(700, 400));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
+		
 		setIconImage(new ImageIcon(Constants.LOGO_PATH).getImage());
 		setTitle(HandlerLanguage.languageProperties.getProperty(Constants.TITLE));
 		initComponents(actionListenner, datasFarm);
 		setVisible(true);
+    	JScrollPane jScrollPane = new JScrollPane();
+		jScrollPane.setViewportView(panel);
+		this.add( jScrollPane);
     } 
 	
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	panel = new MyJPanelPrincipal(actionListenner, datasFarm);
-    	JScrollPane jScrollPane = new JScrollPane();
-		jScrollPane.setViewportView( panel );
-		this.add( jScrollPane, BorderLayout.CENTER );
 		add(panel);
 		dialogAdd = new JDialogTwo(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.ADD_POND),Constants.ADD_PATH,false);
 		dialogDelete = new JDialogOne(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.DELETE_POND),Constants.DELETE_PATH,false);
@@ -47,6 +46,10 @@ public class MyJFramePpal extends JFrame{
     	Pond pond=dialogAdd.createRunner();
     	return pond;
     }
+    public void addTableReport(ArrayList<Object[]> datasFarm) {
+    	panel.showDatasReport(datasFarm);
+    	panel.visibletableReport(false);
+    }
 	public void reiniciarTable() {
 		   panel.restartTable();
 	}
@@ -54,8 +57,7 @@ public class MyJFramePpal extends JFrame{
 		panel.newDatas(datasFarm);
 	}
 	public void changeLanguage(){
-		table.changeLanguageColunmJtable();
-		buttons.changeLanguage();
+		panel.changeLanguage();
 		dialogAdd.changeLanguage();
 		dialogDelete.changeLanguage();
 	}
@@ -67,7 +69,9 @@ public class MyJFramePpal extends JFrame{
     public void showMessage() {
     	JOptionPaneMessages.showMessageEndProgram();
     }
-	
+	public void visibleTable(boolean estado) {
+		panel.visibleTable(estado);
+	}
     public void openDialogAdd() {
     	dialogAdd.setVisible(true);
     }
@@ -91,7 +95,7 @@ public class MyJFramePpal extends JFrame{
     	return dialogAdd.verifyEmptyComponents();
     } 
 	
-	
+	 
     public Pond getRunnerFromDialog() {
     	return dialogAdd.createRunner();
     }
@@ -139,4 +143,19 @@ public class MyJFramePpal extends JFrame{
     public int getIdDeletDialog() {
     	return dialogDelete.getId();
     }
+	public String estadoJComboReport() {
+		return panel.estadoJComboReport();
+	}
+	public void visibletableReport(boolean estado) {
+		panel.visibletableReport(estado);
+	}
+	public void tabledeReport(ArrayList<Object[]> datasFarm) {
+		if(estadoJComboReport().equals("Promedio de precio por especie en boyaca")) {
+//			panel.borrarJtableReport();
+			panel.tabledeReport("ESPECIES", "PROMEDIO", datasFarm);
+    	}else if(estadoJComboReport().equals("Porcentaje de especies cultivadas en boyaca")) {
+//    		panel.borrarJtableReport();
+    		panel.tabledeReport("ESPECIES", "PORCENTAJE %", datasFarm);
+    	}
+	}
 }

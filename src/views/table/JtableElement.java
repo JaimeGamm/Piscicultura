@@ -91,7 +91,7 @@ public class JtableElement extends JPanel{
 		dtmElements=new DefaultTableModel();
 		dtmElements.setColumnIdentifiers(header);
 
-	} 
+	}  
 	
 	public void stringFormat(ArrayList<Object[]> info) {
 		ArrayList<Object[]> arrayFormat = new ArrayList<Object[]>();

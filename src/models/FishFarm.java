@@ -3,7 +3,10 @@ package models;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.json.simple.DeserializationException;
+
 import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
@@ -103,4 +106,80 @@ public class FishFarm {
 	public void setPonds(ArrayList<Pond> ponds) {
 		this.ponds = ponds;
 	}
+	public void averageSpeciesGrownInBoyaca() {
+		//promedio de especie cultivado en boyaca
+		
+	}
+	
+	public HashMap<String, Double> averageSpeciesPriceInBoyaca() {
+		//promedio de precio por especie en boyaca
+		HashMap <String, Double>averageSpecie =new HashMap<String, Double>();
+		for (TypeSpecie specie : TypeSpecie.values()) {
+			averageSpecie.put(specie.getName(), averageSpecieCounter(specie.getName()));
+		}
+		return averageSpecie;
+	}
+	
+	private double averageSpecieCounter(String specie) {
+		double countSpeciePrice =0;
+		double numero = 0;
+		double average=0;
+		for (Pond register : ponds) {
+			if(specie.equals(register.getSpecie())) {
+				countSpeciePrice += register.getPrice();
+				numero++;
+			}
+		}
+		average=countSpeciePrice/numero;
+
+//	System.out.println(tote+" "+countSpecie+" "+percentaje);
+		return average;
+	}
+	
+	public HashMap<String, Double> percentageOfCultivatedSpecies() {
+	// porcentaje de especies cultivadas en boyaca
+		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
+		for (TypeSpecie specie : TypeSpecie.values()) {
+			percentageSpecie.put(specie.getName(), contadorAndPercentageSpecie(specie.getName()));
+		}
+		
+		return percentageSpecie;
+	}
+	private double contadorAndPercentageSpecie(String specie) {
+		
+		double countSpecie =0;
+		double tote = 0;
+		double percentaje=0;
+		for (Pond register : ponds) {
+			tote+=register.getSeeded();
+			if(specie.equals(register.getSpecie())) {
+				countSpecie += register.getSeeded();
+			}
+		}
+		percentaje=(countSpecie*100)/(tote);
+
+//	System.out.println(tote+" "+countSpecie+" "+percentaje);
+		return percentaje;
+	}
+	public ArrayList<Object[]>toMatrixVectorAverageSpeciesPriceInBoyaca() {
+		HashMap averageSpecie=averageSpeciesPriceInBoyaca();
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double average = (double) averageSpecie.get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),average)) );
+		}
+		return datas;
+	} 
+	public ArrayList<Object[]>toMatrixVectorpercentageOfCultivatedSpecies(){
+		HashMap percentageSpecie=percentageOfCultivatedSpecies();
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double percentage = (double) percentageSpecie.get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
+		}
+		return datas;
+	}
+	public Object[] toObjectVector(String dato1, double dato2) {
+	return new Object[] {dato1,dato2};
+    }	
 }
