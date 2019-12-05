@@ -1,15 +1,18 @@
 package views;
 
 import views.dialogs.JDialogTwo;
-import views.table.JtableElement;
+import views.reports.PondsReport;
+import views.reports.PriceReport;
 import views.dialogs.JDialogOne;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+
+import org.json.simple.DeserializationException;
 
 import general.HandlerLanguage;
 import models.Pond;
@@ -20,8 +23,12 @@ public class MyJFramePpal extends JFrame{
     private MyJPanelPrincipal panel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
+    private PondsReport pondsReport;
+    private PriceReport priceReport;
 	
-    public MyJFramePpal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
+    public MyJFramePpal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) throws IOException, DeserializationException {
+    	pondsReport = new PondsReport();
+    	priceReport = new PriceReport();
     	setMinimumSize(new Dimension(700, 400));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
@@ -51,7 +58,7 @@ public class MyJFramePpal extends JFrame{
     	panel.visibletableReport(false);
     }
 	public void reiniciarTable() {
-		   panel.restartTable();
+		panel.restartTable();
 	}
 	public void cargaDeNuevoTabla(ArrayList<Object[]> datasFarm) {
 		panel.newDatas(datasFarm);
@@ -69,9 +76,12 @@ public class MyJFramePpal extends JFrame{
     public void showMessage() {
     	JOptionPaneMessages.showMessageEndProgram();
     }
+    
 	public void visibleTable(boolean estado) {
 		panel.visibleTable(estado);
 	}
+	
+
     public void openDialogAdd() {
     	dialogAdd.setVisible(true);
     }
@@ -139,13 +149,27 @@ public class MyJFramePpal extends JFrame{
     public boolean componentsDeleteDialogEmpty() {
     	return dialogDelete.verifyEmptyComponent();
     }
-
+    
     public int getIdDeletDialog() {
     	return dialogDelete.getId();
     }
+    
 	public String estadoJComboReport() {
 		return panel.estadoJComboReport();
 	}
+	
+	public String estadoJComboReport2() {
+		return panel.estadoJComboReport2();
+	}
+	
+	public void showGrafics() {
+		if(estadoJComboReport2().equals("Grafica de especies cultivadas en boyaca")) {
+			pondsReport.setVisible(true);
+		}else if(estadoJComboReport2().equals("Grafica de precios promedio de las especies")) {
+			priceReport.setVisible(true);
+		}
+	}
+	
 	public void visibletableReport(boolean estado) {
 		panel.visibletableReport(estado);
 	}

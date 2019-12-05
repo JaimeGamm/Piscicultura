@@ -23,6 +23,7 @@ public class Constants{
 	public static final String MESSAGE_CONFIRMATION_DELETE = "¿Estás seguro que deseas eliminar el cultivo?";
 	public static final String BACKGROUND_COLOR_DECODE = "#ececec";
 	public static final String ROUTE_DATA = "Resources/registros.txt";
+	public static final String STATS_PATH = "Resources/stats.png";
 	public static final String EMPTY = " ";
 	public static final String LIST = "Update_List";
 	public static final String EXIT = "Exit";
@@ -75,4 +76,19 @@ public class Constants{
 	public static final String PRODUCTION = "Estimated_Production"; 
 	public static final String PRICE_ANIMAL = "Price";
 	public static final String VERIFY = "Confirmar";
+	public static final String CACHAMA = "CACHAMA";
+	public static final String TRUCHA = "TRUCHA";
+	public static final String TILAPIA_NEGRA = "TILAPIA NEGRA";
+	public static final String TILAPIA_O_MOJARRA_ROJA = "TILAPIA O MOJARRA ROJA";
+	public static final String CARPA = "CARPA";
+	public static final String BOCACHICO = "BOCACHICO";
+	public static final String TILAPIA_O_MOJARRA ="TILAPIA O MOJARRA";
+	public static final String RTRUCHA = "RTRUCHA";
+	public static final String UCACHAMA = "UCACHAMA";
+	public static final String UTILAPIA_NEGRA = "UTILAPIA NEGRA";
+	public static final String UTILAPIA_O_MOJARRA = "UTILAPIA O MOJARRA";
+	public static final String TITLE_PRICE_RPORT = "Reporte Especies";
+	public static final String TITLE_REPORTS = "Reportes";
+	public static final String B_PRICE_REPORT = "Reporte Precio Promedio";
+	public static final String B_PONDS_REPORT = "Reporte Cultivos";
 }

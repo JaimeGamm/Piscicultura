@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -18,8 +16,6 @@ import models.FishFarm;
 import models.Pond;
 import models.TypeSpecie;
 import persistence.DemoJsonConsume;
-import persistence.JsonFileManager;
-import views.Constants;
 import views.MyJFramePpal;
 
 public class Control implements ActionListener{
@@ -28,17 +24,15 @@ public class Control implements ActionListener{
 	
     private FishFarm fishFarm;
     private MyJFramePpal framePpal;
-    private JsonFileManager jsonFileManager;
     private DemoJsonConsume demoJsonConsume;
     private HandlerLanguage config = null;
 	private String languageDefault;
 	
     public Control() throws IOException, DeserializationException{
-    	jsonFileManager = new JsonFileManager();
     	demoJsonConsume= new DemoJsonConsume();
-		fishFarm= new FishFarm();
+		fishFarm = new FishFarm();
     	loadConfiguration();
-    	inDatas();
+//    	inDatas();
 //    	inDatasWed();
     	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
     	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
@@ -54,7 +48,8 @@ public class Control implements ActionListener{
             openDialogDelete();
             break;
     	case SEE_LIST:
-            getAndShowInformationPonds();
+    		framePpal.visibleTable(true);
+            framePpal.visibletableReport(false);
             break;
     	case GET_OUT:
             endProgram();
@@ -83,6 +78,9 @@ public class Control implements ActionListener{
     	case CLOSE_DIALOG_DELETE_CANCEL:
             framePpal.closeDialogDelete();
             break;
+    	case ENTER_REPORT_TWO:
+    		framePpal.showGrafics();
+            break;
     	case ENTER_REPORT:
             framePpal.visibleTable(false);
             framePpal.visibletableReport(true);
@@ -97,7 +95,8 @@ public class Control implements ActionListener{
 			break;
 		}	
     }
-    private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
+    @SuppressWarnings({ "unused", "static-access" })
+	private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
 		for(Pond pond:demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json")) {
 			fishFarm.addPond(pond);
 		}
@@ -242,14 +241,6 @@ public class Control implements ActionListener{
             framePpal.showErrorNumberFormatException();
     	}
     }
-
-	
-	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
-		for(Pond pond:jsonFileManager.readFile(Constants.ROUTE_DATA)) {
-			fishFarm.addPond(pond);
-		}
-	}
-	
 	
     private void endProgram() {
     	if(framePpal.showMessageConfirmation() == framePpal.jOptionPaneYesOption()) {
@@ -261,18 +252,22 @@ public class Control implements ActionListener{
     private void getAndShowInformationPonds() {
     	framePpal.getPondsList(fishFarm.getInformationByPond());
     }
-    private void percentageOfCultivatedSpecies() {
+    
+    @SuppressWarnings({ "unused", "rawtypes" })
+	private void percentageOfCultivatedSpecies() {
     	HashMap percentageSpecie=fishFarm.percentageOfCultivatedSpecies();
     	double suma=0;
     	for (TypeSpecie specie : TypeSpecie.values()) {
     		double percentage = (double) percentageSpecie.get(specie.getName());
     		suma+=percentage;
     		// la manera que se obtiene lo dos valores con el HashMap
-    		System.out.println(specie.getName()+" "+percentage);
+    		System.out.println(specie.getName()+" : "+percentage);
     		}
     	System.out.println(suma);
     	}
-    private HashMap<String, Double> averageSpeciesPriceInBoyaca() {
+    
+    @SuppressWarnings({ "unused", "rawtypes", "unchecked" })
+	private HashMap<String, Double> averageSpeciesPriceInBoyaca() {
     	HashMap averageSpecie=fishFarm.averageSpeciesPriceInBoyaca();
 //    	double suma=0;
 //    	for (TypeSpecie specie : TypeSpecie.values()) {
@@ -283,13 +278,17 @@ public class Control implements ActionListener{
 //    	System.out.println(suma);
 //    	}
     	return averageSpecie;
-	}
+
+    }
+    
     private ArrayList<Object[]> toMatrixVectorAverageSpeciesPriceInBoyaca() {
     	return fishFarm.toMatrixVectorAverageSpeciesPriceInBoyaca();
 	}
+    
     private ArrayList<Object[]> toMatrixVectorpercentageOfCultivatedSpecies(){
     	return fishFarm.toMatrixVectorpercentageOfCultivatedSpecies();
     }
+    
     private ArrayList<Object[]> estadoDeJComboReport(String estado) {
     	ArrayList<Object[]> datas = new ArrayList<Object[]>();
     	if(estado.equals("Promedio de precio por especie en boyaca")) {
@@ -309,7 +308,7 @@ public class Control implements ActionListener{
 //	for (TypeSpecie specie : TypeSpecie.values()) {
 //		double percentage = (double) percentageSpecie.get(specie.getName());
 //		suma+=percentage;
-//		System.out.println(specie.getName()+" "+percentage);
+//		System.out.println(specie.getName()+" : "+percentage);
 //		}
 //	System.out.println(suma);
 	}

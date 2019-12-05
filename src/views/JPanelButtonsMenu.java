@@ -24,11 +24,13 @@ public class JPanelButtonsMenu extends JPanel{
     private JButtonsMenuAndDialogs spanish;
     private JButtonsMenuAndDialogs english;
     JComboBox<String> jComboReport; 
+    JComboBox<String> jComboReport2; 
 	
     public JPanelButtonsMenu(ActionListener actionListenner) {
     	initComponents(actionListenner);
     	setBackground(Constants.GRAY_BLUE);
     	report(actionListenner);
+    	reportGrafic(actionListenner);
     }
 	
     private void initComponents(ActionListener actionListenner) {
@@ -68,18 +70,18 @@ public class JPanelButtonsMenu extends JPanel{
 	}
 	private void report(ActionListener actionListenner) {
 		Panel panel =new Panel();
-		Label label =new Label("REPORTES");
+		Label label =new Label(Constants.TITLE_REPORTS);
 		JButton button = new JButton("Entrer");
-		button.setPreferredSize(new Dimension(100,40));
+		button.setPreferredSize(new Dimension(80,40));
 		button.addActionListener(actionListenner);
 		button.setActionCommand(Commands.ENTER_REPORT.toString());
-		label.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		label.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
 		jComboReport= new JComboBox<>();
-		jComboReport.setPreferredSize(new Dimension(400,40));
+		jComboReport.setPreferredSize(new Dimension(380,40));
 		for (ReportEnum team : ReportEnum.values()) {
 			jComboReport.addItem(team.getName());
 		}
-		jComboReport.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		jComboReport.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
 		panel.add(label);
 		panel.add(jComboReport);
 		panel.add(button);
@@ -87,6 +89,29 @@ public class JPanelButtonsMenu extends JPanel{
 	}
 	public String estadoJComboReport() {
 		return (String)jComboReport.getSelectedItem();
+	}
+	
+	private void reportGrafic(ActionListener actionListenner) {
+		Panel panel =new Panel();
+		Label label =new Label("Graficas");
+		JButton button = new JButton("Entrer");
+		button.setPreferredSize(new Dimension(80,40));
+		button.addActionListener(actionListenner);
+		button.setActionCommand(Commands.ENTER_REPORT_TWO.toString());
+		label.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
+		jComboReport2= new JComboBox<>();
+		jComboReport2.setPreferredSize(new Dimension(380,40));
+		for (ReportEnum2 team : ReportEnum2.values()) {
+			jComboReport2.addItem(team.getName());
+		}
+		jComboReport2.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
+		panel.add(label);
+		panel.add(jComboReport2);
+		panel.add(button);
+		this.add(panel,BorderLayout.CENTER);
+	}
+	public String estadoJComboReport2() {
+		return (String)jComboReport2.getSelectedItem();
 	}
 
 }

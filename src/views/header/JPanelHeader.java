@@ -3,14 +3,10 @@ package views.header;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
-
 import views.Constants;
 import views.JPanelButtonsMenu;
-import views.ReportEnum;
 
 public class JPanelHeader extends JPanel{
 
@@ -28,13 +24,18 @@ public class JPanelHeader extends JPanel{
 	
     private void initComponents(ActionListener actionListenner) {
     	buttonsMenu = new JPanelButtonsMenu(actionListenner);
-        buttonsMenu.setPreferredSize(new Dimension(1000, 150));
+        buttonsMenu.setPreferredSize(new Dimension(1200, 200));
         add(buttonsMenu, BorderLayout.CENTER);
    
     }
     public String estadoJComboReport() {
     	return buttonsMenu.estadoJComboReport();  
     }
+    
+    public String estadoJComboReport2() {
+    	return buttonsMenu.estadoJComboReport2();  
+    }
+    
 	public void changeLanguageButtonsMenu(){
 		buttonsMenu.changeLanguage();
 	}

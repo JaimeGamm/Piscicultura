@@ -9,11 +9,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
-import javax.swing.BoxLayout;
-import javax.swing.JComboBox;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 
 public class MyJPanelPrincipal extends JPanel{
@@ -72,6 +68,7 @@ public class MyJPanelPrincipal extends JPanel{
 	public void visibletableReport(boolean estado) {
 		jtableReport.setVisible(estado);
 	}
+	
 	public void newDatas(ArrayList<Object[]> datasFarm) {
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
@@ -79,15 +76,23 @@ public class MyJPanelPrincipal extends JPanel{
 		this.add(jtableElement,BorderLayout.CENTER);
 		
 	}
+	
 	public void restartTable() {
 		jtableElement.cleanRowsTable();
 	}
+	
 	public void visibleTable(boolean estado) {
 		jtableElement.setVisible(estado);
 	}
+	
 	public String estadoJComboReport() {
 		return jPanelHeader.estadoJComboReport();
 	}
+	
+	public String estadoJComboReport2() {
+		return jPanelHeader.estadoJComboReport2();
+	}
+	
 	public void tabledeReport(String titule, String operacion,ArrayList<Object[]> datasFarm) {
 		jtableReport.clean(titule,operacion);
 //		jtableReport.cleanRowsTable();

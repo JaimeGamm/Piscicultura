@@ -14,19 +14,19 @@ import views.Constants;
 
 public class FishFarm {
 	
-	private JsonFileManager fileManager;
 	private ArrayList<Pond> ponds; 
-   
+    private JsonFileManager jsonFileManager;
 	 
 	
-    public FishFarm() {
+    public FishFarm() throws IOException, DeserializationException{
+    	jsonFileManager = new JsonFileManager();
     	this.ponds = new ArrayList<Pond>();
-    	
+    	inDatas();	
     }
     
-    public ArrayList<Pond> crearListPonds() throws FileNotFoundException, IOException, DeserializationException{
-    	return fileManager.readFile(Constants.ROUTE_DATA);
-    }
+//    public ArrayList<Pond> crearListPonds() throws FileNotFoundException, IOException, DeserializationException{
+//    	return fileManager.readFile(Constants.ROUTE_DATA);
+//    }
 	
     public static Pond createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
     	return new Pond(year, municipality, specie, seeded, harvested, weight, production, price);
@@ -50,14 +50,14 @@ public class FishFarm {
 	boolean ubication = false;
 	int i = 0;
 	while(ubication == false && i < this.ponds.size()) {
-            if(ponds.get(i).getId() > pond.getId()) {
-		ponds.add(i,pond);
-		ubication = true;
-            }
-            i++;
+        if(ponds.get(i).getId() > pond.getId()) {
+        	ponds.add(i,pond);
+        	ubication = true;
+        }
+        i++;
 	}
 	if(ubication == false)
-            ponds.add(pond);
+        ponds.add(pond);
     }
     
 	public void setPondList(ArrayList<Pond> pondsList)throws FileNotFoundException, IOException, DeserializationException {
@@ -120,7 +120,7 @@ public class FishFarm {
 		return averageSpecie;
 	}
 	
-	private double averageSpecieCounter(String specie) {
+	public double averageSpecieCounter(String specie) {
 		double countSpeciePrice =0;
 		double numero = 0;
 		double average=0;
@@ -145,6 +145,36 @@ public class FishFarm {
 		
 		return percentageSpecie;
 	}
+	
+	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
+		for(Pond pond: jsonFileManager.readFile(Constants.ROUTE_DATA)) {
+			addPond(pond);
+		}
+	}
+	
+	public int calculatePercentage(String mySpecie) {
+    	@SuppressWarnings("rawtypes")
+		HashMap percentageSpecie= percentageOfCultivatedSpecies();
+    	int percentage = 0;
+    	for (@SuppressWarnings("unused") TypeSpecie specie : TypeSpecie.values()) {
+    		double aux = (double)percentageSpecie.get(mySpecie);
+    		percentage = (int) aux;
+    	}
+    	return percentage;
+    }
+	
+	public int calculatePrice(String mySpecie) {
+    	@SuppressWarnings("rawtypes")
+		HashMap averageSpecie = averageSpeciesPriceInBoyaca();
+    	int average = 0;
+    	for (@SuppressWarnings("unused") TypeSpecie specie : TypeSpecie.values()) {
+    		double aux = (double) averageSpecie.get(mySpecie);
+    		average = (int)aux;
+    		}
+    	return average;
+    }
+	
+	
 	private double contadorAndPercentageSpecie(String specie) {
 		
 		double countSpecie =0;
@@ -161,6 +191,7 @@ public class FishFarm {
 //	System.out.println(tote+" "+countSpecie+" "+percentaje);
 		return percentaje;
 	}
+	@SuppressWarnings("rawtypes")
 	public ArrayList<Object[]>toMatrixVectorAverageSpeciesPriceInBoyaca() {
 		HashMap averageSpecie=averageSpeciesPriceInBoyaca();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
@@ -170,6 +201,7 @@ public class FishFarm {
 		}
 		return datas;
 	} 
+	@SuppressWarnings("rawtypes")
 	public ArrayList<Object[]>toMatrixVectorpercentageOfCultivatedSpecies(){
 		HashMap percentageSpecie=percentageOfCultivatedSpecies();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
@@ -181,5 +213,7 @@ public class FishFarm {
 	}
 	public Object[] toObjectVector(String dato1, double dato2) {
 	return new Object[] {dato1,dato2};
-    }	
+    }
+	
+
 }
