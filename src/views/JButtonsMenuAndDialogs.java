@@ -26,7 +26,7 @@ public class JButtonsMenuAndDialogs extends JButton{
         setCursor(new Cursor(Cursor.HAND_CURSOR));
         setHorizontalTextPosition(SwingConstants.CENTER);
         setVerticalTextPosition(SwingConstants.BOTTOM);
-    }
+    } 
 	
     public JButtonsMenuAndDialogs(String text, int width, int heigth) {
     	setText(text);

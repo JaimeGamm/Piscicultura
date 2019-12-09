@@ -32,7 +32,7 @@ public class JPanelButtonsMenu extends JPanel{
     	report(actionListenner);
     	reportGrafic(actionListenner);
     }
-	
+	 
     private void initComponents(ActionListener actionListenner) {
     	addButton = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.ADD_POND), Constants.ADD_PATH);
     	addButton.addActionListener(actionListenner);
@@ -76,7 +76,7 @@ public class JPanelButtonsMenu extends JPanel{
 		button.addActionListener(actionListenner);
 		button.setActionCommand(Commands.ENTER_REPORT.toString());
 		label.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
-		jComboReport= new JComboBox<>();
+		jComboReport= new JComboBox<>(); 
 		jComboReport.setPreferredSize(new Dimension(380,40));
 		for (ReportEnum team : ReportEnum.values()) {
 			jComboReport.addItem(team.getName());

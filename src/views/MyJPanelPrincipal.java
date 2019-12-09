@@ -3,13 +3,25 @@ package views;
 import views.table.JtableElement;
 import views.table.JtableReport;
 import views.header.JPanelHeader;
+import views.reports.PanelReporrtPercentajeOfSpeciesInBoyaca;
+import views.reports.PanelReportBoyacaAverageSpecies;
+import views.reports.PanelReportMunicipalityPercentaje;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Panel;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import org.json.simple.DeserializationException;
 
 
 public class MyJPanelPrincipal extends JPanel{
@@ -21,10 +33,12 @@ public class MyJPanelPrincipal extends JPanel{
     private JtableElement jtableElement;
     private JPanelHeader jPanelHeader;
     private JtableReport jtableReport;
+    private Panel panelGraphics;
 
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
-		setBackground(Color.WHITE);
+		panelGraphics = new Panel();
+		setBackground(Color.white);
 		setPreferredSize(new Dimension(1300,1000));
 		FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
 		flowLayout.setHgap(30);
@@ -37,11 +51,19 @@ public class MyJPanelPrincipal extends JPanel{
 	
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	jPanelHeader=new JPanelHeader(actionListenner);
- 
+    	startPanelGraphics();
     	add(jPanelHeader,BorderLayout.NORTH);
     	showDatas(datasFarm);
 		
     }
+
+    private void startPanelGraphics() {
+    	panelGraphics.setBackground(Color.black);
+    	FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
+    	panelGraphics.setLayout(flowLayout);
+    	panelGraphics.setPreferredSize(new Dimension(530,530));
+
+	}
     public void changeLanguage() {
     	jtableElement.changeLanguageColunmJtable();
     	jPanelHeader.changeLanguageButtonsMenu();
@@ -106,6 +128,44 @@ public class MyJPanelPrincipal extends JPanel{
 	public void borrarJtableReport() {
 		jtableReport.cleanRowsTable();
 	}
+	public void addGragicaPanelReportBoyaca(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
+		JLabel titlePanel = startJlabel(title);
+		panelGraphics.add(titlePanel);
+		panelGraphics.add(new PanelReportBoyacaAverageSpecies(SpeciesPriceInBoyaca));
+    	panelGraphics.setBackground(Color.black);
+    	panelGraphics.setPreferredSize(new Dimension(530,530));
+		this.add(panelGraphics);
 
+	}
+	public void addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
+		JLabel titlePanel = startJlabel(title);
+		panelGraphics.add(titlePanel);
+		panelGraphics.add(new PanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca));
+    	panelGraphics.setBackground(new Color(20, 20, 20));
+    	panelGraphics.setPreferredSize(new Dimension(530,530));
+		this.add(panelGraphics);
+
+	}
+	public void addGraficaPanelReporrtPercentajeOfMunicipality(HashMap<String, Double> municipality, String title) throws IOException, DeserializationException {
+		JLabel titlePanel = startJlabel(title);
+		panelGraphics.add(titlePanel);
+		panelGraphics.add(new PanelReportMunicipalityPercentaje(municipality));
+    	panelGraphics.setBackground(new Color(30, 30, 30));
+    	panelGraphics.setPreferredSize(new Dimension(530,730)); 
+		this.add(panelGraphics);
+
+	}
+	private JLabel startJlabel(String title) {
+		JLabel titlePanel = new JLabel(title);
+		titlePanel.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		titlePanel.setForeground(Color.white);
+		return titlePanel;
+	}
+	public void removerPanelGraphics() {
+		panelGraphics.removeAll();
+		panelGraphics.repaint();
+	
+	}
+	
 
 }

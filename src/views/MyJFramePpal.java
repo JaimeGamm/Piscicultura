@@ -8,9 +8,12 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
 
 import org.json.simple.DeserializationException;
 
@@ -173,13 +176,59 @@ public class MyJFramePpal extends JFrame{
 	public void visibletableReport(boolean estado) {
 		panel.visibletableReport(estado);
 	}
-	public void tabledeReport(ArrayList<Object[]> datasFarm) {
+	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
+		int numero=0;
 		if(estadoJComboReport().equals("Promedio de precio por especie en boyaca")) {
+			numero=1;
 //			panel.borrarJtableReport();
-			panel.tabledeReport("ESPECIES", "PROMEDIO", datasFarm);
+			panel.tabledeReport("ESPECIES", "PROMEDIO DE PRECIO $", datasFarm);
+			if(numero!=1 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,"Promedio de precio por especie en boyaca");
+			actualizarPantalla();
     	}else if(estadoJComboReport().equals("Porcentaje de especies cultivadas en boyaca")) {
 //    		panel.borrarJtableReport();
+    		numero=2;
     		panel.tabledeReport("ESPECIES", "PORCENTAJE %", datasFarm);
-    	}
+    		if(numero!=2 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			}
+    		panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,"Porcentaje de especies cultivadas en boyaca");
+    		actualizarPantalla();
+    	}else if(estadoJComboReport().equals("Promedio de producion por especie en boyaca")) {
+    		numero=3;
+			panel.tabledeReport("ESPECIES", "PROMEDIO", datasFarm);
+			if(numero!=3 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics(); 
+			} 
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,"Promedio de producion por especie en boyaca");
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals("Porcentaje de porducion por especie en boyaca")) {
+    		numero=4;
+			panel.tabledeReport("ESPECIES", "PORCENTAJE %", datasFarm);
+			if(numero!=4 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,"Porcentaje de porducion por especie en boyaca");
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals("Porcentaje de producion en psicultura por municipio")) {
+    		numero=5;
+			panel.tabledeReport("MUNICIPIO", "PORCENTAJE %", datasFarm);
+			if(numero!=5 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGraficaPanelReporrtPercentajeOfMunicipality(SpeciesPriceInBoyaca,"Porcentaje de producion en psicultura por municipio");
+			actualizarPantalla();
+		}
 	}
+	public void actualizarPantalla(){
+		try {
+			SwingUtilities.updateComponentTreeUI(this);
+			this.validateTree();
+		} catch (IllegalStateException e) {
+			// TODO: handle exception
+		}
+	}
+
 }

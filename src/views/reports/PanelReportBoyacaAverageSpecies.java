@@ -1,45 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package views.reports;
 
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.io.IOException;
-import javax.swing.JDialog;
+import java.util.HashMap;
+
+import javax.swing.JPanel;
+
 import org.json.simple.DeserializationException;
-import models.FishFarm;
+
 import models.TypeSpecie;
 import views.Constants;
 
-
-public class PriceReport extends JDialog {
-	
-	/**
-	 * 
-	 */
+public class PanelReportBoyacaAverageSpecies extends JPanel{
 	private static final long serialVersionUID = 1L;
-	private FishFarm farm;
+	private HashMap<String, Double> averageSpeciesPriceInBoyaca;
 
-
-    public PriceReport() throws IOException, DeserializationException {
-    	farm = new FishFarm();
-    	setBounds(500, 80, 0, 0);
+    public PanelReportBoyacaAverageSpecies(HashMap<String, Double> averageSpeciesPriceInBoyaca) throws IOException, DeserializationException {
+    	this.averageSpeciesPriceInBoyaca=averageSpeciesPriceInBoyaca;
+    	setPreferredSize(new Dimension(520,520));
         initComponents();
-        setBackground(Color.WHITE);
-        setTitle(Constants.B_PRICE_REPORT);
-        setMinimumSize(new Dimension(600,620));
+        setBackground(new Color(15, 15, 15));
+        
+//        setTitle(Constants.B_PRICE_REPORT);
+        
     }
     
                     
     private void initComponents() {
         repaint();  
-    } 
+    }
                 
-
+    public void datas() {
+    	
+    }
     public int maxValue(int value_red, int value_green, int value_blue, int value_orange, int value_yellow, int value_pink, int value_gray, int value_cian, int value_magenta, int value_black, int value_lightGrey){
         if(value_red > value_green && value_red > value_blue && value_red > value_orange && value_red > value_yellow && value_red > value_pink && value_red > value_gray && value_red > value_cian && value_red > value_magenta && value_red > value_black && value_red > value_lightGrey){    
             return value_red;
@@ -68,39 +64,19 @@ public class PriceReport extends JDialog {
     
     public void paint(Graphics g){
         super.paint(g);
-            
- 
-            
-            int int_red = farm.calculatePrice(TypeSpecie.BOCACHICO.getName()) ;
-            int int_green = farm.calculatePrice(TypeSpecie.CACHAMA.getName()) ;
-            int int_blue = farm.calculatePrice(TypeSpecie.CARPA.getName()) ;
-            int int_orange = farm.calculatePrice(TypeSpecie.RTRUCHA.getName()) ;
-            int int_yellow = farm.calculatePrice(TypeSpecie.TILAPIA_NEGRA.getName()) ;
-            int int_pink = farm.calculatePrice(TypeSpecie.TILAPIA_O_MOJARRA.getName()) ;
-            int int_gray = farm.calculatePrice(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName()) ;
-            int int_cian = farm.calculatePrice(TypeSpecie.TRUCHA.getName()) ;
-            int int_magenta = farm.calculatePrice(TypeSpecie.UCACHAMA.getName()) ;
-            int int_black = farm.calculatePrice(TypeSpecie.UTILAPIA_NEGRA.getName());
-            int int_lightGray = farm.calculatePrice(TypeSpecie.UTILAPIA_O_MOJARRA.getName()) ;
-            
-            
-            int max_value = maxValue(int_red, int_green, int_blue, int_orange, int_yellow, int_pink, int_gray, int_cian, int_magenta, int_black, int_lightGray);
   
-            int long_red = (int)(int_red * 400 / max_value);
-            int long_green = (int)(int_green * 400 / max_value);
-            int long_blue = (int)(int_blue * 400 / max_value);
-            int long_orange = (int)(int_orange * 400 / max_value);
-            int long_yellow = (int)(int_yellow * 400 / max_value);
-            int long_pink = (int)(int_pink * 400 / max_value);
-            int long_gray = (int)(int_gray * 400 / max_value);
-            int long_cian = (int)(int_cian * 400 / max_value);
-            int long_magenta = (int)(int_magenta * 400 / max_value);
-            int long_black = (int)(int_black * 400 / max_value);
-            int long_lightGray = (int)(int_lightGray * 400 / max_value);
+            int long_red = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.BOCACHICO.getName())/100;
+            int long_green = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CACHAMA.getName())/100;
+            int long_blue = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CARPA.getName())/100;
+            int long_orange = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.RTRUCHA.getName())/100;
+            int long_yellow = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_NEGRA.getName())/100;
+            int long_pink = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA.getName())/100;
+            int long_gray = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName())/100;
+            int long_cian = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TRUCHA.getName())/100;
+            int long_magenta = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UCACHAMA.getName())/100;
+            int long_black = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName())/100;
+            int long_lightGray = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())/100;
             
-            g.setColor(Color.RED);
-            g.fillRect(170, 50, long_red, 40);
-            g.drawString(Constants.BOCACHICO, 10, 75);
             
             g.setColor(Color.GREEN);
             g.fillRect(170, 100, long_green, 40);
@@ -141,6 +117,17 @@ public class PriceReport extends JDialog {
             g.setColor(Color.LIGHT_GRAY);
             g.fillRect(170, 550, long_lightGray, 40);
             g.drawString(Constants.UTILAPIA_O_MOJARRA, 10, 575);
+            
+            g.setColor(Color.RED);
+            g.fillRect(170, 50, long_red, 40);
+            g.drawString(Constants.BOCACHICO, 10, 75);
         }
+    @Override  
+    public void paintComponent(Graphics g) {
+        Graphics2D g2d = (Graphics2D) g;
+        int w2 = getWidth() / 2;
+        int h2 = getHeight() / 2;
+        g2d.rotate(-Math.PI / 5, w2, h2);
+        super.paintComponent(g);
     }
-
+}

@@ -84,7 +84,12 @@ public class Control implements ActionListener{
     	case ENTER_REPORT:
             framePpal.visibleTable(false);
             framePpal.visibletableReport(true);
-            framePpal.tabledeReport(estadoDeJComboReport(framePpal.estadoJComboReport()));
+            try {
+				framePpal.tabledeReport(estadoDeJComboReport(framePpal.estadoJComboReport()),estadoDeJComboReportHash(framePpal.estadoJComboReport()));
+			} catch (IOException | DeserializationException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
             break;
     	case ENGLISH:	
 			manageChangeLanguageUS();
@@ -204,7 +209,7 @@ public class Control implements ActionListener{
     	deletePond();
         framePpal.closeDialogDelete();
         getAndShowInformationPonds();
-    }	
+    }	 
 	
     private void createAndAddPond() {
     	try {
@@ -254,16 +259,17 @@ public class Control implements ActionListener{
     }
     
     @SuppressWarnings({ "unused", "rawtypes" })
-	private void percentageOfCultivatedSpecies() {
+	private HashMap<String, Double> percentageOfCultivatedSpecies() {
     	HashMap percentageSpecie=fishFarm.percentageOfCultivatedSpecies();
-    	double suma=0;
-    	for (TypeSpecie specie : TypeSpecie.values()) {
-    		double percentage = (double) percentageSpecie.get(specie.getName());
-    		suma+=percentage;
-    		// la manera que se obtiene lo dos valores con el HashMap
-    		System.out.println(specie.getName()+" : "+percentage);
-    		}
-    	System.out.println(suma);
+//    	double suma=0;
+//    	for (TypeSpecie specie : TypeSpecie.values()) {
+//    		double percentage = (double) percentageSpecie.get(specie.getName());
+//    		suma+=percentage;
+//    		// la manera que se obtiene lo dos valores con el HashMap
+//    		System.out.println(specie.getName()+" : "+percentage);
+//    		}
+//    	System.out.println(suma);
+    	return percentageSpecie;
     	}
     
     @SuppressWarnings({ "unused", "rawtypes", "unchecked" })
@@ -280,6 +286,21 @@ public class Control implements ActionListener{
     	return averageSpecie;
 
     }
+
+    private HashMap<String, Double>  averageProductionSpeciesInBoyaca() {
+    	// promedio de producion por especie
+    	return fishFarm.averageProductionSpeciesInBoyaca(); 
+    }
+    private HashMap<String, Double> percentageOfProductionSpecies() {
+    	// porcentaje de porducion por especie en boyaca
+    	return fishFarm.percentageOfProductionSpecies(); 
+	}
+    
+    private HashMap<String, Double> percentageOfProductionInPsiculturaForMunicipality() {
+    	// porcentaje de producion en psicultura por municipio
+    	return fishFarm.percentageOfProductionInPsiculturaForMunicipality(); 
+	}
+    
     
     private ArrayList<Object[]> toMatrixVectorAverageSpeciesPriceInBoyaca() {
     	return fishFarm.toMatrixVectorAverageSpeciesPriceInBoyaca();
@@ -288,6 +309,15 @@ public class Control implements ActionListener{
     private ArrayList<Object[]> toMatrixVectorpercentageOfCultivatedSpecies(){
     	return fishFarm.toMatrixVectorpercentageOfCultivatedSpecies();
     }
+    private ArrayList<Object[]> toMatrixVectorAverageProductionSpeciesInBoyaca(){
+    	return fishFarm.toMatrixVectorAverageProductionSpeciesInBoyaca();
+    }
+    private ArrayList<Object[]> toMatrixVectorpercentageOfProductionSpecies(){
+    	return fishFarm.toMatrixVectorpercentageOfProductionSpecies();
+    }
+    private ArrayList<Object[]> toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality(){
+    	return fishFarm.toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality();
+    }
     
     private ArrayList<Object[]> estadoDeJComboReport(String estado) {
     	ArrayList<Object[]> datas = new ArrayList<Object[]>();
@@ -295,9 +325,32 @@ public class Control implements ActionListener{
     		datas= toMatrixVectorAverageSpeciesPriceInBoyaca();  		
     	}else if(estado.equals("Porcentaje de especies cultivadas en boyaca")) {
     		datas= toMatrixVectorpercentageOfCultivatedSpecies(); 
-    	}
+    	}else if(estado.equals("Promedio de producion por especie en boyaca")) {
+    		datas= toMatrixVectorAverageProductionSpeciesInBoyaca(); 
+    	}else if(estado.equals("Porcentaje de porducion por especie en boyaca")) {
+    		datas= toMatrixVectorpercentageOfProductionSpecies(); 
+    	}else if(estado.equals("Porcentaje de producion en psicultura por municipio")) {
+    		datas= toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality(); 
+    	}			
     	return datas;
 	}
+    
+    
+    private HashMap<String, Double>estadoDeJComboReportHash(String estado){
+    	HashMap hash=new HashMap<String, Double>();
+    	if(estado.equals("Promedio de precio por especie en boyaca")) {
+    		hash= averageSpeciesPriceInBoyaca();  		
+    	}else if(estado.equals("Porcentaje de especies cultivadas en boyaca")) {
+    		hash= percentageOfCultivatedSpecies(); 
+    	}else if(estado.equals("Promedio de producion por especie en boyaca")) {
+    		hash= averageProductionSpeciesInBoyaca(); 
+    	}else if(estado.equals("Porcentaje de porducion por especie en boyaca")) {
+    		hash= percentageOfProductionSpecies(); 
+    	}else if(estado.equals("Porcentaje de producion en psicultura por municipio")) {
+    		hash= percentageOfProductionInPsiculturaForMunicipality(); 
+    	}		
+    	return hash;
+    }
 
 	
 	
