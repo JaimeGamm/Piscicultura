@@ -14,18 +14,15 @@ import org.json.simple.DeserializationException;
 import models.TypeSpecie;
 import views.Constants;
 
-public class PanelReporrtPercentajeOfSpeciesInBoyaca  extends JPanel{
+public class PanelReportHarvestedTotal  extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private HashMap<String, Double> percentajeOfSpeciesPriceInBoyaca;
 
-    public PanelReporrtPercentajeOfSpeciesInBoyaca(HashMap<String, Double> percentajeOfSpeciesPriceInBoyaca) throws IOException, DeserializationException {
+    public PanelReportHarvestedTotal(HashMap<String, Double> percentajeOfSpeciesPriceInBoyaca) throws IOException, DeserializationException {
     	this.percentajeOfSpeciesPriceInBoyaca=percentajeOfSpeciesPriceInBoyaca;
     	setPreferredSize(new Dimension(520,520));
         initComponents();
-        setBackground(new Color(15, 15, 15));
-        
-//        setTitle(Constants.B_PRICE_REPORT);
-        
+        setBackground(new Color(15, 15, 15));    
     }
     
                     
@@ -37,17 +34,17 @@ public class PanelReporrtPercentajeOfSpeciesInBoyaca  extends JPanel{
     public void paint(Graphics g){
         super.paint(g);
   
-            int long_red = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.BOCACHICO.getName());
-            int long_green = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.CACHAMA.getName());
-            int long_blue = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.CARPA.getName());
-            int long_orange = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.RTRUCHA.getName());
-            int long_yellow = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_NEGRA.getName());
-            int long_pink = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA.getName());
-            int long_gray = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName());
-            int long_cian = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TRUCHA.getName());
-            int long_magenta = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UCACHAMA.getName());
-            int long_black = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName());
-            int long_lightGray = (int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName());
+            int long_red = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.BOCACHICO.getName()) /10000)+1;
+            int long_green = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.CACHAMA.getName())/10000)+1;
+            int long_blue = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.CARPA.getName())/10000)+1;
+            int long_orange = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.RTRUCHA.getName())/10000)+1;
+            int long_yellow = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_NEGRA.getName())/10000)+1;
+            int long_pink = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA.getName())/10000)+1;
+            int long_gray = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName())/10000)+1;
+            int long_cian = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.TRUCHA.getName())/10000)+1;
+            int long_magenta = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UCACHAMA.getName())/10000)+1;
+            int long_black = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName())/10000)+1;
+            int long_lightGray = ((int)(double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())/10000)+1;
             
             
             g.setColor(Color.RED);

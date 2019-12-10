@@ -15,7 +15,7 @@ public class JPanelHeader extends JPanel{
 	
     public JPanelHeader(ActionListener actionListenner) {
 	setLayout(new BorderLayout());
-	setBackground(Constants.GRAY_BLUE);
+	setBackground(Constants.GRAY);
 	setBorder(BorderFactory.createEmptyBorder(0, 0, 5, 0));
 	initComponents(actionListenner);
 	setVisible(true);
@@ -30,10 +30,6 @@ public class JPanelHeader extends JPanel{
     }
     public String estadoJComboReport() {
     	return buttonsMenu.estadoJComboReport();  
-    }
-    
-    public String estadoJComboReport2() {
-    	return buttonsMenu.estadoJComboReport2();  
     }
     
 	public void changeLanguageButtonsMenu(){

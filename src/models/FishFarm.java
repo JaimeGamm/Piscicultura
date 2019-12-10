@@ -4,9 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import org.json.simple.DeserializationException;
-
 import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
@@ -38,12 +36,6 @@ public class FishFarm {
 			datas.add( Utilities.concatObjectArrays2( register.toObjectVector()) );
 		}
 		return datas;
-	}
-	 
-	public void at() {
-		for (int i = 0; i < ponds.size(); i++) {
-			System.out.println(ponds.get(i));
-		}
 	}
 	
     public void addPond(Pond pond) {
@@ -106,9 +98,90 @@ public class FishFarm {
 	public void setPonds(ArrayList<Pond> ponds) {
 		this.ponds = ponds;
 	}
-	public void averageSpeciesGrownInBoyaca() {
-		//promedio de especie cultivado en boyaca
-		
+	
+	public long maxYear() {
+		long year = 0;
+		for(Pond pond: ponds) {
+			if(pond.getYear() > year) {
+				year = pond.getYear();
+			}
+		}
+		return year;
+	}
+	
+	public long minYear() {
+		long year = Long.MAX_VALUE;
+		for(Pond pond: ponds) {
+			if(pond.getYear() < year) {
+				year = pond.getYear();
+			}
+		}
+		return year;
+	}
+	
+	public HashMap<Long, Integer> pondsByYear(){
+		HashMap<Long, Integer> map = new HashMap<Long, Integer>();
+		for(long i=minYear(); i<=maxYear(); i++) {
+			map.put(i, quantityPondByYear(i));
+		}
+		return map;
+	}
+	
+	
+	public int quantityPondByYear(long year) {
+		int count = 0;
+		for(Pond register : ponds) {
+			if(year == register.getYear()) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public double averageWeight(String mySpecie) {
+		double countSpecieProduction =0;
+		double numero = 0;
+		double average=0;
+		for (Pond register : ponds) {
+			if(mySpecie.equals(register.getSpecie())) {
+				countSpecieProduction += register.getWeight();
+				numero++;
+			}
+		}
+		average=countSpecieProduction/numero;
+
+		return average;
+	}
+	
+	public double averageHarvested(String mySpecie) {
+		double countSpecieProduction =0;
+		double numero = 0;
+		double average=0;
+		for (Pond register : ponds) {
+			if(mySpecie.equals(register.getSpecie())) {
+				countSpecieProduction += register.getHaversted();
+				numero++;
+			}
+		}
+		average=countSpecieProduction/numero;
+
+		return average;
+	}
+	
+	public HashMap<String, Double> averageHarvested() {
+		HashMap <String, Double>averageSpecie =new HashMap<String, Double>();
+		for (TypeSpecie specie : TypeSpecie.values()) {
+			averageSpecie.put(specie.getName(), averageHarvested(specie.getName()));
+		}
+		return averageSpecie;
+	}
+	
+	public HashMap<String, Double> averageWeightSpecies() {
+		HashMap <String, Double>averageSpecie =new HashMap<String, Double>();
+		for (TypeSpecie specie : TypeSpecie.values()) {
+			averageSpecie.put(specie.getName(), averageWeight(specie.getName()));
+		}
+		return averageSpecie;
 	}
 	
 	public HashMap<String, Double> averageSpeciesPriceInBoyaca() {
@@ -144,6 +217,7 @@ public class FishFarm {
 		}
 		return averageSpecie;
 	}
+	
 	public double averageProductionSpecieCounter(String specie) {
 		double countSpecieProduction =0;
 		double numero = 0;
@@ -155,23 +229,56 @@ public class FishFarm {
 			}
 		}
 		average=countSpecieProduction/numero;
-
-//	System.out.println(tote+" "+countSpecie+" "+percentaje);
 		return average;
 	}
 	
+	public double countAnimalsHarvestedInPuertoBoyaca(String specie) {
+		double countSpecieProduction =0;
+		for (Pond register : ponds) {
+			if(register.getMunicipality().equals(TypeMunicipality.PUERTO_BOYACA.getName())) {
+				if(specie.equals(register.getSpecie())) {
+					countSpecieProduction += register.getHaversted();
+				}
+			}
+		}
+		return countSpecieProduction; 
+	}
 	
+	public double countAnimalsHarvestedTotal(String specie) {
+		double countSpecieProduction =0;
+		for (Pond register : ponds) {
+			if(specie.equals(register.getSpecie())) {
+				countSpecieProduction += register.getHaversted();
+			}
+		}
+		return countSpecieProduction; 
+	}
+	
+	public HashMap<String, Double> AnimalsHarvestedTotal() {
+		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
+		for (TypeSpecie specie : TypeSpecie.values()) {
+			percentageSpecie.put(specie.getName(), countAnimalsHarvestedTotal(specie.getName()));
+		}
+		return percentageSpecie;
+	}
+	
+	public HashMap<String, Double> AnimalsHarvestedInPuertoBoyaca() {
+			HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
+			for (TypeSpecie specie : TypeSpecie.values()) {
+				percentageSpecie.put(specie.getName(), countAnimalsHarvestedInPuertoBoyaca(specie.getName()));
+			}
+			return percentageSpecie;
+		}
 
-	
 	public HashMap<String, Double> percentageOfCultivatedSpecies() {
 	// porcentaje de especies cultivadas en boyaca
 		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
 		for (TypeSpecie specie : TypeSpecie.values()) {
 			percentageSpecie.put(specie.getName(), contadorAndPercentageSpecie(specie.getName()));
 		}
-		
 		return percentageSpecie;
 	}
+	
 	public HashMap<String, Double> percentageOfProductionSpecies() {
 	// porcentaje de porducion por especie en boyaca
 		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
@@ -213,28 +320,7 @@ public class FishFarm {
 			addPond(pond);
 		}
 	}
-	
-	public int calculatePercentage(String mySpecie) {
-    	@SuppressWarnings("rawtypes")
-		HashMap percentageSpecie= percentageOfCultivatedSpecies();
-    	int percentage = 0;
-    	for (@SuppressWarnings("unused") TypeSpecie specie : TypeSpecie.values()) {
-    		double aux = (double)percentageSpecie.get(mySpecie);
-    		percentage = (int) aux;
-    	}
-    	return percentage;
-    }
-	
-	public int calculatePrice(String mySpecie) {
-    	@SuppressWarnings("rawtypes")
-		HashMap averageSpecie = averageSpeciesPriceInBoyaca();
-    	int average = 0;
-    	for (@SuppressWarnings("unused") TypeSpecie specie : TypeSpecie.values()) {
-    		double aux = (double) averageSpecie.get(mySpecie);
-    		average = (int)aux;
-    		}
-    	return average;
-    }
+
 	private double contadorAndPercentageProductionSpecie(String specie) {
 		
 		double countSpecie =0;
@@ -247,13 +333,10 @@ public class FishFarm {
 			}
 		}
 		percentaje=(countSpecie*100)/(tote);
-
-//	System.out.println(tote+" "+countSpecie+" "+percentaje);
 		return percentaje;
 	}
 	
 	private double contadorAndPercentageSpecie(String specie) {
-		
 		double countSpecie =0;
 		double tote = 0;
 		double percentaje=0;
@@ -264,55 +347,97 @@ public class FishFarm {
 			}
 		}
 		percentaje=(countSpecie*100)/(tote);
-
-//	System.out.println(tote+" "+countSpecie+" "+percentaje);
 		return percentaje;
 	}
-	@SuppressWarnings("rawtypes")
+	
+
+	
 	public ArrayList<Object[]>toMatrixVectorAverageSpeciesPriceInBoyaca() {
-		HashMap averageSpecie=averageSpeciesPriceInBoyaca();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (TypeSpecie specie: TypeSpecie.values()) {
-			double average = (double) averageSpecie.get(specie.getName());
+			double average = (double) averageSpeciesPriceInBoyaca().get(specie.getName());
 			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),average)) );
 		}
 		return datas;
 	} 
-	@SuppressWarnings("rawtypes")
-	public ArrayList<Object[]>toMatrixVectorpercentageOfCultivatedSpecies(){
-		HashMap percentageSpecie=percentageOfCultivatedSpecies();
+	
+	public ArrayList<Object[]>toMatrixVectorAverageWeightSpecies() {
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (TypeSpecie specie: TypeSpecie.values()) {
-			double percentage = (double) percentageSpecie.get(specie.getName());
+			double average = (double) averageWeightSpecies().get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),average)) );
+		}
+		return datas;
+	} 
+	
+	public ArrayList<Object[]>toMatrixVectorPondsByYear() {
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (long i= minYear(); i<= maxYear();i++) {
+			int average = (int)pondsByYear().get(i);
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(i,average)) );
+		}
+		return datas;
+	}
+	
+	public ArrayList<Object[]>toMatrixVectorHarvested(){
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double percentage = (double) averageHarvested().get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
+		}
+		return datas;
+	}
+	
+	public ArrayList<Object[]>toMatrixVectorpercentageOfCultivatedSpecies(){
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double percentage = (double) percentageOfCultivatedSpecies().get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
+		}
+		return datas;
+	}
+	
+	public ArrayList<Object[]>toMatrixVectorHarvestedPuertoBoyaca(){
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double percentage = (double) AnimalsHarvestedInPuertoBoyaca().get(specie.getName());
 			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
 		}
 		return datas;
 	}
 	
 	public ArrayList<Object[]>toMatrixVectorAverageProductionSpeciesInBoyaca(){
-		HashMap averageSpecie=averageProductionSpeciesInBoyaca();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (TypeSpecie specie: TypeSpecie.values()) {
-			double average = (double) averageSpecie.get(specie.getName());
+			double average = (double) averageProductionSpeciesInBoyaca().get(specie.getName());
 			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),average)) );
 		}
 		return datas;
 	}
+	
 	public ArrayList<Object[]>toMatrixVectorpercentageOfProductionSpecies(){
-		HashMap percentageSpecie=percentageOfProductionSpecies();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (TypeSpecie specie: TypeSpecie.values()) {
-			double percentage = (double) percentageSpecie.get(specie.getName());
+			double percentage = (double) percentageOfProductionSpecies().get(specie.getName());
 			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
 		}
 		return datas;
 	}
+	
 	public ArrayList<Object[]>toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality(){
-		HashMap percentageMunicipality=percentageOfProductionInPsiculturaForMunicipality();
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (TypeMunicipality municipality: TypeMunicipality.values()) {
-			double percentage = (double) percentageMunicipality.get(municipality.getName());
+			double percentage = (double) percentageOfProductionInPsiculturaForMunicipality().get(municipality.getName());
 			datas.add( Utilities.concatObjectArrays2(toObjectVector(municipality.getName(),percentage)) );
+		}
+		return datas;
+	}
+	
+	public ArrayList<Object[]>toMatrixVectorHarvestedTotal(){
+		ArrayList<Object[]> datas = new ArrayList<Object[]>();
+		for (TypeSpecie specie: TypeSpecie.values()) {
+			double percentage = (double) AnimalsHarvestedTotal().get(specie.getName());
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(specie.getName(),percentage)) );
 		}
 		return datas;
 	}
@@ -321,5 +446,12 @@ public class FishFarm {
 	return new Object[] {dato1,dato2};
     }
 	
-
+	public Object[] toObjectVector(long dato1, int dato2) {
+		return new Object[] {dato1,dato2};
+	    }
+	
+	public static void main(String[] args) throws IOException, DeserializationException {
+		FishFarm farm = new FishFarm();
+		System.out.println(farm.countAnimalsHarvestedInPuertoBoyaca(TypeSpecie.BOCACHICO.getName()));
+	}
 }

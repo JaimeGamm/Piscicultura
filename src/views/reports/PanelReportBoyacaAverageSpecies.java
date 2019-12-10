@@ -77,51 +77,51 @@ public class PanelReportBoyacaAverageSpecies extends JPanel{
             int long_black = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName())/100;
             int long_lightGray = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())/100;
             
-            
+            g.setColor(Color.RED);
+            g.fillRect(170, 40, long_red, 30);
+            g.drawString(Constants.BOCACHICO, 6, 60);
+        
             g.setColor(Color.GREEN);
-            g.fillRect(170, 100, long_green, 40);
-            g.drawString(Constants.CACHAMA, 10, 125);
+            g.fillRect(170, 80, long_green, 30);
+            g.drawString(Constants.CACHAMA, 6, 100);
             
             g.setColor(Color.BLUE);
-            g.fillRect(170, 150, long_blue, 40);
-            g.drawString(Constants.CARPA, 10, 175);
+            g.fillRect(170, 120, long_blue, 30);
+            g.drawString(Constants.CARPA, 6, 140);
             
             g.setColor(Color.ORANGE);
-            g.fillRect(170, 200, long_orange, 40);
-            g.drawString(Constants.RTRUCHA, 10, 225);
+            g.fillRect(170, 160, long_orange, 30);
+            g.drawString(Constants.RTRUCHA, 6, 180);
             
             g.setColor(Color.YELLOW);
-            g.fillRect(170, 250, long_yellow, 40);
-            g.drawString(Constants.TILAPIA_NEGRA, 10, 275);
+            g.fillRect(170, 200, long_yellow, 30);
+            g.drawString(Constants.TILAPIA_NEGRA, 6, 220);
             
             g.setColor(Color.PINK);
-            g.fillRect(170, 300, long_pink, 40);
-            g.drawString(Constants.TILAPIA_O_MOJARRA, 10, 325);
+            g.fillRect(170, 240, long_pink, 30);
+            g.drawString(Constants.TILAPIA_O_MOJARRA, 6, 260);
             
             g.setColor(Color.GRAY);
-            g.fillRect(170, 350, long_gray, 40);
-            g.drawString(Constants.TILAPIA_O_MOJARRA_ROJA, 10, 375);
+            g.fillRect(170, 280, long_gray, 30);
+            g.drawString(Constants.TILAPIA_O_MOJARRA_ROJA, 6, 300);
             
             g.setColor(Color.CYAN);
-            g.fillRect(170, 400, long_cian, 40);
-            g.drawString(Constants.TRUCHA, 10, 425);
+            g.fillRect(170, 320, long_cian, 30);
+            g.drawString(Constants.TRUCHA, 6, 340);
             
             g.setColor(Color.MAGENTA);
-            g.fillRect(170, 450, long_magenta, 40);
-            g.drawString(Constants.UCACHAMA, 10, 475);
+            g.fillRect(170, 360, long_magenta, 30);
+            g.drawString(Constants.UCACHAMA, 6, 380);
             
-            g.setColor(Color.BLACK);
-            g.fillRect(170, 500, long_black, 40);
-            g.drawString(Constants.UTILAPIA_NEGRA, 10, 525);
+            g.setColor(Color.WHITE);
+            g.fillRect(170, 400, long_black, 30);
+            g.drawString(Constants.UTILAPIA_NEGRA, 6, 420);
             
             g.setColor(Color.LIGHT_GRAY);
-            g.fillRect(170, 550, long_lightGray, 40);
-            g.drawString(Constants.UTILAPIA_O_MOJARRA, 10, 575);
+            g.fillRect(170, 440, long_lightGray, 30);
+            g.drawString(Constants.UTILAPIA_O_MOJARRA, 6, 460);
             
-            g.setColor(Color.RED);
-            g.fillRect(170, 50, long_red, 40);
-            g.drawString(Constants.BOCACHICO, 10, 75);
-        }
+    }
     @Override  
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;

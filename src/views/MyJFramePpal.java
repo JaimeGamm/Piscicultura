@@ -1,22 +1,17 @@
 package views;
 
 import views.dialogs.JDialogTwo;
-import views.reports.PondsReport;
-import views.reports.PriceReport;
 import views.dialogs.JDialogOne;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
-
 import org.json.simple.DeserializationException;
-
 import general.HandlerLanguage;
 import models.Pond;
 
@@ -26,12 +21,8 @@ public class MyJFramePpal extends JFrame{
     private MyJPanelPrincipal panel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
-    private PondsReport pondsReport;
-    private PriceReport priceReport;
 	
     public MyJFramePpal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) throws IOException, DeserializationException {
-    	pondsReport = new PondsReport();
-    	priceReport = new PriceReport();
     	setMinimumSize(new Dimension(700, 400));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
@@ -70,6 +61,7 @@ public class MyJFramePpal extends JFrame{
 		panel.changeLanguage();
 		dialogAdd.changeLanguage();
 		dialogDelete.changeLanguage();
+		ReportEnum.price();
 	}
     
     public void getPondsList(ArrayList<Object[]> info) {
@@ -161,64 +153,91 @@ public class MyJFramePpal extends JFrame{
 		return panel.estadoJComboReport();
 	}
 	
-	public String estadoJComboReport2() {
-		return panel.estadoJComboReport2();
-	}
-	
-	public void showGrafics() {
-		if(estadoJComboReport2().equals("Grafica de especies cultivadas en boyaca")) {
-			pondsReport.setVisible(true);
-		}else if(estadoJComboReport2().equals("Grafica de precios promedio de las especies")) {
-			priceReport.setVisible(true);
-		}
-	}
-	
 	public void visibletableReport(boolean estado) {
 		panel.visibletableReport(estado);
 	}
+	
 	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
 		int numero=0;
-		if(estadoJComboReport().equals("Promedio de precio por especie en boyaca")) {
+		if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE))) {
 			numero=1;
-//			panel.borrarJtableReport();
-			panel.tabledeReport("ESPECIES", "PROMEDIO DE PRECIO $", datasFarm);
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL), datasFarm);
 			if(numero!=1 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			} 
-			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,"Promedio de precio por especie en boyaca");
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE));
 			actualizarPantalla();
-    	}else if(estadoJComboReport().equals("Porcentaje de especies cultivadas en boyaca")) {
-//    		panel.borrarJtableReport();
+    	}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED))) {
     		numero=2;
-    		panel.tabledeReport("ESPECIES", "PORCENTAJE %", datasFarm);
+    		panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
     		if(numero!=2 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			}
-    		panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,"Porcentaje de especies cultivadas en boyaca");
+    		panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED));
     		actualizarPantalla();
-    	}else if(estadoJComboReport().equals("Promedio de producion por especie en boyaca")) {
+    	}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE))) {
     		numero=3;
-			panel.tabledeReport("ESPECIES", "PROMEDIO", datasFarm);
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE), datasFarm);
 			if(numero!=3 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics(); 
 			} 
-			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,"Promedio de producion por especie en boyaca");
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE));
 			actualizarPantalla();
-		}else if(estadoJComboReport().equals("Porcentaje de porducion por especie en boyaca")) {
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE))) {
     		numero=4;
-			panel.tabledeReport("ESPECIES", "PORCENTAJE %", datasFarm);
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
 			if(numero!=4 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			} 
-			panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,"Porcentaje de porducion por especie en boyaca");
+			panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE));
 			actualizarPantalla();
-		}else if(estadoJComboReport().equals("Porcentaje de producion en psicultura por municipio")) {
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY))) {
     		numero=5;
-			panel.tabledeReport("MUNICIPIO", "PORCENTAJE %", datasFarm);
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
 			if(numero!=5 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			} 
-			panel.addGraficaPanelReporrtPercentajeOfMunicipality(SpeciesPriceInBoyaca,"Porcentaje de producion en psicultura por municipio");
+			panel.addGraficaPanelReporrtPercentajeOfMunicipality(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR))) {
+    		numero=6;
+			panel.tabledeReport("AÑO", "CULTIVOS", datasFarm);
+			if(numero!=6 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaPanelYear(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE))) {
+    		numero=7;
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.WEIGHT_ANIMAL), datasFarm);
+			if(numero!=7 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED))) {
+    		numero=8;
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
+			if(numero!=8 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED));
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA))) {
+    		numero=9;
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
+			if(numero!=9 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaPanelReportPBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA));
+			actualizarPantalla();
+		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED))) {
+    		numero=10;
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
+			if(numero!=10 || panel.getComponentCount()>2) {
+				panel.removerPanelGraphics();
+			} 
+			panel.addGragicaHarvestedTotal(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED));
 			actualizarPantalla();
 		}
 	}

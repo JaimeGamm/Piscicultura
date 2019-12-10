@@ -2,7 +2,6 @@ package persistence;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -86,6 +85,8 @@ public class DemoJsonConsume {
 		}
 		return inputStream;
 	}
+	
+	@SuppressWarnings({ "static-access", "unused" })
 	public static void main(String[] args) throws FileNotFoundException, IOException, DeserializationException {
 		DemoJsonConsume demoJsonConsume = new DemoJsonConsume();
 		ArrayList<Pond> fishFarmingRegisterList=demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json");

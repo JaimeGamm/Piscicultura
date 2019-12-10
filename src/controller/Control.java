@@ -14,8 +14,8 @@ import exceptions.NoExistException;
 import general.HandlerLanguage;
 import models.FishFarm;
 import models.Pond;
-import models.TypeSpecie;
 import persistence.DemoJsonConsume;
+import views.Constants;
 import views.MyJFramePpal;
 
 public class Control implements ActionListener{
@@ -32,7 +32,6 @@ public class Control implements ActionListener{
     	demoJsonConsume= new DemoJsonConsume();
 		fishFarm = new FishFarm();
     	loadConfiguration();
-//    	inDatas();
 //    	inDatasWed();
     	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
     	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
@@ -78,16 +77,12 @@ public class Control implements ActionListener{
     	case CLOSE_DIALOG_DELETE_CANCEL:
             framePpal.closeDialogDelete();
             break;
-    	case ENTER_REPORT_TWO:
-    		framePpal.showGrafics();
-            break;
     	case ENTER_REPORT:
             framePpal.visibleTable(false);
             framePpal.visibletableReport(true);
             try {
 				framePpal.tabledeReport(estadoDeJComboReport(framePpal.estadoJComboReport()),estadoDeJComboReportHash(framePpal.estadoJComboReport()));
 			} catch (IOException | DeserializationException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
             break;
@@ -100,6 +95,7 @@ public class Control implements ActionListener{
 			break;
 		}	
     }
+    
     @SuppressWarnings({ "unused", "static-access" })
 	private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
 		for(Pond pond:demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json")) {
@@ -258,33 +254,24 @@ public class Control implements ActionListener{
     	framePpal.getPondsList(fishFarm.getInformationByPond());
     }
     
-    @SuppressWarnings({ "unused", "rawtypes" })
 	private HashMap<String, Double> percentageOfCultivatedSpecies() {
-    	HashMap percentageSpecie=fishFarm.percentageOfCultivatedSpecies();
-//    	double suma=0;
-//    	for (TypeSpecie specie : TypeSpecie.values()) {
-//    		double percentage = (double) percentageSpecie.get(specie.getName());
-//    		suma+=percentage;
-//    		// la manera que se obtiene lo dos valores con el HashMap
-//    		System.out.println(specie.getName()+" : "+percentage);
-//    		}
-//    	System.out.println(suma);
-    	return percentageSpecie;
-    	}
+    	return fishFarm.percentageOfCultivatedSpecies();
+    }
     
-    @SuppressWarnings({ "unused", "rawtypes", "unchecked" })
 	private HashMap<String, Double> averageSpeciesPriceInBoyaca() {
-    	HashMap averageSpecie=fishFarm.averageSpeciesPriceInBoyaca();
-//    	double suma=0;
-//    	for (TypeSpecie specie : TypeSpecie.values()) {
-//    		double average = (double) averageSpecie.get(specie.getName());
-//    		suma+=average;
-//    		System.out.println(specie.getName()+" "+average);
-//    		}
-//    	System.out.println(suma);
-//    	}
-    	return averageSpecie;
-
+    	return fishFarm.averageSpeciesPriceInBoyaca();
+    }
+    
+    public HashMap<Long, Integer> pondsByYear(){
+    	return fishFarm.pondsByYear();
+    }
+    
+    public HashMap<String, Double> averageWeightSpecies(){
+    	return fishFarm.averageWeightSpecies();
+    }
+    
+    public HashMap<String, Double> averageHarvested(){
+    	return fishFarm.averageHarvested();
     }
 
     private HashMap<String, Double>  averageProductionSpeciesInBoyaca() {
@@ -301,68 +288,106 @@ public class Control implements ActionListener{
     	return fishFarm.percentageOfProductionInPsiculturaForMunicipality(); 
 	}
     
+    private HashMap<String, Double> harvestedPuertoBoyaca() {
+    	return fishFarm.AnimalsHarvestedInPuertoBoyaca(); 
+	}
+    
+    private HashMap<String, Double> harvestedTotal() {
+    	return fishFarm.AnimalsHarvestedTotal(); 
+	}
     
     private ArrayList<Object[]> toMatrixVectorAverageSpeciesPriceInBoyaca() {
     	return fishFarm.toMatrixVectorAverageSpeciesPriceInBoyaca();
 	}
     
+    private ArrayList<Object[]> toMatrixVectorAverageWeightSpecies() {
+    	return fishFarm.toMatrixVectorAverageWeightSpecies();
+	}
+    
     private ArrayList<Object[]> toMatrixVectorpercentageOfCultivatedSpecies(){
     	return fishFarm.toMatrixVectorpercentageOfCultivatedSpecies();
     }
+    
+    private ArrayList<Object[]> toMatrixVectorHarvested(){
+    	return fishFarm.toMatrixVectorHarvested();
+    }
+    
+    private ArrayList<Object[]> toMatrixVectorpondsByYear(){
+    	return fishFarm.toMatrixVectorPondsByYear();
+    }
+    
+    private ArrayList<Object[]> toMatrixVectorHarvestedPuertoBoyaca(){
+    	return fishFarm.toMatrixVectorHarvestedPuertoBoyaca();
+    }
+    
     private ArrayList<Object[]> toMatrixVectorAverageProductionSpeciesInBoyaca(){
     	return fishFarm.toMatrixVectorAverageProductionSpeciesInBoyaca();
     }
+    
     private ArrayList<Object[]> toMatrixVectorpercentageOfProductionSpecies(){
     	return fishFarm.toMatrixVectorpercentageOfProductionSpecies();
     }
+    
     private ArrayList<Object[]> toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality(){
     	return fishFarm.toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality();
     }
     
+    private ArrayList<Object[]> toMatrixVectorHarvestedTotal(){
+    	return fishFarm.toMatrixVectorHarvestedTotal();
+    }
+    
     private ArrayList<Object[]> estadoDeJComboReport(String estado) {
     	ArrayList<Object[]> datas = new ArrayList<Object[]>();
-    	if(estado.equals("Promedio de precio por especie en boyaca")) {
+    	if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE))) {
     		datas= toMatrixVectorAverageSpeciesPriceInBoyaca();  		
-    	}else if(estado.equals("Porcentaje de especies cultivadas en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED))) {
     		datas= toMatrixVectorpercentageOfCultivatedSpecies(); 
-    	}else if(estado.equals("Promedio de producion por especie en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE))) {
     		datas= toMatrixVectorAverageProductionSpeciesInBoyaca(); 
-    	}else if(estado.equals("Porcentaje de porducion por especie en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE))) {
     		datas= toMatrixVectorpercentageOfProductionSpecies(); 
-    	}else if(estado.equals("Porcentaje de producion en psicultura por municipio")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY))) {
     		datas= toMatrixVectorPercentageOfProductionInPsiculturaForMunicipality(); 
-    	}			
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR))) {
+    		datas= toMatrixVectorpondsByYear(); 
+    	}else if(estado.contentEquals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE))) {
+    		datas = toMatrixVectorAverageWeightSpecies();
+    	}else if(estado.contentEquals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED))) {
+    		datas = toMatrixVectorHarvested();
+    	}else if(estado.contentEquals(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA))) {
+    		datas= toMatrixVectorHarvestedPuertoBoyaca();
+    	}else if(estado.contentEquals(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED))) {
+    		datas = toMatrixVectorHarvestedTotal();
+    	}
     	return datas;
 	}
     
     
-    private HashMap<String, Double>estadoDeJComboReportHash(String estado){
-    	HashMap hash=new HashMap<String, Double>();
-    	if(estado.equals("Promedio de precio por especie en boyaca")) {
+    @SuppressWarnings("unchecked")
+	private HashMap<String, Double>estadoDeJComboReportHash(String estado){
+    	@SuppressWarnings("rawtypes")
+		HashMap hash=new HashMap<String, Double>();
+    	if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE))) {
     		hash= averageSpeciesPriceInBoyaca();  		
-    	}else if(estado.equals("Porcentaje de especies cultivadas en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED))) {
     		hash= percentageOfCultivatedSpecies(); 
-    	}else if(estado.equals("Promedio de producion por especie en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE))) {
     		hash= averageProductionSpeciesInBoyaca(); 
-    	}else if(estado.equals("Porcentaje de porducion por especie en boyaca")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE))) {
     		hash= percentageOfProductionSpecies(); 
-    	}else if(estado.equals("Porcentaje de producion en psicultura por municipio")) {
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY))) {
     		hash= percentageOfProductionInPsiculturaForMunicipality(); 
-    	}		
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR))) {
+    		hash= pondsByYear(); 	
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE))) {
+    		hash= averageWeightSpecies(); 	
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED))) {
+    		hash= averageHarvested(); 	
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA))) {
+    		hash= harvestedPuertoBoyaca();
+    	}else if(estado.equals(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED))) {
+    		hash = harvestedTotal();
+    	}
     	return hash;
     }
-
-	
-	
-	public static void main(String[] args) throws FileNotFoundException, IOException, DeserializationException {
-//	Control control =new Control();	
-//	HashMap percentageSpecie=control.fishFarm.averageSpeciesPriceInBoyaca();
-//	double suma=0;
-//	for (TypeSpecie specie : TypeSpecie.values()) {
-//		double percentage = (double) percentageSpecie.get(specie.getName());
-//		suma+=percentage;
-//		System.out.println(specie.getName()+" : "+percentage);
-//		}
-//	System.out.println(suma);
-	}
 }
