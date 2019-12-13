@@ -15,6 +15,7 @@ public class MyJTextField extends JTextField{
 		setPreferredSize(new Dimension(0,40));
 		setBackground(Color.WHITE);
 		setForeground(Color.BLACK);
+		
 		setFont(new Font("Calibri", Font.ITALIC, 16));
 	}
 	

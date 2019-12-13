@@ -454,4 +454,12 @@ public class FishFarm {
 		FishFarm farm = new FishFarm();
 		System.out.println(farm.countAnimalsHarvestedInPuertoBoyaca(TypeSpecie.BOCACHICO.getName()));
 	}
+
+	public JsonFileManager getJsonFileManager() {
+		return jsonFileManager;
+	}
+
+	public void setJsonFileManager(JsonFileManager jsonFileManager) {
+		this.jsonFileManager = jsonFileManager;
+	}
 }

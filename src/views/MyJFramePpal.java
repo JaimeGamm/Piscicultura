@@ -1,7 +1,10 @@
 package views;
 
 import views.dialogs.JDialogTwo;
+import views.table.JtableElement;
 import views.dialogs.JDialogOne;
+import views.dialogs.JDialogSaveDatos;
+
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -21,6 +24,7 @@ public class MyJFramePpal extends JFrame{
     private MyJPanelPrincipal panel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
+    private JDialogSaveDatos jDialogSaveDatos;
 	
     public MyJFramePpal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) throws IOException, DeserializationException {
     	setMinimumSize(new Dimension(700, 400));
@@ -41,15 +45,20 @@ public class MyJFramePpal extends JFrame{
 		add(panel);
 		dialogAdd = new JDialogTwo(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.ADD_POND),Constants.ADD_PATH,false);
 		dialogDelete = new JDialogOne(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.DELETE_POND),Constants.DELETE_PATH,false);
+		jDialogSaveDatos=new JDialogSaveDatos(this,actionListenner);
     }
     public Pond actualizarTable() {
     	panel.restartTable();
     	Pond pond=dialogAdd.createRunner();
     	return pond;
     }
+    public JtableElement obtenerTabla() {
+    	return panel.getJtableElement();
+    }
+    
     public void addTableReport(ArrayList<Object[]> datasFarm) {
     	panel.showDatasReport(datasFarm);
-    	panel.visibletableReport(false);
+    	panel.visibletableReport(false); 
     }
 	public void reiniciarTable() {
 		panel.restartTable();
@@ -80,9 +89,13 @@ public class MyJFramePpal extends JFrame{
     public void openDialogAdd() {
     	dialogAdd.setVisible(true);
     }
+    public void openDialogSaveDatos() {
+    	jDialogSaveDatos.setVisible(true);
+    }
+    
 	
     public void openDialogDelete() {
-    	dialogDelete.setVisible(true);
+    	dialogDelete.setVisible(true); 
     }
 	
     public void closeDialogAdd() {
@@ -94,8 +107,19 @@ public class MyJFramePpal extends JFrame{
     	dialogDelete.setVisible(false);
     	dialogDelete.clearComponents();
     }
-
-	
+    public void closeJjDialogSaveDatos() {
+    	jDialogSaveDatos.setVisible(false);
+    	jDialogSaveDatos.clearComponents();
+    }
+    public String getRutaFile() {
+    	return jDialogSaveDatos.getRuta(); 
+    }
+    public String getEstadoTypeArchivo() {
+    	return jDialogSaveDatos.estadoTypeArchivo();
+    }
+	public boolean estadoJRadioButton() {
+		return jDialogSaveDatos.estadoJRadioButton();
+	}
     public boolean componentsAddDialogEmpty() {
     	return dialogAdd.verifyEmptyComponents();
     } 
@@ -155,6 +179,9 @@ public class MyJFramePpal extends JFrame{
 	
 	public void visibletableReport(boolean estado) {
 		panel.visibletableReport(estado);
+	}
+	public void removerPanelGraphics() {
+		panel.removerPanelGraphics();
 	}
 	
 	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
@@ -240,6 +267,9 @@ public class MyJFramePpal extends JFrame{
 			panel.addGragicaHarvestedTotal(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED));
 			actualizarPantalla();
 		}
+	}
+	public void openJFileChooser() {
+		jDialogSaveDatos.openJFileChooser();
 	}
 	public void actualizarPantalla(){
 		try {

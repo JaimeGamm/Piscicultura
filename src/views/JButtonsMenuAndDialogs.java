@@ -38,6 +38,6 @@ public class JButtonsMenuAndDialogs extends JButton{
     	ImageIcon icon = new ImageIcon(route);
     	Icon scaleIcon = new ImageIcon(icon.getImage().getScaledInstance(85,75, Image.SCALE_DEFAULT));
     	return scaleIcon;
-    }
+    } 
 	
 }

@@ -34,7 +34,7 @@ public class MyJPanelPrincipal extends JPanel{
 	public static final int WIDTH_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static final int HEIGHT_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; 
     private JtableElement jtableElement;
     private JPanelHeader jPanelHeader;
     private JtableReport jtableReport;
@@ -43,11 +43,12 @@ public class MyJPanelPrincipal extends JPanel{
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
 		panelGraphics = new Panel();
-		setBackground(Color.white);
+//		setBackground(Color.white);
+		setBackground(new Color(40, 40, 40));
 		setPreferredSize(new Dimension(1300,800));
 		FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
 		flowLayout.setHgap(30);
-		setLayout(flowLayout);
+		setLayout(flowLayout); 
 		initComponents(actionListenner, datasFarm);
 		setVisible(true);
     }
@@ -67,9 +68,10 @@ public class MyJPanelPrincipal extends JPanel{
     	panelGraphics.setPreferredSize(new Dimension(530,530));
 
 	}
-    public void changeLanguage() {
+    public void changeLanguage() { 
     	jtableElement.changeLanguageColunmJtable();
     	jPanelHeader.changeLanguageButtonsMenu();
+    	
 	}
     
 	public void showDatas(ArrayList<Object[]> datasFarm) {
@@ -194,6 +196,14 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.removeAll();
 		panelGraphics.repaint();
 	
+	}
+
+	public JtableElement getJtableElement() {
+		return jtableElement;
+	}
+
+	public void setJtableElement(JtableElement jtableElement) {
+		this.jtableElement = jtableElement;
 	}
 	
 

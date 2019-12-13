@@ -24,13 +24,14 @@ public class JPanelButtonsMenu extends JPanel{
     private JButtonsMenuAndDialogs spanish;
     private JButtonsMenuAndDialogs english;
     private JLabel label;
-    private JButton button;
+    private JButton button,buttonSaveData;
     JComboBox<String> jComboReport; 
 	
     public JPanelButtonsMenu(ActionListener actionListenner) {
     	initComponents(actionListenner);
     	setBackground(Constants.GRAY);
     	report(actionListenner);
+    	addButtonSaveData(actionListenner);
     }
 	 
     private void initComponents(ActionListener actionListenner) {
@@ -88,9 +89,16 @@ public class JPanelButtonsMenu extends JPanel{
 		}
 		jComboReport.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
 		panel.add(label);
-		panel.add(jComboReport);
+		panel.add(jComboReport); 
 		panel.add(button);
 		this.add(panel,BorderLayout.CENTER);
+	}
+	public void addButtonSaveData(ActionListener actionListenner) {
+		buttonSaveData = new JButton("GUARDAR DATOS");
+		buttonSaveData.setPreferredSize(new Dimension(140,40));
+		buttonSaveData.addActionListener(actionListenner);
+		buttonSaveData.setActionCommand(Commands.SAVE_DATA.toString());
+		this.add(buttonSaveData);
 	}
 	public String estadoJComboReport() {
 		return (String)jComboReport.getSelectedItem();

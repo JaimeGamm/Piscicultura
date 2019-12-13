@@ -24,7 +24,7 @@ public class JDialogOne extends JDialog{
 
     private static final long serialVersionUID = 1L;
     private MyJTextField id;
-    private JLabel idL;
+    private JLabel idL; 
     private JButtonsMenuAndDialogs buttonDelete, buttonCancel;
 
     public JDialogOne(MyJFramePpal frame,ActionListener actionListenner,String title, String routeImage, boolean anotherButton) {
@@ -48,7 +48,7 @@ public class JDialogOne extends JDialog{
     	add(idL);
     	id = new MyJTextField();
     	add(id);
-    }
+    } 
 	
     private void addButtonsDelete(ActionListener actionListenner) {
     	JPanel panelButtons = createPanel(10);

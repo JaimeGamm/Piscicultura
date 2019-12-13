@@ -1,22 +1,31 @@
 package controller;
 
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import javax.swing.JOptionPane;
 import org.json.simple.DeserializationException;
+
+import com.itextpdf.text.DocumentException;
+
 import exceptions.EmptyFieldsException;
 import exceptions.NoExistException;
 import general.HandlerLanguage;
 import models.FishFarm;
 import models.Pond;
 import persistence.DemoJsonConsume;
+import persistence.GeneradorPDF;
 import views.Constants;
 import views.MyJFramePpal;
+import views.dialogs.JDialogOne;
+import views.table.JtableElement;
 
 public class Control implements ActionListener{
 	
@@ -27,6 +36,7 @@ public class Control implements ActionListener{
     private DemoJsonConsume demoJsonConsume;
     private HandlerLanguage config = null;
 	private String languageDefault;
+    private JDialogOne errorSave;
 	
     public Control() throws IOException, DeserializationException{
     	demoJsonConsume= new DemoJsonConsume();
@@ -46,9 +56,35 @@ public class Control implements ActionListener{
     	case DELETE:
             openDialogDelete();
             break;
+    	case SAVE_DATA:
+    		openDialogSaveDatos();
+    		break;
+    	case OPEN_J_CHOOSER:
+    		framePpal.openJFileChooser();
+    		break;
+    	case CANCEL_SAVE:
+    		framePpal.closeJjDialogSaveDatos();
+    		break;
+    	case ACEPT_SAVE:
+    		try {
+    			if(framePpal.getRutaFile() == null || framePpal.getRutaFile().isEmpty()){
+    				framePpal.showErrorMessage("Ruta invalida");
+    			}else {
+				createFilePDF();
+	    		framePpal.closeJjDialogSaveDatos();
+    			}
+			} catch (DocumentException | IOException e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+				
+			}
+   
+    		break;
     	case SEE_LIST:
-    		framePpal.visibleTable(true);
+    		framePpal.visibleTable(true); 
+    		framePpal.removerPanelGraphics();
             framePpal.visibletableReport(false);
+            framePpal.actualizarPantalla();
             break;
     	case GET_OUT:
             endProgram();
@@ -95,6 +131,7 @@ public class Control implements ActionListener{
 			break;
 		}	
     }
+
     
     @SuppressWarnings({ "unused", "static-access" })
 	private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
@@ -179,6 +216,11 @@ public class Control implements ActionListener{
     private void openDialogAdd() {
     	framePpal.openDialogAdd();
     }
+    private void openDialogSaveDatos() {
+    	framePpal.openDialogSaveDatos();
+    }
+    
+  
 	
     private void closeDialogAdd() {
     	createAndAddPond();
@@ -390,4 +432,43 @@ public class Control implements ActionListener{
     	}
     	return hash;
     }
+    public JtableElement obtenerTabla() {
+    	return framePpal.obtenerTabla();
+    }
+    public void createFilePDF() throws MalformedURLException, DocumentException, IOException {
+    	String ruta =framePpal.getRutaFile();
+    	String tipeFile =framePpal.getEstadoTypeArchivo();
+    	boolean state =framePpal.estadoJRadioButton();
+    	if(tipeFile.equals("PDF")) {
+    	GeneradorPDF generadorPDF=new GeneradorPDF(obtenerTabla(),ruta);
+//    	System.out.println(ruta+" "+tipeFile);
+    		if(state==true) {
+    			abrirarchivo(ruta+".pdf");
+    		}
+    	}else if(tipeFile.equals("JSON")){
+    		fishFarm.getJsonFileManager().whiteFile(ruta, fishFarm.getPonds());
+    		if(state==true) {
+    	 	abrirarchivo(ruta+".txt");
+    		}
+		}
+    	
+    }
+    public void abrirarchivo(String archivo){
+
+        try {
+
+               File objetofile = new File (archivo);
+               Desktop.getDesktop().open(objetofile);
+
+        }catch (IOException ex) {
+
+               System.out.println(ex);
+
+        }
+    }    
+
+	public static void main(String[] args) throws IOException, DeserializationException, DocumentException {
+//		Control control =new Control();
+//		GeneradorPDF generadorPDF=new GeneradorPDF(control.obtenerTabla());
+	}
 }

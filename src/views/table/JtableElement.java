@@ -101,5 +101,8 @@ public class JtableElement extends JPanel{
 		}
 		addPondList(arrayFormat);
 	}
+	public JTable tableOriginal() {
+		return jtElements;
+	}
 	
 }

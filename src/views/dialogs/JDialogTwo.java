@@ -102,7 +102,7 @@ public class JDialogTwo extends JDialog{
     	municipalityL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
     	add(municipalityL);
     	municipality = new JComboBox<String>();
-    	municipality.setBackground(Color.WHITE);
+    	municipality.setBackground(Color.WHITE); 
     	municipality.setForeground(Color.BLACK);
     	municipality.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
     	municipality.addItem("ALMEIDA");
@@ -201,7 +201,7 @@ public class JDialogTwo extends JDialog{
 		buttonCancel.setActionCommand(Commands.CLOSE_DIALOG_ADD_CANCEL.toString());
 		panelButtons.add(buttonCancel);
 		add(panelButtons);
-    }
+    } 
     
     public void changeLanguage(){
 		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));

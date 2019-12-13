@@ -1,13 +1,16 @@
 package persistence;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.DeserializationException;
 import org.json.simple.JsonArray;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
+
 import models.Pond;
 import views.Constants;
 
@@ -39,4 +42,28 @@ public class JsonFileManager {
 		}
 		return fishFarmingRegisterList;
 	}
+	 public void whiteFile(String path,	ArrayList<Pond> fishFarmingRegisterList ) throws IOException {
+		 File file =new File(path+".txt");
+		 file.createNewFile();
+		 FileWriter fileWriter=new FileWriter(file);
+		JsonArray listStandard= new JsonArray();
+
+		 for(Pond pond: fishFarmingRegisterList) {
+			 JsonObject leagueObj = new JsonObject();
+			 leagueObj.put("id", Long.toString(pond.getId()));
+			 leagueObj.put("a_o", Long.toString(pond.getYear()));
+			 leagueObj.put("municipio", pond.getMunicipality());
+			 leagueObj.put("especie", pond.getSpecie());
+			 leagueObj.put("animales_sembrados", Long.toString(pond.getSeeded()));
+			 leagueObj.put("animales_cosechados", Long.toString(pond.getHaversted()));
+			 leagueObj.put("peso_promedio_por_animal_al_cosechar_g", Long.toString(pond.getWeight()));
+			 leagueObj.put("produccion_estimada_kg", Long.toString(pond.getWeight()));
+			 leagueObj.put("produccion_estimada_kg", Long.toString(pond.getProduction()));
+			 leagueObj.put("precio_al_productor_kg", Long.toString(pond.getPrice()));
+			 listStandard.add(leagueObj);
+		 }
+		 fileWriter.write(listStandard.toJson());
+		 fileWriter.flush();
+		 fileWriter.close();
+		 }
 }
