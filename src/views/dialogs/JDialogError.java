@@ -4,24 +4,24 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-
 import controller.Commands;
 import general.HandlerLanguage;
 import views.Constants;
 import views.JButtonsMenuAndDialogs;
 import views.MyJFramePpal;
-import views.MyJTextField;
 
 public class JDialogError extends JDialog {
-	   private JButtonsMenuAndDialogs buttonDelete, buttonCancel;
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButtonsMenuAndDialogs buttonDelete, buttonCancel;
 	public JDialogError(MyJFramePpal frame,ActionListener actionListenner,String title) {
     	setMinimumSize(new Dimension(350,160));
 //		setIconImage(new ImageIcon(routeImage).getImage());
@@ -68,7 +68,8 @@ public class JDialogError extends JDialog {
 	    	return panel;
 	    }
 		
-	    private JLabel createLabel(String text) {
+	    @SuppressWarnings("unused")
+		private JLabel createLabel(String text) {
 	    	JLabel label = new JLabel(text);
 	    	label.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 0));
 	    	label.setForeground(Color.BLACK);

@@ -27,6 +27,7 @@ public class JtableElement extends JPanel{
 	private DefaultTableModel dtmElements;
 	private JTable jtElements;
 	private JScrollPane jsTable;
+	
 	public JtableElement() {
 		initComponents();
 	}

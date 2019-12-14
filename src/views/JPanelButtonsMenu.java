@@ -70,6 +70,10 @@ public class JPanelButtonsMenu extends JPanel{
 		english.setText(HandlerLanguage.languageProperties.getProperty(Constants.ENGLISH));
 		label.setText(HandlerLanguage.languageProperties.getProperty(Constants.REPORTS));
 		button.setText(HandlerLanguage.languageProperties.getProperty(Constants.SEE));
+		buttonSaveData.setText(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_DATA));
+		for (ReportEnum team : ReportEnum.values()) {
+			jComboReport.addItem(HandlerLanguage.languageProperties.getProperty(team.getName()));
+		}
 	}
     
 	private void report(ActionListener actionListenner) {
@@ -93,8 +97,10 @@ public class JPanelButtonsMenu extends JPanel{
 		panel.add(button);
 		this.add(panel,BorderLayout.CENTER);
 	}
+	
 	public void addButtonSaveData(ActionListener actionListenner) {
-		buttonSaveData = new JButton("GUARDAR DATOS");
+		buttonSaveData = new JButton();
+		buttonSaveData.setText(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_DATA));
 		buttonSaveData.setPreferredSize(new Dimension(140,40));
 		buttonSaveData.addActionListener(actionListenner);
 		buttonSaveData.setActionCommand(Commands.SAVE_DATA.toString());

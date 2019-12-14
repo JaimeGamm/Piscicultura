@@ -5,13 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
-
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JTable;
-import javax.swing.text.StyleConstants.FontConstants;
-
-import com.itextpdf.text.Anchor;
-import com.itextpdf.text.Chapter;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -20,13 +14,9 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
-import com.itextpdf.text.Section;
-import com.itextpdf.text.pdf.ColumnText;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
-
-import views.Constants;
 import views.table.JtableElement;
 
 public class GeneradorPDF {
@@ -101,7 +91,7 @@ public class GeneradorPDF {
        Paragraph p2 =new Paragraph("  ");
        p.setAlignment(Element.ALIGN_LEFT);
        Chunk c= new Chunk();
-       Chunk c2= new Chunk();
+//       Chunk c2= new Chunk();
 	   c.setFont(subtitulos); 
 	   c.append("Tabla con todos los datos:");
 	   p.add(c);

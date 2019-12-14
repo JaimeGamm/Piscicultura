@@ -8,7 +8,6 @@ import org.json.simple.DeserializationException;
 import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
-import views.Constants;
 
 public class FishFarm {
 	
@@ -18,8 +17,7 @@ public class FishFarm {
 	
     public FishFarm() throws IOException, DeserializationException{
     	jsonFileManager = new JsonFileManager();
-    	this.ponds = new ArrayList<Pond>();
-    	inDatas();	
+    	this.ponds = new ArrayList<Pond>();	
     }
     
 //    public ArrayList<Pond> crearListPonds() throws FileNotFoundException, IOException, DeserializationException{
@@ -119,17 +117,17 @@ public class FishFarm {
 		return year;
 	}
 	
-	public HashMap<Long, Integer> pondsByYear(){
-		HashMap<Long, Integer> map = new HashMap<Long, Integer>();
+	public HashMap<String, Double> pondsByYear(){
+		HashMap<String, Double> map = new HashMap<String, Double>();
 		for(long i=minYear(); i<=maxYear(); i++) {
-			map.put(i, quantityPondByYear(i));
+			map.put(Long.toString(i), quantityPondByYear(i));
 		}
 		return map;
 	}
 	
 	
-	public int quantityPondByYear(long year) {
-		int count = 0;
+	public double quantityPondByYear(long year) {
+		double count = 0;
 		for(Pond register : ponds) {
 			if(year == register.getYear()) {
 				count++;
@@ -315,11 +313,6 @@ public class FishFarm {
 	}
 	
 	
-	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
-		for(Pond pond: jsonFileManager.readFile(Constants.ROUTE_DATA)) {
-			addPond(pond);
-		}
-	}
 
 	private double contadorAndPercentageProductionSpecie(String specie) {
 		
@@ -373,8 +366,8 @@ public class FishFarm {
 	public ArrayList<Object[]>toMatrixVectorPondsByYear() {
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
 		for (long i= minYear(); i<= maxYear();i++) {
-			int average = (int)pondsByYear().get(i);
-			datas.add( Utilities.concatObjectArrays2(toObjectVector(i,average)) );
+			double average = (double)pondsByYear().get(Long.toString(i));
+			datas.add( Utilities.concatObjectArrays2(toObjectVector(Long.toString(i),average)) );
 		}
 		return datas;
 	}

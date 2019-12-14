@@ -4,16 +4,16 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.io.IOException;
+import java.util.HashMap;
 import javax.swing.JPanel;
 import org.json.simple.DeserializationException;
-import models.FishFarm;
 
 public class ReportYear  extends JPanel{
 	private static final long serialVersionUID = 1L;
-	private FishFarm farm;
+	private HashMap<String, Double> year2;
 
-    public ReportYear() throws IOException, DeserializationException {
-    	farm = new FishFarm();
+    public ReportYear(HashMap<String, Double> year) throws IOException, DeserializationException {
+    	this.year2=year;
     	setPreferredSize(new Dimension(520,520));
         initComponents();
         setBackground(new Color(15, 15, 15));        
@@ -28,9 +28,9 @@ public class ReportYear  extends JPanel{
     public void paint(Graphics g){
         super.paint(g);
         
-        int int_cian = farm.quantityPondByYear(2016);
-        int int_orange = farm.quantityPondByYear(2017);
-        int int_yellow = farm.quantityPondByYear(2018);
+        int int_cian = (int)(double)year2.get(Long.toString(2016));
+        int int_orange = (int)(double)year2.get(Long.toString(2017));
+        int int_yellow = (int)(double)year2.get(Long.toString(2018));
         
         int total_votos = int_cian + int_orange + int_yellow;
         

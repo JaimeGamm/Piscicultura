@@ -11,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import general.HandlerLanguage;
 import views.Constants;
 
 public class JtableReport extends JPanel{
@@ -53,6 +54,14 @@ public class JtableReport extends JPanel{
 		this.add(jsTable,BorderLayout.PAGE_END);
 		setBorder(null);
 			} 
+	
+	public void changeLanguageColunmJtableR(String titule1, String operation){
+		String[] headers = {HandlerLanguage.languageProperties.getProperty(titule1), 
+				HandlerLanguage.languageProperties.getProperty(operation),
+				};
+		dtmElements.setColumnIdentifiers(headers);
+		repaint();
+	}
 	
 	public void addElementTOtable(Object[] vector) {
 		dtmElements.addRow(vector);

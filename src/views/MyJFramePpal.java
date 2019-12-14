@@ -22,6 +22,7 @@ public class MyJFramePpal extends JFrame{
 	
     private static final long serialVersionUID = 1L;
     private MyJPanelPrincipal panel;
+    private WelcomePanel welcomePanel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
     private JDialogSaveDatos jDialogSaveDatos;
@@ -30,11 +31,9 @@ public class MyJFramePpal extends JFrame{
     	setMinimumSize(new Dimension(700, 400));
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setExtendedState(MAXIMIZED_BOTH);
-		
 		setIconImage(new ImageIcon(Constants.LOGO_PATH).getImage());
 		setTitle(HandlerLanguage.languageProperties.getProperty(Constants.TITLE));
 		initComponents(actionListenner, datasFarm);
-		setVisible(true);
     	JScrollPane jScrollPane = new JScrollPane();
 		jScrollPane.setViewportView(panel);
 		this.add( jScrollPane);
@@ -46,7 +45,13 @@ public class MyJFramePpal extends JFrame{
 		dialogAdd = new JDialogTwo(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.ADD_POND),Constants.ADD_PATH,false);
 		dialogDelete = new JDialogOne(this,actionListenner,HandlerLanguage.languageProperties.getProperty(Constants.DELETE_POND),Constants.DELETE_PATH,false);
 		jDialogSaveDatos=new JDialogSaveDatos(this,actionListenner);
+		setVisible(true);
     }
+    
+    public void showPanelP() {
+    	welcomePanel.setVisible(false);
+    }
+    
     public Pond actualizarTable() {
     	panel.restartTable();
     	Pond pond=dialogAdd.createRunner();
@@ -70,7 +75,8 @@ public class MyJFramePpal extends JFrame{
 		panel.changeLanguage();
 		dialogAdd.changeLanguage();
 		dialogDelete.changeLanguage();
-		ReportEnum.price();
+		
+//		changeLanguageColunmJtableR();
 	}
     
     public void getPondsList(ArrayList<Object[]> info) {
@@ -180,9 +186,23 @@ public class MyJFramePpal extends JFrame{
 	public void visibletableReport(boolean estado) {
 		panel.visibletableReport(estado);
 	}
+	
 	public void removerPanelGraphics() {
 		panel.removerPanelGraphics();
 	}
+	
+//	public void changeLanguageColunmJtableR(){
+//		HandlerLanguage.languageProperties.getProperty(Constants.SPECIE);
+//		HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL);
+//		HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE);
+//		HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE);
+//	}
+	
+//	public void changeLanguageColunmJtableR(){
+//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL));
+//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE));
+//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE));
+//	}
 	
 	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
 		int numero=0;
@@ -228,11 +248,11 @@ public class MyJFramePpal extends JFrame{
 			actualizarPantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR))) {
     		numero=6;
-			panel.tabledeReport("AÑO", "CULTIVOS", datasFarm);
+			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.YEAR), HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR), datasFarm);
 			if(numero!=6 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			} 
-			panel.addGragicaPanelYear(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
+			panel.addGragicaPanelYear(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
 			actualizarPantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE))) {
     		numero=7;

@@ -28,7 +28,11 @@ import views.JButtonsMenuAndDialogs;
 import views.MyJFramePpal;
 
 public class JDialogSaveDatos extends JDialog{
-    private JComboBox<String> typeArchivo;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JComboBox<String> typeArchivo;
     private AddJTextField2 direcion;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
     private JRadioButton openFile;

@@ -27,5 +27,7 @@ public enum Commands {
 	SAVE_DATA,
 	OPEN_J_CHOOSER,
 	ACEPT_SAVE,
+	WEB,
+	JSON,
 	CANCEL_SAVE;
 }

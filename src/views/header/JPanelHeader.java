@@ -28,6 +28,7 @@ public class JPanelHeader extends JPanel{
         add(buttonsMenu, BorderLayout.CENTER);
    
     }
+    
     public String estadoJComboReport() {
     	return buttonsMenu.estadoJComboReport();  
     }

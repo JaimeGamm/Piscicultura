@@ -94,6 +94,7 @@ public class Constants{
 	public static final String STATS_PATH = "Resources/stats.png";
 	public static final String EMPTY = " ";
 	public static final String LIST = "Update_List";
+	public static final String SAVE_DATA = "Save_Data";
 	public static final String EXIT = "Exit";
 	public static final String ERROR = "Error: ";
 	public static final String SPANISH = "Spanish_LG";

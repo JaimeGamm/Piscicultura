@@ -22,9 +22,10 @@ import models.FishFarm;
 import models.Pond;
 import persistence.DemoJsonConsume;
 import persistence.GeneradorPDF;
+import persistence.JsonFileManager;
 import views.Constants;
 import views.MyJFramePpal;
-import views.dialogs.JDialogOne;
+import views.WelcomePanel;
 import views.table.JtableElement;
 
 public class Control implements ActionListener{
@@ -36,16 +37,26 @@ public class Control implements ActionListener{
     private DemoJsonConsume demoJsonConsume;
     private HandlerLanguage config = null;
 	private String languageDefault;
-    private JDialogOne errorSave;
+	private JsonFileManager jsonFileManager;
+	private WelcomePanel panel;
+//    private JDialogOne errorSave;
 	
     public Control() throws IOException, DeserializationException{
     	demoJsonConsume= new DemoJsonConsume();
+    	jsonFileManager = new JsonFileManager();
 		fishFarm = new FishFarm();
+		panel = new WelcomePanel(this);
+		panel.setVisible(true);
     	loadConfiguration();
 //    	inDatasWed();
-    	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
-    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
-    	getAndShowInformationPonds();		
+//    	inDatas();
+//    	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+//    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
+//    	getAndShowInformationPonds();		
+    }
+    
+    public void loadDatas() {
+    	
     }
 	
     public void actionPerformed(ActionEvent e){
@@ -127,6 +138,37 @@ public class Control implements ActionListener{
 			break;
 		case SPANISH:	
 			manageChangeLanguageES();
+			break;
+		case WEB:
+			try {
+				inDatasWed();
+				panel.setVisible(false);
+				try {
+					framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+				} catch (IOException | DeserializationException e1) {
+					e1.printStackTrace();
+				}
+		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
+		    	getAndShowInformationPonds();	
+			} catch (IOException | DeserializationException e1) {
+				e1.printStackTrace();
+			}
+			break;
+		case JSON:
+			try {
+				inDatas();
+				panel.setVisible(false);
+				try {
+					framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+				} catch (IOException | DeserializationException e1) {
+					e1.printStackTrace();
+				}
+		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
+		    	getAndShowInformationPonds();	
+			} catch (IOException | DeserializationException e1) {
+				e1.printStackTrace();
+			}
+			break;
 		default:
 			break;
 		}	
@@ -139,6 +181,13 @@ public class Control implements ActionListener{
 			fishFarm.addPond(pond);
 		}
     }
+    
+	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
+		for(Pond pond: jsonFileManager.readFile(Constants.ROUTE_DATA)) {
+			fishFarm.addPond(pond);
+		}
+	}
+
     
     public String getLanguageDefault(){
 		languageDefault = Locale.getDefault().getLanguage();
@@ -304,7 +353,7 @@ public class Control implements ActionListener{
     	return fishFarm.averageSpeciesPriceInBoyaca();
     }
     
-    public HashMap<Long, Integer> pondsByYear(){
+    public HashMap<String, Double> pondsByYear(){
     	return fishFarm.pondsByYear();
     }
     
@@ -432,10 +481,13 @@ public class Control implements ActionListener{
     	}
     	return hash;
     }
+    
     public JtableElement obtenerTabla() {
     	return framePpal.obtenerTabla();
     }
-    public void createFilePDF() throws MalformedURLException, DocumentException, IOException {
+    
+    @SuppressWarnings("unused")
+	public void createFilePDF() throws MalformedURLException, DocumentException, IOException {
     	String ruta =framePpal.getRutaFile();
     	String tipeFile =framePpal.getEstadoTypeArchivo();
     	boolean state =framePpal.estadoJRadioButton();
@@ -453,6 +505,7 @@ public class Control implements ActionListener{
 		}
     	
     }
+    
     public void abrirarchivo(String archivo){
 
         try {

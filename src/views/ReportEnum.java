@@ -3,7 +3,7 @@ package views;
 import general.HandlerLanguage;
 
 public enum ReportEnum {
-	AVERAGE_SPECIE_PRICE_IN_BOYAC(price()),
+	AVERAGE_SPECIE_PRICE_IN_BOYAC(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE)),
 	PERCERTAGE_OF_CULTIVATE_SPECIES(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED)),
 	AVERAGE_SPECIE_PRODUCTION_IN_BOYACA(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE)),	
 	PERCERTAGE_SPECIE_PRODUCTION_IN_BOYACA(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE)),
@@ -15,7 +15,6 @@ public enum ReportEnum {
 	PERCERTAGE_PRODUCTION_FOR_MUNICIPALITY(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
 	
 	private String name;
-	private static String price;
 	
 	private ReportEnum(String name) {
 		this.name = name;
@@ -25,8 +24,7 @@ public enum ReportEnum {
 		return name;
 	}
 	
-	public static String price() {
-		price = HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE);
-		return price;
+	public void setName(String name) {
+		this.name = name;
 	}
 }

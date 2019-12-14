@@ -43,14 +43,13 @@ public class MyJPanelPrincipal extends JPanel{
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
 		panelGraphics = new Panel();
-//		setBackground(Color.white);
 		setBackground(new Color(40, 40, 40));
-		setPreferredSize(new Dimension(1300,800));
+		setPreferredSize(new Dimension(1300,1200));
+		setMinimumSize(new Dimension(700, 400));
 		FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
 		flowLayout.setHgap(30);
 		setLayout(flowLayout); 
 		initComponents(actionListenner, datasFarm);
-		setVisible(true);
     }
 	
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
@@ -76,12 +75,10 @@ public class MyJPanelPrincipal extends JPanel{
     
 	public void showDatas(ArrayList<Object[]> datasFarm) {
 		jtableElement = new JtableElement();
-	    jtableElement.setPreferredSize(new Dimension(1200,500));
+	    jtableElement.setPreferredSize(new Dimension(1500,550));
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
 		}
-//		jtableElement.setAlignmentX(CENTER_ALIGNMENT);
-
 		this.add(jtableElement,BorderLayout.CENTER);
 	}
 	public void showDatasReport(ArrayList<Object[]> datasFarm) {
@@ -117,6 +114,10 @@ public class MyJPanelPrincipal extends JPanel{
 	}
 	
 	
+	public void changeLanguageColunmJtableR(String titule1, String operation){
+		jtableReport.changeLanguageColunmJtableR(titule1, operation);
+	}
+	
 	public void tabledeReport(String titule, String operacion,ArrayList<Object[]> datasFarm) {
 		jtableReport.clean(titule,operacion);
 		for (Object[] objects : datasFarm) {
@@ -134,7 +135,7 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new PanelReportBoyacaAverageSpecies(SpeciesPriceInBoyaca));
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(530,530));
+    	panelGraphics.setPreferredSize(new Dimension(1000,530));
 		this.add(panelGraphics);
 		HandlerLanguage.languageProperties.getProperty(title);
 	}
@@ -144,7 +145,7 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new PanelReportHarvestedPuertoBoyaca(SpeciesPriceInBoyaca));
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(530,530));
+    	panelGraphics.setPreferredSize(new Dimension(1000,530));
 		this.add(panelGraphics);
 	}
 	
@@ -153,14 +154,14 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new PanelReportHarvestedTotal(SpeciesPriceInBoyaca));
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(530,530));
+    	panelGraphics.setPreferredSize(new Dimension(1000,530));
 		this.add(panelGraphics);
 	}
 	
-	public void addGragicaPanelYear(String title) throws IOException, DeserializationException {
+	public void addGragicaPanelYear(HashMap<String,Double> year, String title) throws IOException, DeserializationException {
 		JLabel titlePanel = startJlabel(title);
 		panelGraphics.add(titlePanel);
-		panelGraphics.add(new ReportYear());
+		panelGraphics.add(new ReportYear(year));
     	panelGraphics.setBackground(Color.black);
     	panelGraphics.setPreferredSize(new Dimension(530,530));
 		this.add(panelGraphics);
@@ -172,7 +173,7 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new PanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca));
     	panelGraphics.setBackground(new Color(20, 20, 20));
-    	panelGraphics.setPreferredSize(new Dimension(530,530));
+    	panelGraphics.setPreferredSize(new Dimension(1000,530));
 		this.add(panelGraphics);
 
 	}
