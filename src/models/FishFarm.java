@@ -4,7 +4,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+
 import org.json.simple.DeserializationException;
+
 import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
@@ -54,16 +57,30 @@ public class FishFarm {
 		this.ponds = pondsList;
 	}
 	
-    public Pond searchPond(long id){
-    	Pond soughtPOnd = null;
-    	int i = 0;
-    	while(soughtPOnd == null && i < this.ponds.size()) {
-            if(this.ponds.get(i).getId() == id) 
-            	soughtPOnd = this.ponds.get(i);
-            i++;
-            	}
-    	return soughtPOnd;
-    }
+//    public Pond searchPond(long id){
+//    	Pond soughtPOnd = null;
+//    	int i = 0;
+//    	while(soughtPOnd == null && i < this.ponds.size()) {
+//            if(this.ponds.get(i).getId() == id) 
+//            	soughtPOnd = this.ponds.get(i);
+//            i++;
+//            	}
+//    	return soughtPOnd;
+//    }
+	public Pond searchPond(long id){
+		long i = 0;
+		Pond soughtPOnd = null;
+		 Iterator it = ponds.iterator();
+		 while(it.hasNext()){
+			 Object obj=it.next();
+			 Pond newPond=(Pond)obj;
+			  if(newPond.getId() ==id){
+				  soughtPOnd= newPond;
+			  }
+		 }
+		
+		return soughtPOnd;
+	}
 	
     public void editPond(Pond runner) {
     	boolean runnerEdit = false;

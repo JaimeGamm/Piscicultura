@@ -62,7 +62,24 @@ public class JtableReport extends JPanel{
 		dtmElements.setColumnIdentifiers(headers);
 		repaint();
 	}
-	
+	public void changeLanguageColunmJtable1(){
+		String[] headers= {HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), 
+				HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL),
+				};
+			
+			
+//			{HandlerLanguage.languageProperties.getProperty(Constants.ID), 
+//				HandlerLanguage.languageProperties.getProperty(Constants.YEAR),
+//				HandlerLanguage.languageProperties.getProperty(Constants.MUNICIPALITY)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.SPECIE)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.SEEDED_ANIMALS)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.WEIGHT_ANIMAL)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.PRODUCTION)
+//				,HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL)};
+		dtmElements.setColumnIdentifiers(headers);
+		repaint();
+	}
 	public void addElementTOtable(Object[] vector) {
 		dtmElements.addRow(vector);
 		//dtmElements.setNumRows(0);

@@ -72,10 +72,13 @@ public class MyJPanelPrincipal extends JPanel{
     	jPanelHeader.changeLanguageButtonsMenu();
     	
 	}
+    public void changeLanguageJtableReport(String titule1, String operation) { 
+    	jtableReport.changeLanguageColunmJtableR(titule1, operation);
+	}
     
 	public void showDatas(ArrayList<Object[]> datasFarm) {
 		jtableElement = new JtableElement();
-	    jtableElement.setPreferredSize(new Dimension(1500,550));
+	    jtableElement.setPreferredSize(new Dimension(1300,450));
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
 		}

@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Panel;
@@ -10,6 +11,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
 import controller.Commands;
 import general.HandlerLanguage;
 
@@ -25,6 +28,7 @@ public class JPanelButtonsMenu extends JPanel{
     private JButtonsMenuAndDialogs english;
     private JLabel label;
     private JButton button,buttonSaveData;
+    private Panel panelJComboReport;
     JComboBox<String> jComboReport; 
 	
     public JPanelButtonsMenu(ActionListener actionListenner) {
@@ -71,13 +75,15 @@ public class JPanelButtonsMenu extends JPanel{
 		label.setText(HandlerLanguage.languageProperties.getProperty(Constants.REPORTS));
 		button.setText(HandlerLanguage.languageProperties.getProperty(Constants.SEE));
 		buttonSaveData.setText(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_DATA));
+		
+		jComboReport.removeAllItems();
 		for (ReportEnum team : ReportEnum.values()) {
 			jComboReport.addItem(HandlerLanguage.languageProperties.getProperty(team.getName()));
 		}
 	}
     
 	private void report(ActionListener actionListenner) {
-		Panel panel =new Panel();
+		panelJComboReport =new Panel();
 		label = new JLabel();
 		label.setText(HandlerLanguage.languageProperties.getProperty(Constants.REPORTS));
 		button = new JButton();
@@ -89,13 +95,13 @@ public class JPanelButtonsMenu extends JPanel{
 		jComboReport= new JComboBox<>(); 
 		jComboReport.setPreferredSize(new Dimension(430,40));
 		for (ReportEnum team : ReportEnum.values()) {
-			jComboReport.addItem(team.getName());
+			jComboReport.addItem(HandlerLanguage.languageProperties.getProperty(team.getName()));
 		}
 		jComboReport.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
-		panel.add(label);
-		panel.add(jComboReport); 
-		panel.add(button);
-		this.add(panel,BorderLayout.CENTER);
+		panelJComboReport.add(label);
+		panelJComboReport.add(jComboReport); 
+		panelJComboReport.add(button);
+		this.add(panelJComboReport,BorderLayout.CENTER);
 	}
 	
 	public void addButtonSaveData(ActionListener actionListenner) {

@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Panel;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -12,77 +13,114 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import controller.Commands;
 import general.HandlerLanguage;
 import models.Pond;
 import models.FishFarm;
 import views.Constants;
 import views.JButtonsMenuAndDialogs;
+import views.JTextFieldDialog;
 import views.MyJFramePpal;
 import views.MyJTextField;
 
 public class JDialogTwo extends JDialog{
 
     private static final long serialVersionUID = 1L;
-    private MyJTextField year, seeded, harvested, weight, production, price;
+    private JTextFieldDialog year,seeded, harvested, weight, production, price;
+//    private MyJTextField seeded, harvested, weight, production, price;
     private JComboBox<String> species, municipality;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
     private JLabel yearL, seededL, harvestedL, weightL, productionL, priceL, specieslL, municipalityL;
 	
     public JDialogTwo(MyJFramePpal frame,ActionListener actionListenner,String title, String routeImage,boolean editButtons) {
-    	setMinimumSize(new Dimension(430,600));
-    	setMaximumSize(new Dimension(430,600));
-    	getRootPane().setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
+    	setMinimumSize(new Dimension(470,700));
+    	setMaximumSize(new Dimension(470,700));
+    	getRootPane().setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 10));
     	setIconImage(new ImageIcon(routeImage).getImage());
 		setLocationRelativeTo(frame);
 		setTitle(title);
 		setModal(true);
 		setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+		getContentPane().setBackground(new Color(40, 40, 40));
+		setBackground(new Color(35, 35, 35));
 		initComponents(actionListenner,editButtons);
     }
     public JDialogTwo() {}
       private void initComponents(ActionListener actionListenner,boolean editButtons) {
+      	addJComboBoxSpecies();
+      	addJComboBoxMunicipality();
     	addJDialogs();
-    	addJComboBoxSpecies();
-    	addJComboBoxMunicipality();
     	if(editButtons == false)
             addButtons(actionListenner);
     }
 	
     private void addJDialogs() {
-    	yearL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
-    	add(yearL);
-    	year = new MyJTextField();
-    	add(year);
-    	seededL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
-		add(seededL);
-		seeded = new MyJTextField();
-		add(seeded);
-		harvestedL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
-		add(harvestedL);
-		harvested = new MyJTextField();
-		add(harvested);
-		weightL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
-		add(weightL);
-		weight = new MyJTextField();
-		add(weight);
-		productionL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
-		add(productionL);
-		production = new MyJTextField();
-		add(production);
-		priceL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
-		add(priceL);
-		price = new MyJTextField();
-		add(price);
+//    	yearL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
+//    	add(yearL);
+    	Color colorPanel =new Color(40, 40, 40);
+    	Panel yearPanel = new Panel();
+    	yearPanel.setBackground(colorPanel);
+    	year = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
+    	yearPanel.add(year);
+    	add(yearPanel);
+//    	seededL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
+//		add(seededL);
+       	Panel seededPanel = new Panel();
+		seeded = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
+		seededPanel.setBackground(colorPanel);
+		seededPanel.add(seeded);
+		add(seededPanel);
+//		harvestedL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
+//		add(harvestedL);
+		Panel harvestedPanel = new Panel();
+		harvested = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
+		harvestedPanel.setBackground(colorPanel);
+		harvestedPanel.add(harvested);
+		add(harvestedPanel);
+//		weightL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
+//		add(weightL);
+		Panel weightPanel = new Panel();
+		weight = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
+		weightPanel.setBackground(colorPanel);
+		weightPanel.add(weight);
+		add(weightPanel);
+//		productionL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
+//		add(productionL);
+		Panel productionPanel = new Panel();
+		production = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
+		productionPanel.setBackground(colorPanel);
+		productionPanel.add(production);
+		add(productionPanel);
+//		priceL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
+//		add(priceL);
+		Panel pricePanel = new Panel();
+		price = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
+		pricePanel.setBackground(colorPanel);
+		pricePanel.add(price);
+		add(pricePanel);
     }
-	
     private void addJComboBoxSpecies() {
+    	Panel panel = new Panel();
+    	 panel.setPreferredSize(new Dimension(450,50));
+//	    panel.setPreferredSize(new Dimension(450,30));
+	    panel.setBackground(new Color(40, 40, 40));
+	    FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
+		flowLayout.setHgap(2);
+		panel.setLayout(flowLayout);
     	specieslL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
-    	add(specieslL);
+    	specieslL.setForeground(Color.WHITE);
+    	specieslL.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 14));
+
+    
+    	
     	species = new JComboBox<String>();
+       	species.setPreferredSize(new Dimension(380,30));
     	species.setBackground(Color.WHITE);
-    	species.setForeground(Color.BLACK);
-    	species.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
+    	species.setForeground(Color.WHITE);
+    	species.setBackground(new Color(90, 90, 90));
+    	species.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 14));
     	species.addItem("BOCACHICO");
     	species.addItem("CACHAMA");
     	species.addItem("CARPA");
@@ -95,16 +133,26 @@ public class JDialogTwo extends JDialog{
     	species.addItem("UTILAPIA NEGRA");
     	species.addItem("UTILAPIA O MOJARRA");
     	species.setFocusable(false);
-    	add(species);
+ 
+    	
+    	panel.add(specieslL);
+    	panel.add(species);
+    	add(panel);
     }
 	
     private void addJComboBoxMunicipality() {
+    	Panel panel = new Panel();
+    	 panel.setPreferredSize(new Dimension(450,50));
     	municipalityL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
-    	add(municipalityL);
+    	municipalityL.setForeground(Color.WHITE);
+    	municipalityL.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
+
     	municipality = new JComboBox<String>();
-    	municipality.setBackground(Color.WHITE); 
-    	municipality.setForeground(Color.BLACK);
+    	municipality.setBackground(Color.WHITE);
+    	municipality.setForeground(Color.WHITE);
+    	municipality.setBackground(new Color(90, 90, 90));
     	municipality.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
+    	
     	municipality.addItem("ALMEIDA");
 		municipality.addItem("AQUITANA");
 		municipality.addItem("ARCABUCO");
@@ -185,7 +233,10 @@ public class JDialogTwo extends JDialog{
 		municipality.addItem("VIRACACHA");
 		municipality.addItem("ZETAQUIRA");
 		municipality.setFocusable(false);
-		add(municipality);
+		municipality.setPreferredSize(new Dimension(380,30));
+    	panel.add(municipalityL);
+		panel.add(municipality);
+		add(panel);
     }
 
 	
@@ -195,25 +246,42 @@ public class JDialogTwo extends JDialog{
     	buttonAcept = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.ACCEPT),120,35);
     	buttonAcept.addActionListener(actionListenner);
     	buttonAcept.setActionCommand(Commands.CLOSE_ADD_DIALOG.toString());
+    	buttonAcept.setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 14));
+    	buttonAcept.setBackground(new Color(90, 90, 90));
+    	buttonAcept.setForeground(Color.WHITE);
     	panelButtons.add(buttonAcept);
 		buttonCancel = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.CANCEL),120,35);
 		buttonCancel.addActionListener(actionListenner);
 		buttonCancel.setActionCommand(Commands.CLOSE_DIALOG_ADD_CANCEL.toString());
+		buttonCancel.setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 14));
+		buttonCancel.setBackground(new Color(90, 90, 90));
+		buttonCancel.setForeground(Color.WHITE);
 		panelButtons.add(buttonCancel);
 		add(panelButtons);
     } 
     
     public void changeLanguage(){
-		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
-		seededL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
-		harvestedL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
-		weightL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
-		productionL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
-		priceL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
-		specieslL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
+//		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
+//		seededL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
+//		harvestedL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
+//		weightL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
+//		productionL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
+//		priceL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
+//		specieslL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
+//		municipalityL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
+//		buttonAcept.setText(HandlerLanguage.languageProperties.getProperty(Constants.ACCEPT));
+//		buttonCancel.setText(HandlerLanguage.languageProperties.getProperty(Constants.CANCEL));
+		
+    	year.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
+    	seeded.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
+    	weight.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
+    	production.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
+    	price.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
+    	specieslL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
 		municipalityL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
 		buttonAcept.setText(HandlerLanguage.languageProperties.getProperty(Constants.ACCEPT));
 		buttonCancel.setText(HandlerLanguage.languageProperties.getProperty(Constants.CANCEL));
+		
 	}
 	
     private JPanel createPanel(int separation) {

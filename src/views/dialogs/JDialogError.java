@@ -27,6 +27,7 @@ public class JDialogError extends JDialog {
 //		setIconImage(new ImageIcon(routeImage).getImage());
 		setLocationRelativeTo(frame);
 		setTitle(title);
+		getContentPane().setBackground(new Color(40, 40, 40));
 		getRootPane().setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		setModal(true);
 		setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));

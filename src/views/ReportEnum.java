@@ -1,18 +1,17 @@
 package views;
 
-import general.HandlerLanguage;
 
 public enum ReportEnum {
-	AVERAGE_SPECIE_PRICE_IN_BOYAC(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE)),
-	PERCERTAGE_OF_CULTIVATE_SPECIES(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED)),
-	AVERAGE_SPECIE_PRODUCTION_IN_BOYACA(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE)),	
-	PERCERTAGE_SPECIE_PRODUCTION_IN_BOYACA(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE)),
-	PONDS_BY_YEAR(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR)),
-	AVERAGE_WEIGHT_SPECIES(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE)),
-	AVERAGE_HARVESTED(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED)),
-	HARVESTED_PUERTO_BOYACA(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA)),
-	HARVESTED_TOTAL(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED)),
-	PERCERTAGE_PRODUCTION_FOR_MUNICIPALITY(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
+	AVERAGE_SPECIE_PRICE_IN_BOYAC(Constants.AVERAGE_PRICE),
+	PERCERTAGE_OF_CULTIVATE_SPECIES(Constants.PERCENTAGE_SPECIE_SEEDED),
+	AVERAGE_SPECIE_PRODUCTION_IN_BOYACA(Constants.AVERAGE_PRODUCTION_BY_SPECIE),	
+	PERCERTAGE_SPECIE_PRODUCTION_IN_BOYACA(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE),
+	PONDS_BY_YEAR(Constants.PONDS_BY_YEAR),
+	AVERAGE_WEIGHT_SPECIES(Constants.AVERAGE_WEIGHT_BY_SPECIE),
+	AVERAGE_HARVESTED(Constants.AVERAGE_HARVESTED),
+	HARVESTED_PUERTO_BOYACA(Constants.HARVESTED_IN_PUERTO_BOYCA),
+	HARVESTED_TOTAL(Constants.TOTAL_HARVESTED),
+	PERCERTAGE_PRODUCTION_FOR_MUNICIPALITY(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY);
 	
 	private String name;
 	
