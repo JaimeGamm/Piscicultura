@@ -85,13 +85,13 @@ public class Control implements ActionListener{
 	    		framePpal.closeJjDialogSaveDatos();
     			}
 			} catch (DocumentException | IOException e2) {
-				// TODO Auto-generated catch block
 				e2.printStackTrace();
 				
 			}
    
     		break;
     	case SEE_LIST:
+    		framePpal.actualizarPantalla();
     		framePpal.visibleTable(true); 
     		framePpal.removerPanelGraphics();
             framePpal.visibletableReport(false);
@@ -148,6 +148,7 @@ public class Control implements ActionListener{
 				} catch (IOException | DeserializationException e1) {
 					e1.printStackTrace();
 				}
+				framePpal.addTable(fishFarm.toMatrixVector2());
 		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
 		    	getAndShowInformationPonds();	
 			} catch (IOException | DeserializationException e1) {
@@ -163,6 +164,7 @@ public class Control implements ActionListener{
 				} catch (IOException | DeserializationException e1) {
 					e1.printStackTrace();
 				}
+				framePpal.addTable(fishFarm.toMatrixVector2());
 		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
 		    	getAndShowInformationPonds();	
 			} catch (IOException | DeserializationException e1) {
@@ -175,7 +177,7 @@ public class Control implements ActionListener{
     }
 
     
-    @SuppressWarnings({ "unused", "static-access" })
+    @SuppressWarnings({"static-access" })
 	private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
 		for(Pond pond:demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json")) {
 			fishFarm.addPond(pond);

@@ -62,6 +62,11 @@ public class MyJFramePpal extends JFrame{
     	return panel.getJtableElement();
     }
     
+    public void addTable(ArrayList<Object[]> datasFarm) {
+    	panel.showDatas(datasFarm);
+    	panel.visibleTable(false);
+    }
+    
     public void addTableReport(ArrayList<Object[]> datasFarm) {
     	panel.showDatasReport(datasFarm);
     	panel.visibletableReport(false); 
@@ -230,6 +235,31 @@ public class MyJFramePpal extends JFrame{
 			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
 		}
 	}
+	
+//	private void changeLanguageGraficReport() {
+//		if(numero==1) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PRICE_ANIMAL);
+//		}else if(numero==2) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//		}else if(numero==3) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.AVERAGE);
+//		}else if(numero==4) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//		}else if(numero==5) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//		}else if(numero==6) {
+//			panel.changeLanguageJtableReport(Constants.YEAR,Constants.PONDS_BY_YEAR);
+//		}else if(numero==7) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.WEIGHT_ANIMAL);
+//		}else if(numero==8) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//		}else if(numero==9) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//		}else if(numero==10) {
+//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//		}
+//	}
+	
 	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
 		numero=0;
 		if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE))) {

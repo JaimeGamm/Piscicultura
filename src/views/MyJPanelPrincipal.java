@@ -2,6 +2,8 @@ package views;
 
 import views.table.JtableElement;
 import views.table.JtableReport;
+import views.body.JPBody;
+import views.footer.Footer;
 import views.header.JPanelHeader;
 import views.reports.PanelReporrtPercentajeOfSpeciesInBoyaca;
 import views.reports.PanelReportBoyacaAverageSpecies;
@@ -9,7 +11,6 @@ import views.reports.PanelReportHarvestedPuertoBoyaca;
 import views.reports.PanelReportHarvestedTotal;
 import views.reports.PanelReportMunicipalityPercentaje;
 import views.reports.ReportYear;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,12 +21,9 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import org.json.simple.DeserializationException;
-
 import general.HandlerLanguage;
 
 
@@ -39,13 +37,14 @@ public class MyJPanelPrincipal extends JPanel{
     private JPanelHeader jPanelHeader;
     private JtableReport jtableReport;
     private Panel panelGraphics;
+    private Footer footer;
+    private JPBody body;
 
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
 		panelGraphics = new Panel();
-		setBackground(new Color(40, 40, 40));
-		setPreferredSize(new Dimension(1300,1200));
-		setMinimumSize(new Dimension(700, 400));
+		setBackground(Color.white);
+		setPreferredSize(new Dimension(WIDTH_SCREEN-25, 1300));
 		FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
 		flowLayout.setHgap(30);
 		setLayout(flowLayout); 
@@ -55,10 +54,18 @@ public class MyJPanelPrincipal extends JPanel{
     private void initComponents(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
     	jPanelHeader=new JPanelHeader(actionListenner);
     	startPanelGraphics();
+    	jPanelHeader.setPreferredSize(new Dimension(WIDTH_SCREEN, 135));
     	add(jPanelHeader,BorderLayout.NORTH);
-    	showDatas(datasFarm);
-		
+    	body =new JPBody();
+    	body.setPreferredSize(new Dimension(WIDTH_SCREEN, 610));
+    	add(body,BorderLayout.CENTER);
+//    	showDatas(datasFarm);	
+    	footer = new Footer();
+    	footer.setPreferredSize(new Dimension(WIDTH_SCREEN, 130));
+    	add(footer, BorderLayout.SOUTH);
     }
+    
+   
 
     private void startPanelGraphics() {
     	panelGraphics.setBackground(Color.black);
@@ -70,7 +77,7 @@ public class MyJPanelPrincipal extends JPanel{
     public void changeLanguage() { 
     	jtableElement.changeLanguageColunmJtable();
     	jPanelHeader.changeLanguageButtonsMenu();
-    	
+    	footer.changeLanguage();
 	}
     public void changeLanguageJtableReport(String titule1, String operation) { 
     	jtableReport.changeLanguageColunmJtableR(titule1, operation);
@@ -92,10 +99,12 @@ public class MyJPanelPrincipal extends JPanel{
      
 		this.add(jtableReport,BorderLayout.CENTER);
 	}
+	
 	public void visibletableReport(boolean estado) {
 		jtableReport.setVisible(estado);
 	}
 	
+
 	public void newDatas(ArrayList<Object[]> datasFarm) {
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
@@ -192,7 +201,7 @@ public class MyJPanelPrincipal extends JPanel{
 	}
 	private JLabel startJlabel(String title) {
 		JLabel titlePanel = new JLabel(title);
-		titlePanel.setFont(new Font("Rubik, Arial, sans-serif", 1, 16));
+		titlePanel.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
 		titlePanel.setForeground(Color.white);
 		return titlePanel;
 	}

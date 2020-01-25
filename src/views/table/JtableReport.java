@@ -29,7 +29,7 @@ public class JtableReport extends JPanel{
 	}
 	private void initComponents(String titule1, String operacion) {
 		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
-		this.setBackground(Color.decode("#30373D"));
+		this.setBackground(Color.WHITE);
 		headrs[0]= titule1;
 		headrs[1]= operacion;
 		dtmElements=new DefaultTableModel();

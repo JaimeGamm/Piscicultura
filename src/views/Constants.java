@@ -6,6 +6,8 @@ public class Constants{
 	
 	public static final Color GRAY = Color.decode("#888888");
 	public static final Color GRAY_LIGHT = Color.decode("#E8E8E8");
+	public static final Color MY_ORANGE = Color.decode("#E8510A");
+	public static final Color MY_JADE = Color.decode("#A3E4D7");
 	public static final Color GRAT_DARK = Color.decode("#4A4848");
 	public static final Color GRAY_BLUE = Color.decode("#909700");
 	public static final Color GRAY_RED = Color.decode("#969696");
@@ -81,6 +83,12 @@ public class Constants{
 	public static final Color CIAN = Color.decode("#00F0FF");
 	public static final Color ORANGE = Color.decode("#FFAE00");
 	public static final String MESSAGE_ARRAY_INDEX = "Opcion no valida";
+	public static final String MESSAGE_WELCOME_ES = "-Selecione como quiere carga los datos-";
+	public static final String MESSAGE_WELCOME_EN = "-Choose how you like up the data-";
+	public static final String WEB = "WEB";
+	public static final String LOCAL = "LOCAL";
+	public static final String NAME_PAGE= "PisciculturaApp";
+	public static final String FOOTER_TEXT= "Footer_Text";
 	public static final String MESSAGE_NUMBER_FORMAT = "El ID no es valido";
 	public static final String MESSAGE_CREATE_POND = "El cultivo ha sido añadido";
 	public static final String MESSAGE_EMPTY_FIELDS = "";
@@ -92,6 +100,9 @@ public class Constants{
 	public static final String BACKGROUND_COLOR_DECODE = "#ececec";
 	public static final String ROUTE_DATA = "Resources/registros.txt";
 	public static final String STATS_PATH = "Resources/stats.png";
+	public static final String BACKGROUND_HOME = "Resources/trucha.jpg";
+	public static final String BACKGROUND_HOME_ONE = "Resources/peces.png";
+	public static final String BACKGROUND_HOME_TWO = "Resources/peces2.png";
 	public static final String EMPTY = " ";
 	public static final String LIST = "Update_List";
 	public static final String SAVE_DATA = "Save_Data";
@@ -118,6 +129,7 @@ public class Constants{
 	public static final String ACCEPT = "Accept";
 	public static final String CANCEL = "Cancel"; 
 	public static final String LOGO_PATH = "Resources/logo.png"; 
+	public static final String LOGO_HEAD_PATH = "Resources/logoHead.png"; 
 	public static final String ADD_PATH = "Resources/AddPond.png"; 
 	public static final String DELETE_PATH = "Resources/DeletePond.png"; 
 	public static final String LIST_PATH = "Resources/seelist.png"; 

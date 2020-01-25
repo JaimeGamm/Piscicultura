@@ -13,7 +13,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import controller.Commands;
 import general.HandlerLanguage;
@@ -23,7 +22,6 @@ import views.Constants;
 import views.JButtonsMenuAndDialogs;
 import views.JTextFieldDialog;
 import views.MyJFramePpal;
-import views.MyJTextField;
 
 public class JDialogTwo extends JDialog{
 
@@ -32,7 +30,7 @@ public class JDialogTwo extends JDialog{
 //    private MyJTextField seeded, harvested, weight, production, price;
     private JComboBox<String> species, municipality;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
-    private JLabel yearL, seededL, harvestedL, weightL, productionL, priceL, specieslL, municipalityL;
+    private JLabel specieslL, municipalityL;
 	
     public JDialogTwo(MyJFramePpal frame,ActionListener actionListenner,String title, String routeImage,boolean editButtons) {
     	setMinimumSize(new Dimension(470,700));

@@ -40,7 +40,7 @@ public class JtableElement extends JPanel{
 		jtElements = new JTable();
 		jtElements.setModel(dtmElements);
 		jtElements.getTableHeader().setReorderingAllowed(false);
-		jtElements.getTableHeader().setBackground(Constants.GRAY);
+		jtElements.getTableHeader().setBackground(Constants.MY_ORANGE);
 		jtElements.getTableHeader().setForeground(Color.WHITE);
 		jtElements.getTableHeader().setFont(fontHeader);
 		jtElements.setBackground(Constants.GRAY_LIGHT);

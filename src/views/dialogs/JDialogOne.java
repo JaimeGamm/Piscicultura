@@ -10,20 +10,15 @@ import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import general.HandlerLanguage;
-
-import javax.swing.SwingConstants;
-
 import controller.Commands;
 import views.Constants;
 import views.JButtonsMenuAndDialogs;
 import views.JTextFieldDialog;
 import views.MyJFramePpal;
-import views.MyJTextField;
 
 public class JDialogOne extends JDialog{
 

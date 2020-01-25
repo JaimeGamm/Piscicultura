@@ -5,9 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-
 import org.json.simple.DeserializationException;
-
 import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
@@ -67,6 +65,7 @@ public class FishFarm {
 //            	}
 //    	return soughtPOnd;
 //    }
+	@SuppressWarnings({ "unused", "rawtypes" })
 	public Pond searchPond(long id){
 		long i = 0;
 		Pond soughtPOnd = null;
