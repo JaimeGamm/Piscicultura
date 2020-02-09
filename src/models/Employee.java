@@ -1,6 +1,6 @@
 package models;
 
-public class Pond {
+public class Employee {
 	
     private long id;
     private long year;
@@ -13,7 +13,7 @@ public class Pond {
     private long price;
     
 	
-    public Pond(long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
+    public Employee(long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
 	
 		this.year = year;
 		this.municipality = municipality;
@@ -99,6 +99,6 @@ public class Pond {
 	}
 
 	public Object[] toObjectVector() {
-	return new Object[] {this.id, this.year, this.municipality, this.specie, this.seeded, this.haversted, this.weight, this.production, this.price};
+		return new Object[] {this.id, this.year, this.municipality, this.specie, this.seeded, this.haversted, this.weight, this.production, this.price};
     }	
 }

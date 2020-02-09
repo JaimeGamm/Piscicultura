@@ -7,6 +7,7 @@ public enum Commands {
     ENGLISH,
     EDIT,
     SEARCH,
+    HOME,
     SEE_LIST,
     SEE_AVERAGE,
     EXPORT,
@@ -29,5 +30,11 @@ public enum Commands {
 	ACEPT_SAVE,
 	WEB,
 	JSON,
+	FB1,
+	FB2,
+	IN2,
+	IN1,
+	TW1,
+	WP1,
 	CANCEL_SAVE;
 }

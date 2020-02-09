@@ -11,18 +11,18 @@ import org.json.simple.JsonArray;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
 
-import models.Pond;
+import models.Employee;
 import views.Constants;
 
 public class JsonFileManager {
 
-	public ArrayList<Pond> readFile(String fileName) throws FileNotFoundException,IOException, DeserializationException{
-		ArrayList<Pond> fishFarmingRegisterList  = new ArrayList<>();
+	public ArrayList<Employee> readFile(String fileName) throws FileNotFoundException,IOException, DeserializationException{
+		ArrayList<Employee> fishFarmingRegisterList  = new ArrayList<>();
 		JsonArray listPrincipal= (JsonArray)Jsoner.deserialize(new FileReader(fileName));
 		long id=1;
 	
 		for(Object object: listPrincipal) {
-			Pond pond =null;
+			Employee pond =null;
 			try {
 				JsonObject registerObj =(JsonObject)object;
 				String municipality = registerObj.getString(Constants.MUNICIPALITY_KEY);
@@ -34,7 +34,7 @@ public class JsonFileManager {
 				long estimatedProduction=Long.parseLong(registerObj.getString(Constants.PRODUCTION_KEY));
 				long price=Long.parseLong(registerObj.getString(Constants.PRICE_KEY));
 				id++;
-				pond = new Pond(year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
+				pond = new Employee(year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
 				pond.setId(id);
 				fishFarmingRegisterList.add(pond);	
 				} catch (NumberFormatException e) {
@@ -42,13 +42,13 @@ public class JsonFileManager {
 		}
 		return fishFarmingRegisterList;
 	}
-	 public void whiteFile(String path,	ArrayList<Pond> fishFarmingRegisterList ) throws IOException {
+	 public void whiteFile(String path,	ArrayList<Employee> fishFarmingRegisterList ) throws IOException {
 		 File file =new File(path+".txt");
 		 file.createNewFile();
 		 FileWriter fileWriter=new FileWriter(file);
 		JsonArray listStandard= new JsonArray();
 
-		 for(Pond pond: fishFarmingRegisterList) {
+		 for(Employee pond: fishFarmingRegisterList) {
 			 JsonObject leagueObj = new JsonObject();
 			 leagueObj.put("id", Long.toString(pond.getId()));
 			 leagueObj.put("a_o", Long.toString(pond.getYear()));

@@ -15,7 +15,7 @@ public class BackgroundHome extends JLabel{
 
 	public BackgroundHome() {
 		ImageIcon originalImage = new ImageIcon(Constants.BACKGROUND_HOME);
-        ImageIcon scaleIcon = new ImageIcon(originalImage.getImage().getScaledInstance(1200, 600, java.awt.Image.SCALE_DEFAULT));
+        ImageIcon scaleIcon = new ImageIcon(originalImage.getImage().getScaledInstance(WIDTH_SCREEN-400, 600, java.awt.Image.SCALE_DEFAULT));
 		setIcon(scaleIcon);
 		setBackground(Color.WHITE);
 		setOpaque(true);

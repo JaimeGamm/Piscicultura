@@ -13,7 +13,7 @@ public class BackgroundHome2 extends JLabel{
 
 	public BackgroundHome2(String path) {
         ImageIcon originalImage1 = new ImageIcon(path);
-        ImageIcon scaleIcon1 = new ImageIcon(originalImage1.getImage().getScaledInstance(160, 600, java.awt.Image.SCALE_DEFAULT));
+        ImageIcon scaleIcon1 = new ImageIcon(originalImage1.getImage().getScaledInstance(WIDTH_SCREEN-1950, 600, java.awt.Image.SCALE_DEFAULT));
 		setIcon(scaleIcon1);
 		setBackground(Color.WHITE);
 		setOpaque(true);

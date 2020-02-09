@@ -18,13 +18,13 @@ import com.itextpdf.text.Image;
 public class JButtonsMenuAndDialogs extends JButton{
 
     private static final long serialVersionUID = 1L;
-    public static final int DIMENSION_WHIDTH = 145;
-    public static final int DIMENSION_HEIGHT = 50;
+    public static final int DIMENSION_WHIDTH = 135;
+    public static final int DIMENSION_HEIGHT = 40;
     private JButton button;
 	
     public JButtonsMenuAndDialogs(String text, String routeImage) {
         setText(text);   
-        setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 14));
+        setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 12));
         setBackground(Color.BLACK);
         setForeground(Color.WHITE);
         setPreferredSize(new Dimension(DIMENSION_WHIDTH,DIMENSION_HEIGHT));
@@ -50,7 +50,7 @@ public class JButtonsMenuAndDialogs extends JButton{
     
     public JButtonsMenuAndDialogs(String text, int width, int heigth) {
     	setText(text);
-        setFont(new Font(Constants.FONT_RUBIK,Font.BOLD, 16));
+        setFont(new Font(Constants.FONT_RUBIK,Font.BOLD, 14));
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 	

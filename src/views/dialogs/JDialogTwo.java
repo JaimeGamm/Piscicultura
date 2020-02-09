@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 import controller.Commands;
 import general.HandlerLanguage;
-import models.Pond;
+import models.Employee;
 import models.FishFarm;
 import views.Constants;
 import views.JButtonsMenuAndDialogs;
@@ -27,7 +27,6 @@ public class JDialogTwo extends JDialog{
 
     private static final long serialVersionUID = 1L;
     private JTextFieldDialog year,seeded, harvested, weight, production, price;
-//    private MyJTextField seeded, harvested, weight, production, price;
     private JComboBox<String> species, municipality;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
     private JLabel specieslL, municipalityL;
@@ -55,44 +54,32 @@ public class JDialogTwo extends JDialog{
     }
 	
     private void addJDialogs() {
-//    	yearL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
-//    	add(yearL);
     	Color colorPanel =new Color(40, 40, 40);
     	Panel yearPanel = new Panel();
     	yearPanel.setBackground(colorPanel);
     	year = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
     	yearPanel.add(year);
     	add(yearPanel);
-//    	seededL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
-//		add(seededL);
        	Panel seededPanel = new Panel();
 		seeded = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
 		seededPanel.setBackground(colorPanel);
 		seededPanel.add(seeded);
 		add(seededPanel);
-//		harvestedL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
-//		add(harvestedL);
 		Panel harvestedPanel = new Panel();
 		harvested = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
 		harvestedPanel.setBackground(colorPanel);
 		harvestedPanel.add(harvested);
 		add(harvestedPanel);
-//		weightL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
-//		add(weightL);
 		Panel weightPanel = new Panel();
 		weight = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
 		weightPanel.setBackground(colorPanel);
 		weightPanel.add(weight);
 		add(weightPanel);
-//		productionL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
-//		add(productionL);
 		Panel productionPanel = new Panel();
 		production = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
 		productionPanel.setBackground(colorPanel);
 		productionPanel.add(production);
 		add(productionPanel);
-//		priceL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
-//		add(priceL);
 		Panel pricePanel = new Panel();
 		price = new JTextFieldDialog(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
 		pricePanel.setBackground(colorPanel);
@@ -101,8 +88,7 @@ public class JDialogTwo extends JDialog{
     }
     private void addJComboBoxSpecies() {
     	Panel panel = new Panel();
-    	 panel.setPreferredSize(new Dimension(450,50));
-//	    panel.setPreferredSize(new Dimension(450,30));
+    	panel.setPreferredSize(new Dimension(450,50));
 	    panel.setBackground(new Color(40, 40, 40));
 	    FlowLayout flowLayout=new FlowLayout(FlowLayout.CENTER);
 		flowLayout.setHgap(2);
@@ -110,9 +96,6 @@ public class JDialogTwo extends JDialog{
     	specieslL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
     	specieslL.setForeground(Color.WHITE);
     	specieslL.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 14));
-
-    
-    	
     	species = new JComboBox<String>();
        	species.setPreferredSize(new Dimension(380,30));
     	species.setBackground(Color.WHITE);
@@ -131,8 +114,6 @@ public class JDialogTwo extends JDialog{
     	species.addItem("UTILAPIA NEGRA");
     	species.addItem("UTILAPIA O MOJARRA");
     	species.setFocusable(false);
- 
-    	
     	panel.add(specieslL);
     	panel.add(species);
     	add(panel);
@@ -144,13 +125,11 @@ public class JDialogTwo extends JDialog{
     	municipalityL = createLabel(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
     	municipalityL.setForeground(Color.WHITE);
     	municipalityL.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
-
     	municipality = new JComboBox<String>();
     	municipality.setBackground(Color.WHITE);
     	municipality.setForeground(Color.WHITE);
     	municipality.setBackground(new Color(90, 90, 90));
     	municipality.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
-    	
     	municipality.addItem("ALMEIDA");
 		municipality.addItem("AQUITANA");
 		municipality.addItem("ARCABUCO");
@@ -259,17 +238,6 @@ public class JDialogTwo extends JDialog{
     } 
     
     public void changeLanguage(){
-//		yearL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
-//		seededL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
-//		harvestedL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
-//		weightL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_WEIGHT_ANIMALS));
-//		productionL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRODUCTION_ANIMALS));
-//		priceL.setText(HandlerLanguage.languageProperties.getProperty(Constants.IN_PRICE_ANIMALS));
-//		specieslL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_SPECIE));
-//		municipalityL.setText(HandlerLanguage.languageProperties.getProperty(Constants.SELECT_MUNICIPALITY));
-//		buttonAcept.setText(HandlerLanguage.languageProperties.getProperty(Constants.ACCEPT));
-//		buttonCancel.setText(HandlerLanguage.languageProperties.getProperty(Constants.CANCEL));
-		
     	year.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_YEAR));
     	seeded.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_SEEDED_ANIMALS));
     	weight.setBordeText(HandlerLanguage.languageProperties.getProperty(Constants.IN_HARVESTED_ANIMALS));
@@ -397,7 +365,7 @@ public class JDialogTwo extends JDialog{
     	return isEmpty;
     }
 
-    public void getInformationRunner(Pond pond) {
+    public void getInformationRunner(Employee pond) {
     	year.setText(Long.toString(pond.getYear()));
     	seeded.setText(Long.toString(pond.getSeeded()));
     	harvested.setText(Long.toString(pond.getHaversted()));
@@ -408,7 +376,7 @@ public class JDialogTwo extends JDialog{
     	municipality.setSelectedItem(pond.getMunicipality()); 
     }
 	
-    public Pond createRunner() {
+    public Employee createRunner() {
     	return FishFarm.createRunner( getYear(), getMunicipality(), getSpecie(), getSeeded(), getHarvested(), getWeight(), getProduction(), getPrice());
     }
     

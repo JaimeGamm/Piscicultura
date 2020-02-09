@@ -65,17 +65,17 @@ public class PanelReportBoyacaAverageSpecies extends JPanel{
     public void paint(Graphics g){
         super.paint(g);
   
-            int long_red = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.BOCACHICO.getName())/100;
-            int long_green = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CACHAMA.getName())/100;
-            int long_blue = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CARPA.getName())/100;
-            int long_orange = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.RTRUCHA.getName())/100;
-            int long_yellow = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_NEGRA.getName())/100;
-            int long_pink = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA.getName())/100;
-            int long_gray = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName())/100;
-            int long_cian = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TRUCHA.getName())/100;
-            int long_magenta = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UCACHAMA.getName())/100;
-            int long_black = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName())/100;
-            int long_lightGray = (int)(double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())/100;
+            int long_red = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.BOCACHICO.getName())+500)/50;
+            int long_green = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CACHAMA.getName())+500)/50;
+            int long_blue = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.CARPA.getName())+500)/50;
+            int long_orange = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.RTRUCHA.getName())+500)/50;
+            int long_yellow = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_NEGRA.getName())+500)/50;
+            int long_pink = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA.getName())+500)/50;
+            int long_gray = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TILAPIA_O_MOJARRA_ROJA.getName())+500)/50;
+            int long_cian = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.TRUCHA.getName())+500)/50;
+            int long_magenta = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UCACHAMA.getName())+500)/50;
+            int long_black = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_NEGRA.getName())+500)/50;
+            int long_lightGray = (int)((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())+500)/50;
             
             g.setColor(Color.RED);
             g.fillRect(300, 40, long_red, 30);

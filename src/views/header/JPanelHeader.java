@@ -28,11 +28,11 @@ public class JPanelHeader extends JPanel{
 	
     private void initComponents(ActionListener actionListenner) {
     	jpUp =  new JPUp();
-    	jpUp.setPreferredSize(new Dimension(WIDTH_SCREEN-1200, 130));
+    	jpUp.setPreferredSize(new Dimension(300, 130));
     	jpUp.setBorder(BorderFactory.createEmptyBorder(5, 70, 0, 0));
     	add(jpUp, BorderLayout.WEST);
     	buttonsMenu = new JPanelButtonsMenu(actionListenner);
-        buttonsMenu.setPreferredSize(new Dimension(WIDTH_SCREEN-500, 100));
+        buttonsMenu.setPreferredSize(new Dimension(WIDTH_SCREEN-200, 100));
         add(buttonsMenu, BorderLayout.EAST);
    
     }

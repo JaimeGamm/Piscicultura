@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
@@ -19,7 +20,7 @@ import exceptions.EmptyFieldsException;
 import exceptions.NoExistException;
 import general.HandlerLanguage;
 import models.FishFarm;
-import models.Pond;
+import models.Employee;
 import persistence.DemoJsonConsume;
 import persistence.GeneradorPDF;
 import persistence.JsonFileManager;
@@ -28,7 +29,7 @@ import views.MyJFramePpal;
 import views.WelcomePanel;
 import views.table.JtableElement;
 
-public class Control implements ActionListener{
+public class Controller implements ActionListener{
 	
 	private static final String NAME_FILE_CONFIG = "config.init";
 	
@@ -41,13 +42,39 @@ public class Control implements ActionListener{
 	private WelcomePanel panel;
 //    private JDialogOne errorSave;
 	
-    public Control() throws IOException, DeserializationException{
+    public Controller() throws IOException, DeserializationException{
     	demoJsonConsume= new DemoJsonConsume();
     	jsonFileManager = new JsonFileManager();
 		fishFarm = new FishFarm();
-		panel = new WelcomePanel(this);
-		panel.setVisible(true);
+//		panel = new WelcomePanel(this);
+//		panel.setVisible(true);
     	loadConfiguration();
+    	try {
+			inDatasWed();
+			try {
+				framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+			} catch (IOException | DeserializationException e1) {
+				e1.printStackTrace();
+			}
+			framePpal.addTable(fishFarm.toMatrixVector2(), this);
+	    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca(), this);	
+	    	getAndShowInformationPonds();	
+		} catch (IOException | DeserializationException e1) {
+			e1.printStackTrace();
+		}	
+//    	try {
+//			inDatas();
+//			try {
+//				framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+//			} catch (IOException | DeserializationException e1) {
+//				e1.printStackTrace();
+//			}
+//			framePpal.addTable(fishFarm.toMatrixVector2(), this);
+//	    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca(), this);	
+//	    	getAndShowInformationPonds();	
+//		} catch (IOException | DeserializationException e1) {
+//			e1.printStackTrace();
+//		}
 //    	inDatasWed();
 //    	inDatas();
 //    	framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
@@ -58,8 +85,10 @@ public class Control implements ActionListener{
     public void loadDatas() {
     	
     }
+    
 	
-    public void actionPerformed(ActionEvent e){
+    @SuppressWarnings("incomplete-switch")
+	public void actionPerformed(ActionEvent e){
     	switch (Commands.valueOf(e.getActionCommand())) {
     	case ADD:
             openDialogAdd();
@@ -91,14 +120,18 @@ public class Control implements ActionListener{
    
     		break;
     	case SEE_LIST:
-    		framePpal.actualizarPantalla();
     		framePpal.visibleTable(true); 
-    		framePpal.removerPanelGraphics();
+    		framePpal.visibleGrafics(false);
             framePpal.visibletableReport(false);
-            framePpal.actualizarPantalla();
+            framePpal.visibleImages(false);
+            framePpal.visibleFooter(false);
             break;
-    	case GET_OUT:
-            endProgram();
+    	case HOME:
+    		framePpal.visibleTable(false); 
+    		framePpal.visibleGrafics(false);
+            framePpal.visibletableReport(false);
+            framePpal.visibleImages(true);
+            framePpal.visibleFooter(true);
             break;
     	case CLOSE_ADD_DIALOG:
     		if(framePpal.componentsAddDialogEmpty() == true) {
@@ -125,7 +158,10 @@ public class Control implements ActionListener{
             framePpal.closeDialogDelete();
             break;
     	case ENTER_REPORT:
+    		framePpal.visibleGrafics(true);
             framePpal.visibleTable(false);
+            framePpal.visibleImages(false);
+            framePpal.visibleFooter(false);
             framePpal.visibletableReport(true);
             try {
 				framePpal.tabledeReport(estadoDeJComboReport(framePpal.estadoJComboReport()),estadoDeJComboReportHash(framePpal.estadoJComboReport()));
@@ -139,6 +175,21 @@ public class Control implements ActionListener{
 		case SPANISH:	
 			manageChangeLanguageES();
 			break;
+		case FB1:
+			openFB1();
+			break;
+		case FB2:
+			openFB2();
+			break;
+		case IN1:
+			openIN1();
+			break;
+		case IN2:
+			openIN2();
+			break;
+		case TW1:
+			openTW1();
+			break;
 		case WEB:
 			try {
 				inDatasWed();
@@ -148,44 +199,90 @@ public class Control implements ActionListener{
 				} catch (IOException | DeserializationException e1) {
 					e1.printStackTrace();
 				}
-				framePpal.addTable(fishFarm.toMatrixVector2());
-		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
+				framePpal.addTable(fishFarm.toMatrixVector2(), this);
+		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca(), this);	
 		    	getAndShowInformationPonds();	
 			} catch (IOException | DeserializationException e1) {
 				e1.printStackTrace();
 			}
 			break;
-		case JSON:
-			try {
-				inDatas();
-				panel.setVisible(false);
-				try {
-					framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
-				} catch (IOException | DeserializationException e1) {
-					e1.printStackTrace();
-				}
-				framePpal.addTable(fishFarm.toMatrixVector2());
-		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
-		    	getAndShowInformationPonds();	
-			} catch (IOException | DeserializationException e1) {
-				e1.printStackTrace();
-			}
-			break;
-		default:
-			break;
+//		case JSON:
+//			try {
+//				inDatas();
+//				panel.setVisible(false);
+//				try {
+//					framePpal = new MyJFramePpal(this, fishFarm.toMatrixVector2());
+//				} catch (IOException | DeserializationException e1) {
+//					e1.printStackTrace();
+//				}
+//				framePpal.addTable(fishFarm.toMatrixVector2());
+//		    	framePpal.addTableReport(toMatrixVectorAverageSpeciesPriceInBoyaca());	
+//		    	getAndShowInformationPonds();	
+//			} catch (IOException | DeserializationException e1) {
+//				e1.printStackTrace();
+//			}
+//			break;
+//		default:
+//			break;
 		}	
     }
 
     
-    @SuppressWarnings({"static-access" })
+
+	@SuppressWarnings("static-access")
 	private void inDatasWed() throws FileNotFoundException, IOException, DeserializationException {
-		for(Pond pond:demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json")) {
-			fishFarm.addPond(pond);
+		try{
+			for(Employee pond:demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json")) {
+				fishFarm.addPond(pond);
+			}
+		}catch (NullPointerException e) {
+			inDatas();
 		}
+		
     }
+	
+	private void openFB1() {
+		try {
+			Desktop.getDesktop().browse(new URI("https://www.facebook.com/profile.php?id=100007493149183&ref=bookmarks"));
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	private void openFB2() {
+		try {
+			Desktop.getDesktop().browse(new URI("https://www.facebook.com/jaime.saenzgamboa"));
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	private void openIN1() {
+		try {
+			Desktop.getDesktop().browse(new URI("https://www.instagram.com/ivanalexism.c/"));
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	private void openIN2() {
+		try {
+			Desktop.getDesktop().browse(new URI("https://www.instagram.com/jaimesaenzgamboa/"));
+		}catch(Exception e) {
+			
+		}
+	}
+	
+	private void openTW1() {
+		try {
+			Desktop.getDesktop().browse(new URI("https://twitter.com/5710dbc6348847f"));
+		}catch(Exception e) {
+			
+		}
+	}
     
 	private void inDatas() throws FileNotFoundException, IOException, DeserializationException {
-		for(Pond pond: jsonFileManager.readFile(Constants.ROUTE_DATA)) {
+		for(Employee pond: jsonFileManager.readFile(Constants.ROUTE_DATA)) {
 			fishFarm.addPond(pond);
 		}
 	}
@@ -271,7 +368,7 @@ public class Control implements ActionListener{
     	framePpal.openDialogSaveDatos();
     }
     
-  
+
 	
     private void closeDialogAdd() {
     	createAndAddPond();
@@ -280,7 +377,7 @@ public class Control implements ActionListener{
     }
     private long addId() {
     	long actualNumber =0;
-       	for(Pond pond:fishFarm.getPonds()) {
+       	for(Employee pond:fishFarm.getPonds()) {
        		if(actualNumber <pond.getId()) {
        			actualNumber =pond.getId();
        		}
@@ -304,7 +401,7 @@ public class Control implements ActionListener{
     	try {
            if(framePpal.componentsAddDialogEmpty() == true) {
         		framePpal.reiniciarTable();
-            	Pond pond =framePpal.actualizarTable();
+            	Employee pond =framePpal.actualizarTable();
             	pond.setId(addId());
             	fishFarm.addPond(pond);
             	framePpal.cargaDeNuevoTabla(fishFarm.toMatrixVector2());
@@ -318,7 +415,7 @@ public class Control implements ActionListener{
     private void deletePond() {
     	try {
             if(framePpal.componentsDeleteDialogEmpty()) {
-            	Pond pond = fishFarm.searchPond(framePpal.getIdDeletDialog());
+            	Employee pond = fishFarm.searchPond(framePpal.getIdDeletDialog());
             	if(pond != null) {
                     if(framePpal.showMessageConfirmationDelete() == framePpal.jOptionPaneYesOption()) {
                     	framePpal.reiniciarTable();
@@ -336,12 +433,12 @@ public class Control implements ActionListener{
     	}
     }
 	
-    private void endProgram() {
-    	if(framePpal.showMessageConfirmation() == framePpal.jOptionPaneYesOption()) {
-    		framePpal.showMessage();
-    		System.exit(0);	
-    	}
-    }
+//    private void endProgram() {
+//    	if(framePpal.showMessageConfirmation() == framePpal.jOptionPaneYesOption()) {
+//    		framePpal.showMessage();
+//    		System.exit(0);	
+//    	}
+//    }
 	
     private void getAndShowInformationPonds() {
     	framePpal.getPondsList(fishFarm.getInformationByPond());

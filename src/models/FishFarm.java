@@ -6,38 +6,38 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.json.simple.DeserializationException;
-import models.Pond;
+import models.Employee;
 import persistence.JsonFileManager;
 import persistence.Utilities;
 
 public class FishFarm {
 	
-	private ArrayList<Pond> ponds; 
+	private ArrayList<Employee> ponds; 
     private JsonFileManager jsonFileManager;
 	 
 	
     public FishFarm() throws IOException, DeserializationException{
     	jsonFileManager = new JsonFileManager();
-    	this.ponds = new ArrayList<Pond>();	
+    	this.ponds = new ArrayList<Employee>();	
     }
     
 //    public ArrayList<Pond> crearListPonds() throws FileNotFoundException, IOException, DeserializationException{
 //    	return fileManager.readFile(Constants.ROUTE_DATA);
 //    }
 	
-    public static Pond createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
-    	return new Pond(year, municipality, specie, seeded, harvested, weight, production, price);
+    public static Employee createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
+    	return new Employee(year, municipality, specie, seeded, harvested, weight, production, price);
     }
     
 	public ArrayList<Object[]> toMatrixVector2() {
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			datas.add( Utilities.concatObjectArrays2( register.toObjectVector()) );
 		}
 		return datas;
 	}
 	
-    public void addPond(Pond pond) {
+    public void addPond(Employee pond) {
 	boolean ubication = false;
 	int i = 0;
 	while(ubication == false && i < this.ponds.size()) {
@@ -51,7 +51,7 @@ public class FishFarm {
         ponds.add(pond);
     }
     
-	public void setPondList(ArrayList<Pond> pondsList)throws FileNotFoundException, IOException, DeserializationException {
+	public void setPondList(ArrayList<Employee> pondsList)throws FileNotFoundException, IOException, DeserializationException {
 		this.ponds = pondsList;
 	}
 	
@@ -66,13 +66,13 @@ public class FishFarm {
 //    	return soughtPOnd;
 //    }
 	@SuppressWarnings({ "unused", "rawtypes" })
-	public Pond searchPond(long id){
+	public Employee searchPond(long id){
 		long i = 0;
-		Pond soughtPOnd = null;
+		Employee soughtPOnd = null;
 		 Iterator it = ponds.iterator();
 		 while(it.hasNext()){
 			 Object obj=it.next();
-			 Pond newPond=(Pond)obj;
+			 Employee newPond=(Employee)obj;
 			  if(newPond.getId() ==id){
 				  soughtPOnd= newPond;
 			  }
@@ -81,7 +81,7 @@ public class FishFarm {
 		return soughtPOnd;
 	}
 	
-    public void editPond(Pond runner) {
+    public void editPond(Employee runner) {
     	boolean runnerEdit = false;
     	int i = 0;
     	while(runnerEdit == false && i < this.ponds.size()) {
@@ -93,7 +93,7 @@ public class FishFarm {
 		}
     }
 	
-    public void deletePond(Pond pondToRemove) {
+    public void deletePond(Employee pondToRemove) {
     	this.ponds.remove(pondToRemove);
     }
 	
@@ -105,17 +105,17 @@ public class FishFarm {
     	return info;
     }
 
-	public ArrayList<Pond> getPonds() {
+	public ArrayList<Employee> getPonds() {
 		return ponds;
 	}
 
-	public void setPonds(ArrayList<Pond> ponds) {
+	public void setPonds(ArrayList<Employee> ponds) {
 		this.ponds = ponds;
 	}
 	
 	public long maxYear() {
 		long year = 0;
-		for(Pond pond: ponds) {
+		for(Employee pond: ponds) {
 			if(pond.getYear() > year) {
 				year = pond.getYear();
 			}
@@ -125,7 +125,7 @@ public class FishFarm {
 	
 	public long minYear() {
 		long year = Long.MAX_VALUE;
-		for(Pond pond: ponds) {
+		for(Employee pond: ponds) {
 			if(pond.getYear() < year) {
 				year = pond.getYear();
 			}
@@ -144,7 +144,7 @@ public class FishFarm {
 	
 	public double quantityPondByYear(long year) {
 		double count = 0;
-		for(Pond register : ponds) {
+		for(Employee register : ponds) {
 			if(year == register.getYear()) {
 				count++;
 			}
@@ -156,7 +156,7 @@ public class FishFarm {
 		double countSpecieProduction =0;
 		double numero = 0;
 		double average=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(mySpecie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getWeight();
 				numero++;
@@ -171,7 +171,7 @@ public class FishFarm {
 		double countSpecieProduction =0;
 		double numero = 0;
 		double average=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(mySpecie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getHaversted();
 				numero++;
@@ -211,7 +211,7 @@ public class FishFarm {
 		double countSpeciePrice =0;
 		double numero = 0;
 		double average=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpeciePrice += register.getPrice();
 				numero++;
@@ -236,7 +236,7 @@ public class FishFarm {
 		double countSpecieProduction =0;
 		double numero = 0;
 		double average=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getProduction();
 				numero++;
@@ -248,7 +248,7 @@ public class FishFarm {
 	
 	public double countAnimalsHarvestedInPuertoBoyaca(String specie) {
 		double countSpecieProduction =0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(register.getMunicipality().equals(TypeMunicipality.PUERTO_BOYACA.getName())) {
 				if(specie.equals(register.getSpecie())) {
 					countSpecieProduction += register.getHaversted();
@@ -260,7 +260,7 @@ public class FishFarm {
 	
 	public double countAnimalsHarvestedTotal(String specie) {
 		double countSpecieProduction =0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getHaversted();
 			}
@@ -316,7 +316,7 @@ public class FishFarm {
 		double countMunicipality =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			tote+=register.getProduction();
 			if(municipality.equals(register.getMunicipality())) {
 				countMunicipality += register.getProduction();
@@ -335,7 +335,7 @@ public class FishFarm {
 		double countSpecie =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			tote+=register.getProduction();
 			if(specie.equals(register.getSpecie())) {
 				countSpecie += register.getProduction();
@@ -349,7 +349,7 @@ public class FishFarm {
 		double countSpecie =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Pond register : ponds) {
+		for (Employee register : ponds) {
 			tote+=register.getSeeded();
 			if(specie.equals(register.getSpecie())) {
 				countSpecie += register.getSeeded();

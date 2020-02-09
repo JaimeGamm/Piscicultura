@@ -23,6 +23,7 @@ public class JPUp extends JPanel{
     public void initComponents(){
     	iconLabel = new IconLabel();
     	iconLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+    	iconLabel.setOpaque(false);
     	add(iconLabel, BorderLayout.WEST);
     }
 

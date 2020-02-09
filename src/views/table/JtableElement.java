@@ -3,17 +3,21 @@ package views.table;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Panel;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 import general.HandlerLanguage;
 import views.Constants;
+import views.PLogoTable;
+import views.PTextLabel;
+import views.footer.Footer;
 
 public class JtableElement extends JPanel{
 	/**
@@ -27,12 +31,35 @@ public class JtableElement extends JPanel{
 	private DefaultTableModel dtmElements;
 	private JTable jtElements;
 	private JScrollPane jsTable;
+    private PLogoTable logoTable;
+    private PTextLabel label;
+    private Footer footer;
+    private Panel jPanel;
 	
-	public JtableElement() {
+	public JtableElement(ActionListener actionListenner) {
+		logoTable = new PLogoTable();
+		logoTable.setPreferredSize(new Dimension(WIDTH_SCREEN-50,100));
+		logoTable.setBackground(Color.WHITE);;
+		this.add(logoTable);
+		label = new PTextLabel(actionListenner);
+		label.setPreferredSize(new Dimension(WIDTH_SCREEN-50,40));
+		add(label);
 		initComponents();
+		jPanel = new Panel();
+		jPanel.setPreferredSize(new Dimension(WIDTH_SCREEN-50,230));
+		jPanel.setBackground(Color.white);
+		add(jPanel);
+		footer = new Footer(actionListenner);
+		footer.setPreferredSize(new Dimension(WIDTH_SCREEN, 150));
+    	add(footer, BorderLayout.SOUTH);
 	}
+	
+	public void changeLanguage() {
+		label.changeLanguage();
+	}
+
+	
 	private void initComponents() {
-		this.setLayout(new BoxLayout(this,BoxLayout.PAGE_AXIS));
 		this.setBackground(Color.white);
 		dtmElements=new DefaultTableModel();
 		changeLanguageColunmJtable();
@@ -51,10 +78,10 @@ public class JtableElement extends JPanel{
 		jtElements.setBorder(null);
 		jsTable = new JScrollPane(jtElements);
 		jsTable.setBorder(null);
+		jsTable.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 600));
 		jsTable.setAlignmentX(Component.LEFT_ALIGNMENT);
-		this.add(jsTable,BorderLayout.PAGE_END);
+		this.add(jsTable);
 		setBorder(null);
-		
 	}
 	
 	public void changeLanguageColunmJtable(){

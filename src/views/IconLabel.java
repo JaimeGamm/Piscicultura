@@ -13,7 +13,7 @@ public class IconLabel extends JLabel{
 	private static final long serialVersionUID = 1L;
 
 	public IconLabel() {
-        ImageIcon originalImage = new ImageIcon(Constants.LOGO_HEAD_PATH);
+        ImageIcon originalImage = new ImageIcon(Constants.LOGO_PATH);
         ImageIcon scaleIcon = new ImageIcon(originalImage.getImage().getScaledInstance(110, 100, java.awt.Image.SCALE_DEFAULT));
         setText(Constants.NAME_PAGE);
         setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 20));
@@ -21,8 +21,8 @@ public class IconLabel extends JLabel{
 		setIcon(scaleIcon);
 		setVerticalTextPosition(SwingConstants.BOTTOM);
 		setHorizontalTextPosition(SwingConstants.CENTER);
-		setBackground(Color.WHITE);
-		setForeground(Color.BLACK);
+		setOpaque(false);
+		setForeground(Color.WHITE);
 		setOpaque(true);
         
     }   

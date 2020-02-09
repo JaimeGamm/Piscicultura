@@ -5,11 +5,11 @@ import java.io.IOException;
 
 import org.json.simple.DeserializationException;
 
-import controller.Control;
+import controller.Controller;
 
 public class Run {
 	public static void main(String[] args) throws FileNotFoundException, IOException, DeserializationException {
-       new Control(); 
+       new Controller(); 
 	}   
 }
 

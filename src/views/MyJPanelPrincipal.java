@@ -10,6 +10,7 @@ import views.reports.PanelReportBoyacaAverageSpecies;
 import views.reports.PanelReportHarvestedPuertoBoyaca;
 import views.reports.PanelReportHarvestedTotal;
 import views.reports.PanelReportMunicipalityPercentaje;
+import views.reports.PanelReportWeightAvarage;
 import views.reports.ReportYear;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -39,7 +40,12 @@ public class MyJPanelPrincipal extends JPanel{
     private Panel panelGraphics;
     private Footer footer;
     private JPBody body;
-
+    private JLabel titlePanel;
+    private PanelReportHarvestedTotal panel;
+    private PanelReportBoyacaAverageSpecies panel1;
+    private PanelReporrtPercentajeOfSpeciesInBoyaca panel2;
+    private PanelReportHarvestedPuertoBoyaca panel3;
+    private PanelReportWeightAvarage panel4;
 	
     public MyJPanelPrincipal(ActionListener actionListenner, ArrayList<Object[]> datasFarm) {
 		panelGraphics = new Panel();
@@ -57,15 +63,13 @@ public class MyJPanelPrincipal extends JPanel{
     	jPanelHeader.setPreferredSize(new Dimension(WIDTH_SCREEN, 135));
     	add(jPanelHeader,BorderLayout.NORTH);
     	body =new JPBody();
-    	body.setPreferredSize(new Dimension(WIDTH_SCREEN, 610));
-    	add(body,BorderLayout.CENTER);
-//    	showDatas(datasFarm);	
-    	footer = new Footer();
-    	footer.setPreferredSize(new Dimension(WIDTH_SCREEN, 130));
+    	body.setPreferredSize(new Dimension(WIDTH_SCREEN, 1000));
+    	add(body,BorderLayout.CENTER);	
+    	footer = new Footer(actionListenner);
+    	footer.setPreferredSize(new Dimension(WIDTH_SCREEN, 150));
     	add(footer, BorderLayout.SOUTH);
     }
     
-   
 
     private void startPanelGraphics() {
     	panelGraphics.setBackground(Color.black);
@@ -74,36 +78,58 @@ public class MyJPanelPrincipal extends JPanel{
     	panelGraphics.setPreferredSize(new Dimension(530,530));
 
 	}
+    
+    public void visibleGrafics(boolean status){
+    	panelGraphics.setVisible(status);
+    }
+    
     public void changeLanguage() { 
     	jtableElement.changeLanguageColunmJtable();
     	jPanelHeader.changeLanguageButtonsMenu();
     	footer.changeLanguage();
+    	body.changeLanguage();
+    	jtableElement.changeLanguage();
 	}
     public void changeLanguageJtableReport(String titule1, String operation) { 
     	jtableReport.changeLanguageColunmJtableR(titule1, operation);
 	}
     
-	public void showDatas(ArrayList<Object[]> datasFarm) {
-		jtableElement = new JtableElement();
-	    jtableElement.setPreferredSize(new Dimension(1300,450));
+	public void showDatas(ArrayList<Object[]> datasFarm,  ActionListener actionListenner) {
+		jtableElement = new JtableElement(actionListenner);
+	    jtableElement.setPreferredSize(new Dimension(WIDTH_SCREEN-100,1200));
 		for (Object[] objects : datasFarm) {
 			jtableElement.addElementTOtable(objects);
 		}
-		this.add(jtableElement,BorderLayout.CENTER);
+		add(jtableElement,BorderLayout.CENTER);
 	}
-	public void showDatasReport(ArrayList<Object[]> datasFarm) {
-		jtableReport = new JtableReport("ESPECIES", "PROMEDIO");
+	
+//	public void initPAdd(ActionListener actionListener) {
+//		dialogTwo = new JDialogTwo(actionListener);
+//		dialogTwo.setPreferredSize(new Dimension(500,750));
+//		add(dialogTwo);
+//	}
+	
+	public void showDatasReport(ArrayList<Object[]> datasFarm, ActionListener actionLsitener) {
+		jtableReport = new JtableReport(Constants.SPECIE, Constants.AVERAGE);
+		jtableReport.setPreferredSize(new Dimension(WIDTH_SCREEN-600, 500));
 		for (Object[] objects : datasFarm) {
 			jtableReport.addElementTOtable(objects);
 		}
-     
-		this.add(jtableReport,BorderLayout.CENTER);
+		this.add(jtableReport,BorderLayout.NORTH);
 	}
 	
-	public void visibletableReport(boolean estado) {
-		jtableReport.setVisible(estado);
+	public void visibletableReport(boolean status) {
+		jtableReport.setVisible(status);
 	}
 	
+	public void visibleFooter(boolean status) {
+		footer.setVisible(status);
+	}
+	
+	
+	public void visibleImages(boolean status) {
+		body.setVisible(status);
+	}
 
 	public void newDatas(ArrayList<Object[]> datasFarm) {
 		for (Object[] objects : datasFarm) {
@@ -145,9 +171,11 @@ public class MyJPanelPrincipal extends JPanel{
 	public void addGragicaPanelReportBoyaca(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
 		JLabel titlePanel = startJlabel(title);
 		panelGraphics.add(titlePanel);
-		panelGraphics.add(new PanelReportBoyacaAverageSpecies(SpeciesPriceInBoyaca));
+		panel1 = new PanelReportBoyacaAverageSpecies(SpeciesPriceInBoyaca);
+		panel1.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 520));
+		panelGraphics.add(panel1);
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(1000,530));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
 		this.add(panelGraphics);
 		HandlerLanguage.languageProperties.getProperty(title);
 	}
@@ -155,18 +183,22 @@ public class MyJPanelPrincipal extends JPanel{
 	public void addGragicaPanelReportPBoyaca(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
 		JLabel titlePanel = startJlabel(title);
 		panelGraphics.add(titlePanel);
-		panelGraphics.add(new PanelReportHarvestedPuertoBoyaca(SpeciesPriceInBoyaca));
+		panel3 = new PanelReportHarvestedPuertoBoyaca(SpeciesPriceInBoyaca);
+		panel3.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 520));
+		panelGraphics.add(panel3);
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(1000,530));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
 		this.add(panelGraphics);
 	}
 	
 	public void addGragicaHarvestedTotal(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
 		JLabel titlePanel = startJlabel(title);
 		panelGraphics.add(titlePanel);
-		panelGraphics.add(new PanelReportHarvestedTotal(SpeciesPriceInBoyaca));
+		panel = new PanelReportHarvestedTotal(SpeciesPriceInBoyaca);
+		panel.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 520));
+		panelGraphics.add(panel);
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(1000,530));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
 		this.add(panelGraphics);
 	}
 	
@@ -175,19 +207,31 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new ReportYear(year));
     	panelGraphics.setBackground(Color.black);
-    	panelGraphics.setPreferredSize(new Dimension(530,530));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
 		this.add(panelGraphics);
-
 	}
 	
 	public void addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
 		JLabel titlePanel = startJlabel(title);
 		panelGraphics.add(titlePanel);
-		panelGraphics.add(new PanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca));
+		panel2 = new PanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca);
+		panel2.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 520));
+		panelGraphics.add(panel2);
     	panelGraphics.setBackground(new Color(20, 20, 20));
-    	panelGraphics.setPreferredSize(new Dimension(1000,530));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
 		this.add(panelGraphics);
 
+	}
+	
+	public void addGraficaPanelReporrtPercentajeOfWeight(HashMap<String, Double> SpeciesPriceInBoyaca, String title) throws IOException, DeserializationException {
+		JLabel titlePanel = startJlabel(title);
+		panelGraphics.add(titlePanel);
+		panel4 = new PanelReportWeightAvarage(SpeciesPriceInBoyaca);
+		panel4.setPreferredSize(new Dimension(WIDTH_SCREEN-100, 520));
+		panelGraphics.add(panel4);
+    	panelGraphics.setBackground(new Color(20, 20, 20));
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,530));
+		this.add(panelGraphics);
 	}
 	
 	public void addGraficaPanelReporrtPercentajeOfMunicipality(HashMap<String, Double> municipality, String title) throws IOException, DeserializationException {
@@ -195,12 +239,14 @@ public class MyJPanelPrincipal extends JPanel{
 		panelGraphics.add(titlePanel);
 		panelGraphics.add(new PanelReportMunicipalityPercentaje(municipality));
     	panelGraphics.setBackground(new Color(30, 30, 30));
-    	panelGraphics.setPreferredSize(new Dimension(1000,590)); 
+    	panelGraphics.setPreferredSize(new Dimension(WIDTH_SCREEN-100,590)); 
 		this.add(panelGraphics);
 
 	}
+	
 	private JLabel startJlabel(String title) {
-		JLabel titlePanel = new JLabel(title);
+		titlePanel = new JLabel();
+		titlePanel.setText(title);
 		titlePanel.setFont(new Font(Constants.FONT_RUBIK, 1, 16));
 		titlePanel.setForeground(Color.white);
 		return titlePanel;
@@ -208,7 +254,6 @@ public class MyJPanelPrincipal extends JPanel{
 	public void removerPanelGraphics() {
 		panelGraphics.removeAll();
 		panelGraphics.repaint();
-	
 	}
 
 	public JtableElement getJtableElement() {

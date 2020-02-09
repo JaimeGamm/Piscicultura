@@ -15,11 +15,11 @@ public class LabelFooter extends JLabel{
 	
 	public void initComponets() {
 		setText(HandlerLanguage.languageProperties.getProperty(Constants.FOOTER_TEXT));
-		setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 30));
-		setForeground(Color.white);
+		setFont(new Font(Constants.FONT_RUBIK, Font.PLAIN, 18));
+		setForeground(Color.WHITE);
 	}
 	
 	public void changeLanguage() {
-		HandlerLanguage.languageProperties.getProperty(Constants.FOOTER_TEXT);
+		setText(HandlerLanguage.languageProperties.getProperty(Constants.FOOTER_TEXT));
 	}
 }

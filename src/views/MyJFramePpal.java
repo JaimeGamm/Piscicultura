@@ -16,7 +16,7 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import org.json.simple.DeserializationException;
 import general.HandlerLanguage;
-import models.Pond;
+import models.Employee;
 
 public class MyJFramePpal extends JFrame{
 	
@@ -53,22 +53,27 @@ public class MyJFramePpal extends JFrame{
     	welcomePanel.setVisible(false);
     }
     
-    public Pond actualizarTable() {
+    public Employee actualizarTable() {
     	panel.restartTable();
-    	Pond pond=dialogAdd.createRunner();
+    	Employee pond=dialogAdd.createRunner();
     	return pond;
     }
     public JtableElement obtenerTabla() {
     	return panel.getJtableElement();
     }
     
-    public void addTable(ArrayList<Object[]> datasFarm) {
-    	panel.showDatas(datasFarm);
+    public void addTable(ArrayList<Object[]> datasFarm, ActionListener actionListener) {
+    	panel.showDatas(datasFarm, actionListener);
     	panel.visibleTable(false);
     }
     
-    public void addTableReport(ArrayList<Object[]> datasFarm) {
-    	panel.showDatasReport(datasFarm);
+//    public void addPAdd(ActionListener actionListener) {
+//    	panel.initPAdd(actionListener);
+//    	panel.visiblePAdd(false);
+//    }
+    
+    public void addTableReport(ArrayList<Object[]> datasFarm, ActionListener actionListener) {
+    	panel.showDatasReport(datasFarm, actionListener);
     	panel.visibletableReport(false); 
     }
 	public void reiniciarTable() {
@@ -82,11 +87,8 @@ public class MyJFramePpal extends JFrame{
 		dialogAdd.changeLanguage();
 		dialogDelete.changeLanguage();
 		changeLanguageJtableReport();
-		
-		
-//		changeLanguageColunmJtableR();
-	}
 
+	}
     
     public void getPondsList(ArrayList<Object[]> info) {
     	//panel.getPondsList(info);
@@ -104,11 +106,11 @@ public class MyJFramePpal extends JFrame{
     public void openDialogAdd() {
     	dialogAdd.setVisible(true);
     }
+    
     public void openDialogSaveDatos() {
     	jDialogSaveDatos.setVisible(true);
     }
     
-	
     public void openDialogDelete() {
     	dialogDelete.setVisible(true); 
     }
@@ -140,7 +142,7 @@ public class MyJFramePpal extends JFrame{
     } 
 	
 	 
-    public Pond getRunnerFromDialog() {
+    public Employee getRunnerFromDialog() {
     	return dialogAdd.createRunner();
     }
 	
@@ -196,8 +198,20 @@ public class MyJFramePpal extends JFrame{
 		panel.visibletableReport(estado);
 	}
 	
+	public void visibleImages(boolean status) {
+		panel.visibleImages(status);
+	}
+	
+	public void visibleFooter(boolean status) {
+		panel.visibleFooter(status);
+	}
+	
 	public void removerPanelGraphics() {
 		panel.removerPanelGraphics();
+	}
+	
+	public void visibleGrafics(boolean status){
+		panel.visibleGrafics(status);
 	}
 	
 //	public void changeLanguageColunmJtableR(){
@@ -212,6 +226,7 @@ public class MyJFramePpal extends JFrame{
 //		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE));
 //		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE));
 //	}
+	
 	private void changeLanguageJtableReport() {
 		if(numero==1) {
 			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PRICE_ANIMAL);
@@ -238,25 +253,25 @@ public class MyJFramePpal extends JFrame{
 	
 //	private void changeLanguageGraficReport() {
 //		if(numero==1) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PRICE_ANIMAL);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE));
 //		}else if(numero==2) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED));
 //		}else if(numero==3) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.AVERAGE);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE));
 //		}else if(numero==4) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE));
 //		}else if(numero==5) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PERCENTAGE);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
 //		}else if(numero==6) {
-//			panel.changeLanguageJtableReport(Constants.YEAR,Constants.PONDS_BY_YEAR);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
 //		}else if(numero==7) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.WEIGHT_ANIMAL);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
 //		}else if(numero==8) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED));
 //		}else if(numero==9) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA));
 //		}else if(numero==10) {
-//			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.HARVESTED_ANIMALS);
+//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED));
 //		}
 //	}
 	
@@ -316,7 +331,7 @@ public class MyJFramePpal extends JFrame{
 			if(numero!=7 || panel.getComponentCount()>2) {
 				panel.removerPanelGraphics();
 			} 
-			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
+			panel.addGraficaPanelReporrtPercentajeOfWeight(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
 			actualizarPantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED))) {
     		numero=8;

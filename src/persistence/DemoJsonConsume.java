@@ -19,18 +19,19 @@ import org.json.simple.JsonArray;
 import org.json.simple.JsonObject;
 import org.json.simple.Jsoner;
 
-import models.Pond;
+import models.Employee;
 import views.Constants;
 
 public class DemoJsonConsume {
-	public static  ArrayList<Pond>  readSports(String webServicePath) throws IOException, DeserializationException{
-		ArrayList<Pond> fishFarmingRegisterList  = new ArrayList<>();		
+	
+	public static  ArrayList<Employee>  readSports(String webServicePath) throws IOException, DeserializationException{
+		ArrayList<Employee> fishFarmingRegisterList  = new ArrayList<>();		
 		BufferedReader br = new BufferedReader(new InputStreamReader(getHttpURLConnection(false,webServicePath)));
 		JsonArray listPrincipal= (JsonArray)Jsoner.deserialize(br);
 		long id=1;
 		
 		for(Object object: listPrincipal) {
-			Pond pond =null;
+			Employee pond =null;
 			try {
 				JsonObject registerObj =(JsonObject)object;
 				String municipality = registerObj.getString(Constants.MUNICIPALITY_KEY);
@@ -42,7 +43,7 @@ public class DemoJsonConsume {
 				long estimatedProduction=Long.parseLong(registerObj.getString(Constants.PRODUCTION_KEY));
 				long price=Long.parseLong(registerObj.getString(Constants.PRICE_KEY));
 				id++;
-				pond = new Pond(year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
+				pond = new Employee(year, municipality,specie,seededAnimals,harvestedAnimals,averageWeight,estimatedProduction,price);
 				pond.setId(id);
 				fishFarmingRegisterList.add(pond);	
 				} catch (NumberFormatException e) {
@@ -70,7 +71,6 @@ public class DemoJsonConsume {
 				if(inputStream == null )
 					System.out.println( Constants.MESSAGE_INPUT_ERROR );
 			}
-
 		}catch(ConnectException connectException) {
 			isProxy = true;
 			return getHttpURLConnection( isProxy, filePath );
@@ -89,7 +89,7 @@ public class DemoJsonConsume {
 	@SuppressWarnings({ "static-access", "unused" })
 	public static void main(String[] args) throws FileNotFoundException, IOException, DeserializationException {
 		DemoJsonConsume demoJsonConsume = new DemoJsonConsume();
-		ArrayList<Pond> fishFarmingRegisterList=demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json");
+		ArrayList<Employee> fishFarmingRegisterList=demoJsonConsume.readSports("https://www.datos.gov.co/resource/yi68-jjgw.json");
 		ArrayList<String>specie=new ArrayList<String>();
 		specie.add("s");
 		
