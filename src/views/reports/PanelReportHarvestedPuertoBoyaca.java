@@ -87,6 +87,7 @@ public class PanelReportHarvestedPuertoBoyaca  extends JPanel{
             g.drawString(Constants.UTILAPIA_O_MOJARRA+ " : " +String.valueOf((double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())), 6, 460);
        
     }
+    
     @Override 
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;

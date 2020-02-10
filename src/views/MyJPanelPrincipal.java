@@ -90,6 +90,7 @@ public class MyJPanelPrincipal extends JPanel{
     	body.changeLanguage();
     	jtableElement.changeLanguage();
 	}
+    
     public void changeLanguageJtableReport(String titule1, String operation) { 
     	jtableReport.changeLanguageColunmJtableR(titule1, operation);
 	}
@@ -102,12 +103,6 @@ public class MyJPanelPrincipal extends JPanel{
 		}
 		add(jtableElement,BorderLayout.CENTER);
 	}
-	
-//	public void initPAdd(ActionListener actionListener) {
-//		dialogTwo = new JDialogTwo(actionListener);
-//		dialogTwo.setPreferredSize(new Dimension(500,750));
-//		add(dialogTwo);
-//	}
 	
 	public void showDatasReport(ArrayList<Object[]> datasFarm, ActionListener actionLsitener) {
 		jtableReport = new JtableReport(Constants.SPECIE, Constants.AVERAGE);
@@ -148,7 +143,7 @@ public class MyJPanelPrincipal extends JPanel{
 	}
 	
 	public String estadoJComboReport() {
-		return jPanelHeader.estadoJComboReport();
+		return jPanelHeader.statusJComboReport();
 	}
 	
 	

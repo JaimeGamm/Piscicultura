@@ -33,14 +33,17 @@ public class JDialogSaveDatos extends JDialog{
 	 */
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> typeArchivo;
-    private AddJTextField2 direcion;
+    private AddJTextField2 direction;
     private JButtonsMenuAndDialogs buttonAcept, buttonCancel;
     private JRadioButton openFile;
+    private JLabel label;
+    private JButton button;
+    
 	 public JDialogSaveDatos(MyJFramePpal frame,ActionListener actionListenner) {
 	    	setMinimumSize(new Dimension(455,300));
 			setIconImage(new ImageIcon(Constants.ADD_PATH).getImage());
 			setLocationRelativeTo(frame);
-			setTitle("Guarda tabla");
+			setTitle(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_TABLE));
 			getRootPane().setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
 			setModal(true);
 			setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
@@ -56,6 +59,14 @@ public class JDialogSaveDatos extends JDialog{
 	       addButtonAceptAndCamcel(actionListenner);
 	      
 	    }
+	   
+	   public void changeLanguage() {
+		   this.setTitle(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_TABLE));
+		   label.setText(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_DATA_EXPORT));
+		   direction.setText(HandlerLanguage.languageProperties.getProperty(Constants.ROUTE));
+		   button.setText(HandlerLanguage.languageProperties.getProperty(Constants.CHOOSE_ROUTE));
+	   }
+	   
 	   private void addTitle() {
 		    Panel panel = new Panel();
 		    panel.setPreferredSize(new Dimension(450,30));
@@ -64,21 +75,16 @@ public class JDialogSaveDatos extends JDialog{
 			flowLayout.setHgap(5);
 			setLayout(flowLayout);
 			panel.setLayout(flowLayout); 
-	    	JLabel label = new JLabel("Selecione la ruta y el tipo de archivo que desea guardar");
-//	    	JLabel label2 = new JLabel("tipo de archivo que desea guardar");
+			label = new JLabel();
+	    	label.setText(HandlerLanguage.languageProperties.getProperty(Constants.SAVE_DATA_EXPORT));
 	    	label.setBorder(BorderFactory.createEmptyBorder(0, 0, 2, 0));
 	    	label.setForeground(Color.WHITE);
 	    	label.setHorizontalTextPosition(SwingConstants.CENTER);
 	    	label.setVerticalTextPosition(SwingConstants.CENTER);
 	    	label.setFont(new Font(Constants.FONT_RUBIK, 1, 14));
 	    	label.setBackground(new Color(50, 50, 50));
-//	    	label2.setForeground(Color.BLACK);
-//	    	label2.setHorizontalTextPosition(SwingConstants.CENTER);
-//	    	label2.setVerticalTextPosition(SwingConstants.CENTER);
-//	    	label2.setFont(new Font(Constants.FONT_RUBIK, 1, 14));
 	    	label.setOpaque(true);
 	    	panel.add(label);
-//	    	panel.add(label2);
 	    	this.add(panel,BorderLayout.CENTER);
 	   }
 	   
@@ -96,10 +102,13 @@ public class JDialogSaveDatos extends JDialog{
 		   typeArchivo.setFont(new Font(Constants.FONT_RUBIK, Font.ITALIC, 16));
 		   typeArchivo.addItem("PDF");
 		   typeArchivo.addItem("JSON");
+		   typeArchivo.addItem("XML");
+		   typeArchivo.addItem("BINARIO");
 		   typeArchivo.setPreferredSize(new Dimension(400,30));
 		   panel.add(typeArchivo);
 		   add(panel);
 	   }
+	   
 	   public void 	addTextField(ActionListener actionListenner) {
 		   Panel panel = new Panel();
 		    panel.setBackground(new Color(40, 40, 40));
@@ -107,19 +116,20 @@ public class JDialogSaveDatos extends JDialog{
 		   flowLayout.setHgap(5);
 		   panel.setLayout(flowLayout); 
 		   panel.setPreferredSize(new Dimension(460,60));
-		   direcion = new AddJTextField2("RUTA");
-		   direcion.setBackground(new Color(90, 90, 90));
-		   direcion.setForeground(Color.WHITE);
-		   JButton button = new JButton("Selecione ruta");
+		   direction = new AddJTextField2(HandlerLanguage.languageProperties.getProperty(Constants.ROUTE));
+		   direction.setText(HandlerLanguage.languageProperties.getProperty(Constants.ROUTE));
+		   direction.setBackground(new Color(90, 90, 90));
+		   direction.setForeground(Color.WHITE);
+		   button = new JButton();
+		   button.setText(HandlerLanguage.languageProperties.getProperty(Constants.CHOOSE_ROUTE));
 			button.setPreferredSize(new Dimension(136,40));
 			button.addActionListener(actionListenner);
 			button.setActionCommand(Commands.OPEN_J_CHOOSER.toString());
 			button.setFont(new Font(Constants.FONT_RUBIK, Font.BOLD, 14));
 			button.setBackground(new Color(90, 90, 90));
 			button.setForeground(Color.WHITE);
-			
 		   panel.setLayout(flowLayout); 
-		   panel.add(direcion);
+		   panel.add(direction);
 		   panel.add(button);
 		   add(panel);
 	   }
@@ -128,8 +138,7 @@ public class JDialogSaveDatos extends JDialog{
 		int opcion = dlg.showSaveDialog(this);
 		if(opcion == JFileChooser.APPROVE_OPTION) {
 			File f = dlg.getSelectedFile();
-			direcion.setText(f.toString());
-//			System.out.println(direcion.getText());
+			direction.setText(f.toString());
 		}
 	}
 	private void addButtonAceptAndCamcel(ActionListener actionListenner) {
@@ -139,7 +148,6 @@ public class JDialogSaveDatos extends JDialog{
 		   flowLayout.setHgap(16);
 		   panel.setLayout(flowLayout); 
 		   panel.setPreferredSize(new Dimension(420,40));
-		   
 			buttonAcept = new JButtonsMenuAndDialogs(HandlerLanguage.languageProperties.getProperty(Constants.ACCEPT),120,35);
 	    	buttonAcept.addActionListener(actionListenner);
 	    	buttonAcept.setActionCommand(Commands.ACEPT_SAVE.toString());
@@ -168,16 +176,20 @@ public class JDialogSaveDatos extends JDialog{
 		 panel.add(openFile);
 		 add(panel);
 	}
+	
 	public boolean estadoJRadioButton() {
 		return openFile.isSelected();
 	}
+	
 	public String estadoTypeArchivo() {
 		return (String)typeArchivo.getSelectedItem();
 	}
+	
 	public String getRuta() {
-		return direcion.getText();
+		return direction.getText();
 	}
+	
 	public void clearComponents() {
-		direcion.setText(null);
+		direction.setText(null);
 	}
 }

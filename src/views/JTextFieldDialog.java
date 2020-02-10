@@ -14,14 +14,11 @@ import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 public class JTextFieldDialog extends JTextField{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	  private Border titled;
 
 	public JTextFieldDialog(String text) {
-//		super(20);
 		setPreferredSize(new Dimension(380,35));
 		titled = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(55, 55, 55)), text, TitledBorder.LEFT, TitledBorder.TOP, null, Color.WHITE);
 		setForeground(Color.WHITE);
@@ -30,7 +27,6 @@ public class JTextFieldDialog extends JTextField{
 		setBorder(titled);
 		setBackground(new Color(90, 90, 90));
 		addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
@@ -38,19 +34,14 @@ public class JTextFieldDialog extends JTextField{
 			}
 		});
 		addKeyListener(new KeyListener() {
-			
 			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
-			
 			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
-			
 			@Override
 			public void keyPressed(KeyEvent e) {
 			String p = getText();
@@ -59,6 +50,7 @@ public class JTextFieldDialog extends JTextField{
 			}
 		});
 	}
+	
 	public void setBordeText(String text) {
 		titled = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(55, 55, 55)), text, TitledBorder.LEFT, TitledBorder.TOP, null, Color.WHITE);
 		setBorder(titled);

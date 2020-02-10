@@ -20,10 +20,7 @@ public class PanelReporrtPercentajeOfSpeciesInBoyaca  extends JPanel{
     public PanelReporrtPercentajeOfSpeciesInBoyaca(HashMap<String, Double> percentajeOfSpeciesPriceInBoyaca) throws IOException, DeserializationException {
     	this.percentajeOfSpeciesPriceInBoyaca=percentajeOfSpeciesPriceInBoyaca;
         initComponents();
-        setBackground(new Color(15, 15, 15));
-        
-//        setTitle(Constants.B_PRICE_REPORT);
-        
+        setBackground(new Color(15, 15, 15)); 
     }
     
                     
@@ -92,6 +89,7 @@ public class PanelReporrtPercentajeOfSpeciesInBoyaca  extends JPanel{
             g.fillRect(300, 440, long_lightGray, 30);
             g.drawString(Constants.UTILAPIA_O_MOJARRA+ " : " +String.valueOf((double)percentajeOfSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())), 6, 460);
         }
+    
     @Override 
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;

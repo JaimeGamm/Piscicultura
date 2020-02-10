@@ -596,6 +596,7 @@ public class PanelReportMunicipalityPercentaje  extends JPanel{
             g.drawString(TypeMunicipality.ZETAQUIRA.getName(), 900, 330);
             
     }
+    
     @Override 
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;

@@ -28,7 +28,6 @@ public class JButtonsMenuAndDialogs extends JButton{
         setBackground(Color.BLACK);
         setForeground(Color.WHITE);
         setPreferredSize(new Dimension(DIMENSION_WHIDTH,DIMENSION_HEIGHT));
-//        setIcon(convertToIcon(routeImage));
     	setBorderPainted(false);
         setCursor(new Cursor(Cursor.HAND_CURSOR));
         setHorizontalTextPosition(SwingConstants.CENTER);
@@ -60,16 +59,6 @@ public class JButtonsMenuAndDialogs extends JButton{
     	setBorderPainted(false);
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
-    
-//    @Override
-//	protected void paintComponent(Graphics g){
-//            super.paintComponent(g);
-//            Dimension arcs = new Dimension(30,40); //Border corners arcs {width,height}, change this to whatever you want
-//            int width = getWidth();
-//            int height = getHeight();
-//            Graphics2D graphics = (Graphics2D) g;
-//            graphics.drawRoundRect(0, 0, width-1, height-1, arcs.width, arcs.height);//paint border
-//	}
 	
     private static Icon convertToIcon(String route) {
     	ImageIcon icon = new ImageIcon(route);

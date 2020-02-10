@@ -17,14 +17,11 @@ import views.JButtonsMenuAndDialogs;
 import views.MyJFramePpal;
 
 public class JDialogError extends JDialog {
-	   /**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private JButtonsMenuAndDialogs buttonDelete, buttonCancel;
 	public JDialogError(MyJFramePpal frame,ActionListener actionListenner,String title) {
     	setMinimumSize(new Dimension(350,160));
-//		setIconImage(new ImageIcon(routeImage).getImage());
 		setLocationRelativeTo(frame);
 		setTitle(title);
 		getContentPane().setBackground(new Color(40, 40, 40));
@@ -34,13 +31,9 @@ public class JDialogError extends JDialog {
 		initComponents(actionListenner);
     }
 	   private void initComponents(ActionListener actionListenner) {
-	    	addTextField();
 	        addButtonsDelete(actionListenner);
 	    }
-		
-	    private void addTextField() {
-	
-	    } 
+
 		
 	    private void addButtonsDelete(ActionListener actionListenner) {
 	    	JPanel panelButtons = createPanel(10);
@@ -54,9 +47,6 @@ public class JDialogError extends JDialog {
 			buttonCancel.setActionCommand(Commands.CLOSE_DIALOG_DELETE_CANCEL.toString());
 			panelButtons.add(buttonCancel);
 			add(panelButtons);
-	    }
-	    
-	    public void changeLanguage(){
 	    }
 		
 		
@@ -79,18 +69,4 @@ public class JDialogError extends JDialog {
 	    	label.setOpaque(false);
 	    	return label;
 	    }
-		
-	    public void clearComponents() {
-	    }
-		
-//	    public int getId() {
-//	    }
-//		
-//	    public boolean verifyEmptyComponent() {
-//	    	boolean isEmpty = true;
-//	    	if(id.getText().isEmpty()) {
-//	            isEmpty = false;
-//	    	}
-//	    	return isEmpty;
-//	    }
 }

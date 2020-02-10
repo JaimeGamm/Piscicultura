@@ -35,7 +35,6 @@ public class JPanelButtonsMenu extends JPanel{
     	initComponents(actionListenner);
     	setBackground(Color.BLACK);
     	report(actionListenner);
-//    	addButtonSaveData(actionListenner);
     }
 	 
     private void initComponents(ActionListener actionListenner) {

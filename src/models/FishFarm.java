@@ -6,38 +6,40 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.json.simple.DeserializationException;
-import models.Employee;
+import models.Pond;
 import persistence.JsonFileManager;
 import persistence.Utilities;
+import persistence.WriteBinario;
+import persistence.XmlFileManager;
 
 public class FishFarm {
 	
-	private ArrayList<Employee> ponds; 
+	private ArrayList<Pond> ponds; 
     private JsonFileManager jsonFileManager;
+    private XmlFileManager xmlFileManager;
+    private  WriteBinario writeBinario;
 	 
 	
     public FishFarm() throws IOException, DeserializationException{
     	jsonFileManager = new JsonFileManager();
-    	this.ponds = new ArrayList<Employee>();	
+    	xmlFileManager= new XmlFileManager();
+    	writeBinario =new WriteBinario();
+    	this.ponds = new ArrayList<Pond>();	
     }
-    
-//    public ArrayList<Pond> crearListPonds() throws FileNotFoundException, IOException, DeserializationException{
-//    	return fileManager.readFile(Constants.ROUTE_DATA);
-//    }
 	
-    public static Employee createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
-    	return new Employee(year, municipality, specie, seeded, harvested, weight, production, price);
+    public static Pond createRunner(long year, String municipality, String specie, long seeded, long harvested, long weight, long production, long price){
+    	return new Pond(year, municipality, specie, seeded, harvested, weight, production, price);
     }
     
 	public ArrayList<Object[]> toMatrixVector2() {
 		ArrayList<Object[]> datas = new ArrayList<Object[]>();
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			datas.add( Utilities.concatObjectArrays2( register.toObjectVector()) );
 		}
 		return datas;
 	}
 	
-    public void addPond(Employee pond) {
+    public void addPond(Pond pond) {
 	boolean ubication = false;
 	int i = 0;
 	while(ubication == false && i < this.ponds.size()) {
@@ -51,28 +53,18 @@ public class FishFarm {
         ponds.add(pond);
     }
     
-	public void setPondList(ArrayList<Employee> pondsList)throws FileNotFoundException, IOException, DeserializationException {
+	public void setPondList(ArrayList<Pond> pondsList)throws FileNotFoundException, IOException, DeserializationException {
 		this.ponds = pondsList;
 	}
 	
-//    public Pond searchPond(long id){
-//    	Pond soughtPOnd = null;
-//    	int i = 0;
-//    	while(soughtPOnd == null && i < this.ponds.size()) {
-//            if(this.ponds.get(i).getId() == id) 
-//            	soughtPOnd = this.ponds.get(i);
-//            i++;
-//            	}
-//    	return soughtPOnd;
-//    }
 	@SuppressWarnings({ "unused", "rawtypes" })
-	public Employee searchPond(long id){
+	public Pond searchPond(long id){
 		long i = 0;
-		Employee soughtPOnd = null;
+		Pond soughtPOnd = null;
 		 Iterator it = ponds.iterator();
 		 while(it.hasNext()){
 			 Object obj=it.next();
-			 Employee newPond=(Employee)obj;
+			 Pond newPond=(Pond)obj;
 			  if(newPond.getId() ==id){
 				  soughtPOnd= newPond;
 			  }
@@ -81,7 +73,7 @@ public class FishFarm {
 		return soughtPOnd;
 	}
 	
-    public void editPond(Employee runner) {
+    public void editPond(Pond runner) {
     	boolean runnerEdit = false;
     	int i = 0;
     	while(runnerEdit == false && i < this.ponds.size()) {
@@ -93,7 +85,7 @@ public class FishFarm {
 		}
     }
 	
-    public void deletePond(Employee pondToRemove) {
+    public void deletePond(Pond pondToRemove) {
     	this.ponds.remove(pondToRemove);
     }
 	
@@ -105,17 +97,17 @@ public class FishFarm {
     	return info;
     }
 
-	public ArrayList<Employee> getPonds() {
+	public ArrayList<Pond> getPonds() {
 		return ponds;
 	}
 
-	public void setPonds(ArrayList<Employee> ponds) {
+	public void setPonds(ArrayList<Pond> ponds) {
 		this.ponds = ponds;
 	}
 	
 	public long maxYear() {
 		long year = 0;
-		for(Employee pond: ponds) {
+		for(Pond pond: ponds) {
 			if(pond.getYear() > year) {
 				year = pond.getYear();
 			}
@@ -125,7 +117,7 @@ public class FishFarm {
 	
 	public long minYear() {
 		long year = Long.MAX_VALUE;
-		for(Employee pond: ponds) {
+		for(Pond pond: ponds) {
 			if(pond.getYear() < year) {
 				year = pond.getYear();
 			}
@@ -144,7 +136,7 @@ public class FishFarm {
 	
 	public double quantityPondByYear(long year) {
 		double count = 0;
-		for(Employee register : ponds) {
+		for(Pond register : ponds) {
 			if(year == register.getYear()) {
 				count++;
 			}
@@ -154,30 +146,30 @@ public class FishFarm {
 	
 	public double averageWeight(String mySpecie) {
 		double countSpecieProduction =0;
-		double numero = 0;
+		double number = 0;
 		double average=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(mySpecie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getWeight();
-				numero++;
+				number++;
 			}
 		}
-		average=countSpecieProduction/numero;
+		average=countSpecieProduction/number;
 
 		return average;
 	}
 	
 	public double averageHarvested(String mySpecie) {
 		double countSpecieProduction =0;
-		double numero = 0;
+		double number = 0;
 		double average=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(mySpecie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getHaversted();
-				numero++;
+				number++;
 			}
 		}
-		average=countSpecieProduction/numero;
+		average=countSpecieProduction/number;
 
 		return average;
 	}
@@ -199,7 +191,6 @@ public class FishFarm {
 	}
 	
 	public HashMap<String, Double> averageSpeciesPriceInBoyaca() {
-		//promedio de precio por especie en boyaca
 		HashMap <String, Double>averageSpecie =new HashMap<String, Double>();
 		for (TypeSpecie specie : TypeSpecie.values()) {
 			averageSpecie.put(specie.getName(), averageSpecieCounter(specie.getName()));
@@ -209,22 +200,19 @@ public class FishFarm {
 	
 	public double averageSpecieCounter(String specie) {
 		double countSpeciePrice =0;
-		double numero = 0;
+		double number = 0;
 		double average=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpeciePrice += register.getPrice();
-				numero++;
+				number++;
 			}
 		}
-		average=countSpeciePrice/numero;
-
-//	System.out.println(tote+" "+countSpecie+" "+percentaje);
+		average=countSpeciePrice/number;
 		return average;
 	}
 	
 	public HashMap<String, Double> averageProductionSpeciesInBoyaca() {
-		// promedio de producion por especie
 		HashMap <String, Double>averageSpecie =new HashMap<String, Double>();
 		for (TypeSpecie specie : TypeSpecie.values()) {
 			averageSpecie.put(specie.getName(), averageProductionSpecieCounter(specie.getName()));
@@ -234,21 +222,21 @@ public class FishFarm {
 	
 	public double averageProductionSpecieCounter(String specie) {
 		double countSpecieProduction =0;
-		double numero = 0;
+		double number = 0;
 		double average=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getProduction();
-				numero++;
+				number++;
 			}
 		}
-		average=countSpecieProduction/numero;
+		average=countSpecieProduction/number;
 		return average;
 	}
 	
 	public double countAnimalsHarvestedInPuertoBoyaca(String specie) {
 		double countSpecieProduction =0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(register.getMunicipality().equals(TypeMunicipality.PUERTO_BOYACA.getName())) {
 				if(specie.equals(register.getSpecie())) {
 					countSpecieProduction += register.getHaversted();
@@ -260,7 +248,7 @@ public class FishFarm {
 	
 	public double countAnimalsHarvestedTotal(String specie) {
 		double countSpecieProduction =0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			if(specie.equals(register.getSpecie())) {
 				countSpecieProduction += register.getHaversted();
 			}
@@ -285,7 +273,6 @@ public class FishFarm {
 		}
 
 	public HashMap<String, Double> percentageOfCultivatedSpecies() {
-	// porcentaje de especies cultivadas en boyaca
 		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
 		for (TypeSpecie specie : TypeSpecie.values()) {
 			percentageSpecie.put(specie.getName(), contadorAndPercentageSpecie(specie.getName()));
@@ -294,7 +281,6 @@ public class FishFarm {
 	}
 	
 	public HashMap<String, Double> percentageOfProductionSpecies() {
-	// porcentaje de porducion por especie en boyaca
 		HashMap <String, Double>percentageSpecie =new HashMap<String, Double>();
 		for (TypeSpecie specie : TypeSpecie.values()) {
 			percentageSpecie.put(specie.getName(), contadorAndPercentageProductionSpecie(specie.getName()));
@@ -303,7 +289,6 @@ public class FishFarm {
 		return percentageSpecie;
 	}
 	public HashMap<String, Double> percentageOfProductionInPsiculturaForMunicipality() {
-	// porcentaje de producion en psicultura por municipio
 		HashMap <String, Double>percentageMunicipality =new HashMap<String, Double>();
 		for (TypeMunicipality municipality : TypeMunicipality.values()) {
 			percentageMunicipality.put(municipality.getName(), addPercentageMunicipality(municipality.getName()));
@@ -312,30 +297,26 @@ public class FishFarm {
 		return percentageMunicipality;
 	}
 	private double addPercentageMunicipality(String municipality) {
-		
 		double countMunicipality =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			tote+=register.getProduction();
 			if(municipality.equals(register.getMunicipality())) {
 				countMunicipality += register.getProduction();
 			}
 		}
 		percentaje=(countMunicipality*100)/(tote);
-
-//	System.out.println(tote+" "+countSpecie+" "+percentaje);
 		return percentaje;
 	}
 	
 	
 
 	private double contadorAndPercentageProductionSpecie(String specie) {
-		
 		double countSpecie =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			tote+=register.getProduction();
 			if(specie.equals(register.getSpecie())) {
 				countSpecie += register.getProduction();
@@ -349,7 +330,7 @@ public class FishFarm {
 		double countSpecie =0;
 		double tote = 0;
 		double percentaje=0;
-		for (Employee register : ponds) {
+		for (Pond register : ponds) {
 			tote+=register.getSeeded();
 			if(specie.equals(register.getSpecie())) {
 				countSpecie += register.getSeeded();
@@ -451,12 +432,12 @@ public class FishFarm {
 		return datas;
 	}
 	
-	public Object[] toObjectVector(String dato1, double dato2) {
-	return new Object[] {dato1,dato2};
+	public Object[] toObjectVector(String data1, double data2) {
+	return new Object[] {data1,data2};
     }
 	
-	public Object[] toObjectVector(long dato1, int dato2) {
-		return new Object[] {dato1,dato2};
+	public Object[] toObjectVector(long data1, int data2) {
+		return new Object[] {data1,data2};
 	    }
 	
 	public static void main(String[] args) throws IOException, DeserializationException {
@@ -467,8 +448,25 @@ public class FishFarm {
 	public JsonFileManager getJsonFileManager() {
 		return jsonFileManager;
 	}
+	
 
 	public void setJsonFileManager(JsonFileManager jsonFileManager) {
 		this.jsonFileManager = jsonFileManager;
+	}
+
+	public XmlFileManager getXmlFileManager() {
+		return xmlFileManager;
+	}
+
+	public void setXmlFileManager(XmlFileManager xmlFileManager) {
+		this.xmlFileManager = xmlFileManager;
+	}
+
+	public WriteBinario getWriteBinario() {
+		return writeBinario;
+	}
+
+	public void setWriteBinario(WriteBinario writeBinario) {
+		this.writeBinario = writeBinario;
 	}
 }

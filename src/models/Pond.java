@@ -1,6 +1,6 @@
 package models;
 
-public class Employee {
+public class Pond {
 	
     private long id;
     private long year;
@@ -13,7 +13,7 @@ public class Employee {
     private long price;
     
 	
-    public Employee(long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
+    public Pond(long year, String municipality, String specie, long seeded, long harvested, long weight,long production, long price) {
 	
 		this.year = year;
 		this.municipality = municipality;

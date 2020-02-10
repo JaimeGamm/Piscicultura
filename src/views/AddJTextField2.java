@@ -12,9 +12,7 @@ import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
 public class AddJTextField2 extends JTextField{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	  private Border titled;
 
@@ -22,37 +20,26 @@ public class AddJTextField2 extends JTextField{
 		super(20);
 		setPreferredSize(new Dimension(255,50));
 		titled = BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(55, 55, 55)), text, TitledBorder.LEFT, TitledBorder.TOP, null, Color.WHITE);
-//		setBorder(BorderFactory.createLineBorder(Color.BLACK));
-//		setBorder(BorderFactory.createTitledBorder(text)); 
 		setBorder(titled);
 		setBackground(new Color(90, 90, 90));
 		addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 		addKeyListener(new KeyListener() {
-			
-			@Override
 			public void keyTyped(KeyEvent e) {
 				// TODO Auto-generated method stub
 				
 			}
-			
-			@Override
 			public void keyReleased(KeyEvent e) {
 				// TODO Auto-generated method stub
 				
 			}
-			
-			@Override
 			public void keyPressed(KeyEvent e) {
 			String p = getText();
 			 setText(p);
-				
 			}
 		});
 	}

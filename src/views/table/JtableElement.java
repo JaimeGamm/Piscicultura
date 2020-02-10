@@ -20,9 +20,7 @@ import views.PTextLabel;
 import views.footer.Footer;
 
 public class JtableElement extends JPanel{
-	/**
-	 * 
-	 */
+
 	
 	public static final int WIDTH_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static final int HEIGHT_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;

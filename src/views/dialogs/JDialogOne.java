@@ -23,7 +23,6 @@ import views.MyJFramePpal;
 public class JDialogOne extends JDialog{
 
     private static final long serialVersionUID = 1L;
-//    private MyJTextField id;
     private JTextFieldDialog id;
     private JButtonsMenuAndDialogs buttonDelete, buttonCancel;
 
@@ -93,16 +92,6 @@ public class JDialogOne extends JDialog{
     	panel.setOpaque(false);
     	return panel;
     }
-	
-//    private JLabel createLabel(String text) {
-//    	JLabel label = new JLabel(text);
-//    	label.setBorder(BorderFactory.createEmptyBorder(0, 0, 15, 0));
-//    	label.setForeground(Color.BLACK);
-//    	label.setHorizontalTextPosition(SwingConstants.CENTER);
-//    	label.setVerticalTextPosition(SwingConstants.CENTER);
-//    	label.setOpaque(false);
-//    	return label;
-//    }
 	
     public void clearComponents() {
     	id.setText("");

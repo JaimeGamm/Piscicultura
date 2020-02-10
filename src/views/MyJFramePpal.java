@@ -16,13 +16,12 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import org.json.simple.DeserializationException;
 import general.HandlerLanguage;
-import models.Employee;
+import models.Pond;
 
 public class MyJFramePpal extends JFrame{
 	
     private static final long serialVersionUID = 1L;
     private MyJPanelPrincipal panel;
-    private WelcomePanel welcomePanel;
     private JDialogTwo dialogAdd;
     private JDialogOne dialogDelete;
     private JDialogSaveDatos jDialogSaveDatos;
@@ -49,16 +48,12 @@ public class MyJFramePpal extends JFrame{
 		setVisible(true);
     }
     
-    public void showPanelP() {
-    	welcomePanel.setVisible(false);
-    }
-    
-    public Employee actualizarTable() {
+    public Pond updateTable() {
     	panel.restartTable();
-    	Employee pond=dialogAdd.createRunner();
+    	Pond pond=dialogAdd.createPond();
     	return pond;
     }
-    public JtableElement obtenerTabla() {
+    public JtableElement getTable() {
     	return panel.getJtableElement();
     }
     
@@ -67,31 +62,29 @@ public class MyJFramePpal extends JFrame{
     	panel.visibleTable(false);
     }
     
-//    public void addPAdd(ActionListener actionListener) {
-//    	panel.initPAdd(actionListener);
-//    	panel.visiblePAdd(false);
-//    }
-    
     public void addTableReport(ArrayList<Object[]> datasFarm, ActionListener actionListener) {
     	panel.showDatasReport(datasFarm, actionListener);
     	panel.visibletableReport(false); 
     }
-	public void reiniciarTable() {
+    
+	public void restartTable() {
 		panel.restartTable();
 	}
-	public void cargaDeNuevoTabla(ArrayList<Object[]> datasFarm) {
+	
+	public void showTableAgain(ArrayList<Object[]> datasFarm) {
 		panel.newDatas(datasFarm);
 	}
+	
 	public void changeLanguage(){
 		panel.changeLanguage();
 		dialogAdd.changeLanguage();
 		dialogDelete.changeLanguage();
 		changeLanguageJtableReport();
-
+		jDialogSaveDatos.changeLanguage();
 	}
     
     public void getPondsList(ArrayList<Object[]> info) {
-    	//panel.getPondsList(info);
+    	
     }
 	
     public void showMessage() {
@@ -124,26 +117,29 @@ public class MyJFramePpal extends JFrame{
     	dialogDelete.setVisible(false);
     	dialogDelete.clearComponents();
     }
+    
     public void closeJjDialogSaveDatos() {
     	jDialogSaveDatos.setVisible(false);
     	jDialogSaveDatos.clearComponents();
     }
-    public String getRutaFile() {
+    public String getRouteFile() {
     	return jDialogSaveDatos.getRuta(); 
     }
-    public String getEstadoTypeArchivo() {
+    
+    public String getStatusTypeFile() {
     	return jDialogSaveDatos.estadoTypeArchivo();
     }
-	public boolean estadoJRadioButton() {
+    
+	public boolean statusJRadioButton() {
 		return jDialogSaveDatos.estadoJRadioButton();
 	}
+	
     public boolean componentsAddDialogEmpty() {
     	return dialogAdd.verifyEmptyComponents();
     } 
 	
-	 
-    public Employee getRunnerFromDialog() {
-    	return dialogAdd.createRunner();
+    public Pond getPondrFromDialog() {
+    	return dialogAdd.createPond();
     }
 	
     public  void showMessage(String message){
@@ -214,19 +210,6 @@ public class MyJFramePpal extends JFrame{
 		panel.visibleGrafics(status);
 	}
 	
-//	public void changeLanguageColunmJtableR(){
-//		HandlerLanguage.languageProperties.getProperty(Constants.SPECIE);
-//		HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL);
-//		HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE);
-//		HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE);
-//	}
-	
-//	public void changeLanguageColunmJtableR(){
-//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL));
-//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE));
-//		panel.changeLanguageColunmJtableR(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE));
-//	}
-	
 	private void changeLanguageJtableReport() {
 		if(numero==1) {
 			panel.changeLanguageJtableReport(Constants.SPECIE,Constants.PRICE_ANIMAL);
@@ -251,30 +234,6 @@ public class MyJFramePpal extends JFrame{
 		}
 	}
 	
-//	private void changeLanguageGraficReport() {
-//		if(numero==1) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE));
-//		}else if(numero==2) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED));
-//		}else if(numero==3) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE));
-//		}else if(numero==4) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE));
-//		}else if(numero==5) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
-//		}else if(numero==6) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
-//		}else if(numero==7) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
-//		}else if(numero==8) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED));
-//		}else if(numero==9) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA));
-//		}else if(numero==10) {
-//			panel.changeLanguajeGrafics(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED));
-//		}
-//	}
-	
 	public void tabledeReport(ArrayList<Object[]> datasFarm,HashMap<String, Double> SpeciesPriceInBoyaca) throws IOException, DeserializationException {
 		numero=0;
 		if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE))) {
@@ -284,7 +243,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRICE));
-			actualizarPantalla();
+			updatePantalla();
     	}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED))) {
     		numero=2;
     		panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
@@ -292,7 +251,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			}
     		panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_SPECIE_SEEDED));
-    		actualizarPantalla();
+    		updatePantalla();
     	}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE))) {
     		numero=3;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE), datasFarm);
@@ -300,7 +259,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics(); 
 			} 
 			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_PRODUCTION_BY_SPECIE));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE))) {
     		numero=4;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
@@ -308,7 +267,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGraficaPanelReporrtPercentajeOfSpeciesInBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_SPECIE));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY))) {
     		numero=5;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE), datasFarm);
@@ -316,7 +275,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGraficaPanelReporrtPercentajeOfMunicipality(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PERCENTAGE_PRODUCTION_BY_MUNICIPALITY));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR))) {
     		numero=6;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.YEAR), HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR), datasFarm);
@@ -324,7 +283,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGragicaPanelYear(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.PONDS_BY_YEAR));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE))) {
     		numero=7;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.WEIGHT_ANIMAL), datasFarm);
@@ -332,7 +291,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGraficaPanelReporrtPercentajeOfWeight(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_WEIGHT_BY_SPECIE));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED))) {
     		numero=8;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
@@ -340,7 +299,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGragicaPanelReportBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.AVERAGE_HARVESTED));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA))) {
     		numero=9;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
@@ -348,7 +307,7 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGragicaPanelReportPBoyaca(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_IN_PUERTO_BOYCA));
-			actualizarPantalla();
+			updatePantalla();
 		}else if(estadoJComboReport().equals(HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED))) {
     		numero=10;
 			panel.tabledeReport(HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), HandlerLanguage.languageProperties.getProperty(Constants.HARVESTED_ANIMALS), datasFarm);
@@ -356,13 +315,15 @@ public class MyJFramePpal extends JFrame{
 				panel.removerPanelGraphics();
 			} 
 			panel.addGragicaHarvestedTotal(SpeciesPriceInBoyaca,HandlerLanguage.languageProperties.getProperty(Constants.TOTAL_HARVESTED));
-			actualizarPantalla();
+			updatePantalla();
 		}
 	}
+	
 	public void openJFileChooser() {
 		jDialogSaveDatos.openJFileChooser();
 	}
-	public void actualizarPantalla(){
+	
+	public void updatePantalla(){
 		try {
 			SwingUtilities.updateComponentTreeUI(this);
 			this.validateTree();

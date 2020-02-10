@@ -13,9 +13,7 @@ import general.HandlerLanguage;
 import views.Constants;
 
 public class JtableReport extends JPanel{
-	/**
-	 * 
-	 */
+
 	public static final int WIDTH_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static final int HEIGHT_SCREEN = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
 	
@@ -64,6 +62,7 @@ public class JtableReport extends JPanel{
 		dtmElements.setColumnIdentifiers(headers);
 		repaint();
 	}
+	
 	public void changeLanguageColunmJtable1(){
 		String[] headers= {HandlerLanguage.languageProperties.getProperty(Constants.SPECIE), 
 				HandlerLanguage.languageProperties.getProperty(Constants.PRICE_ANIMAL),
@@ -111,6 +110,7 @@ public class JtableReport extends JPanel{
 		setBorder(null);
 		
 	}
+	
 	public void setHeadrs(String[] headrs) {
 		this.headrs = headrs;
 	}

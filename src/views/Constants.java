@@ -86,6 +86,8 @@ public class Constants{
 	public static final String MESSAGE_WELCOME_EN = "-Choose how you like up the data-";
 	public static final String HOME = "Home";
 	public static final String WEB = "WEB";
+	public static final String TABLE_ALL_DATAS = "Tabla con todos los datos:";
+	public static final String PISCICULTURE_IN_BOYACA = "Psicicultura en Boyaca";
 	public static final String FONT_BAUHNAS = "Bauhaus 93";
 	public static final String LOCAL = "LOCAL";
 	public static final String L_ONE = "L_One";
@@ -94,11 +96,18 @@ public class Constants{
 	public static final String T_TWO = "T_Two";
 	public static final String L_THREE = "Eat_Fish";
 	public static final String L_FOUR = "Type_Fish";
+	public static final String CHOOSE_ROUTE = "Choose_Route";
+	public static final String ROUTE = "Route";
 	public static final String T_FOUR = "T_Four";
 	public static final String T_THREE = "T_Three";
+	public static final String SAVE_TABLE = "Save_Table";
+	public static final String SAVE_DATA_EXPORT = "Save_Data_Export";
 	public static final String DATA_TABLE = "Data_Table";
 	public static final String NAME_PAGE= "PisciculturaApp";
 	public static final String FOOTER_TEXT= "Footer_Text";
+	public static final String EXIST_ID= "Exist_Id";
+	public static final String NOT_EXIST_ID= "No_Exist_Id";
+	public static final String EMPTY_FIELDS= "Empty_Fields";
 	public static final String IVAN_T= "Ivan Mancipe:";
 	public static final String JAIME_T= "Jaime Saenz:";
 	public static final String MESSAGE_NUMBER_FORMAT = "El ID no es valido";

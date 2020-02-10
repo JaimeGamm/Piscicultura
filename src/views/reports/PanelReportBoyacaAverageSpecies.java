@@ -23,9 +23,6 @@ public class PanelReportBoyacaAverageSpecies extends JPanel{
     	setPreferredSize(new Dimension(1000,530));
         initComponents();
         setBackground(new Color(15, 15, 15));
-        
-//        setTitle(Constants.B_PRICE_REPORT);
-        
     }
     
                     
@@ -122,6 +119,7 @@ public class PanelReportBoyacaAverageSpecies extends JPanel{
             g.drawString(Constants.UTILAPIA_O_MOJARRA+ " : " +String.valueOf((double)averageSpeciesPriceInBoyaca.get(TypeSpecie.UTILAPIA_O_MOJARRA.getName())), 6, 460);
             
     }
+    
     @Override  
     public void paintComponent(Graphics g) {
         Graphics2D g2d = (Graphics2D) g;

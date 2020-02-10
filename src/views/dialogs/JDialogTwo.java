@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 
 import controller.Commands;
 import general.HandlerLanguage;
-import models.Employee;
+import models.Pond;
 import models.FishFarm;
 import views.Constants;
 import views.JButtonsMenuAndDialogs;
@@ -44,6 +44,7 @@ public class JDialogTwo extends JDialog{
 		setBackground(new Color(35, 35, 35));
 		initComponents(actionListenner,editButtons);
     }
+    
     public JDialogTwo() {}
       private void initComponents(ActionListener actionListenner,boolean editButtons) {
       	addJComboBoxSpecies();
@@ -86,6 +87,7 @@ public class JDialogTwo extends JDialog{
 		pricePanel.add(price);
 		add(pricePanel);
     }
+    
     private void addJComboBoxSpecies() {
     	Panel panel = new Panel();
     	panel.setPreferredSize(new Dimension(450,50));
@@ -365,7 +367,7 @@ public class JDialogTwo extends JDialog{
     	return isEmpty;
     }
 
-    public void getInformationRunner(Employee pond) {
+    public void getInformationPond(Pond pond) {
     	year.setText(Long.toString(pond.getYear()));
     	seeded.setText(Long.toString(pond.getSeeded()));
     	harvested.setText(Long.toString(pond.getHaversted()));
@@ -376,11 +378,11 @@ public class JDialogTwo extends JDialog{
     	municipality.setSelectedItem(pond.getMunicipality()); 
     }
 	
-    public Employee createRunner() {
+    public Pond createPond() {
     	return FishFarm.createRunner( getYear(), getMunicipality(), getSpecie(), getSeeded(), getHarvested(), getWeight(), getProduction(), getPrice());
     }
     
-    public Object[] createRunner2() {
+    public Object[] createAPond2() {
     	Object[] object = new Object[8];
     	object[1]=Long.toString(getYear());
     	object[2]=getMunicipality();
@@ -390,7 +392,6 @@ public class JDialogTwo extends JDialog{
     	object[6]=Long.toString(getWeight());
     	object[7]=Long.toString(getProduction());
     	object[8]=Long.toString(getPrice());
-    	
     	return object;
     }
 }

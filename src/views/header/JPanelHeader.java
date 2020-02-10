@@ -37,7 +37,7 @@ public class JPanelHeader extends JPanel{
    
     }
     
-    public String estadoJComboReport() {
+    public String statusJComboReport() {
     	return buttonsMenu.estadoJComboReport();  
     }
     
